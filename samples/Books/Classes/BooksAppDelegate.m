@@ -7,19 +7,33 @@
 //
 
 #import "BooksAppDelegate.h"
+#import "BooksViewController.h"
+#import "Book.h"
 
 @implementation BooksAppDelegate
 
 @synthesize window;
+@synthesize navigationController;
 
 
 #pragma mark -
 #pragma mark Application lifecycle
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
-    
-    // Override point for customization after application launch.
-    
+	
+	Book *book1 = [Book bookWithTitle:@"The Bible" author:@"God" publisher:@"The church"];
+	Book *book2 = [Book bookWithTitle:@"Tapworthy" author:@"Josh Clark" publisher:@"O'Reilly"];
+	NSArray *books = [NSArray arrayWithObjects:book1, book2, nil];
+	
+	BooksViewController *booksViewController = [[BooksViewController alloc] initWithStyle:UITableViewStylePlain];
+	booksViewController.title = @"Bookshelf";
+	booksViewController.list = books;
+	
+	navigationController = [[UINavigationController alloc] initWithRootViewController:booksViewController];
+	navigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
+	[booksViewController release];
+	
+	[self.window addSubview:navigationController.view];    
     [self.window makeKeyAndVisible];
     
     return YES;
@@ -75,6 +89,7 @@
 
 
 - (void)dealloc {
+	[navigationController release];
     [window release];
     [super dealloc];
 }

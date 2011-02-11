@@ -73,4 +73,18 @@
 		isa = PBXCodeSenseManager;
 		indexTemplatePath = "";
 	};
+	8809058913053BAB00C7C50D /* Book.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {961, 521}}";
+			sepNavSelRange = "{247, 243}";
+			sepNavVisRange = "{0, 496}";
+		};
+	};
+	8809058A13053BAB00C7C50D /* Book.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {961, 521}}";
+			sepNavSelRange = "{461, 0}";
+			sepNavVisRange = "{0, 468}";
+		};
+	};
 }

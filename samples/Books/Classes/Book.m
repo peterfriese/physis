@@ -15,7 +15,7 @@
 @synthesize author;
 @synthesize publisher;
 
-+ (Book)bookWithTitle:(NSString *)title author:(NSString *)author publisher:(NSString *)publisher {
++ (Book*)bookWithTitle:(NSString *)title author:(NSString *)author publisher:(NSString *)publisher {
 	Book *book = [[[Book alloc] init] autorelease];
 	book.title = title;
 	book.author = author;
