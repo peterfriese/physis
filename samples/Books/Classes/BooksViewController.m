@@ -10,39 +10,36 @@
 #import "Book.h"
 
 @implementation BooksViewController
+
 @synthesize list;
+@synthesize filteredList;
+@synthesize searchDisplayController;
 
 #pragma mark -
 #pragma mark Initialization
 
-/*
-- (id)initWithStyle:(UITableViewStyle)style {
-    // Override initWithStyle: if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization.
-    }
-    return self;
-}
-*/
-
-
 #pragma mark -
 #pragma mark View lifecycle
 
-/*
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+	
+	UISearchBar *searchBar = [[UISearchBar alloc] init];
+	searchBar.scopeButtonTitles = [NSArray arrayWithObjects:@"Title", @"Author", @"Publisher", nil];
+	searchBar.placeholder = @"Search Books";
+	[searchBar sizeToFit];
+	self.tableView.tableHeaderView = searchBar;	
+	
+	searchDisplayController = [[UISearchDisplayController alloc] initWithSearchBar:searchBar contentsController:self];
+	[self setSearchDisplayController:searchDisplayController];
+	searchDisplayController.delegate = self;
+	searchDisplayController.searchResultsDataSource = self;
+	[searchBar release];
 }
-*/
 
 // Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations.
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    return YES;
 }
 
 
@@ -55,7 +52,12 @@
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [list count];
+	if (tableView == self.searchDisplayController.searchResultsTableView) {
+		return [filteredList count];
+	}
+	else {
+	    return [list count];
+	}
 }
 
 
@@ -70,7 +72,13 @@
     }
     
     // Configure the cell...
-	Book *book = [list objectAtIndex:[indexPath row]];
+	Book *book;
+	if (tableView == self.searchDisplayController.searchResultsTableView) {
+		book = [filteredList objectAtIndex:[indexPath row]];
+	}
+	else {
+		book = [list objectAtIndex:[indexPath row]];
+	}
 	
 	cell.textLabel.text = book.title;
 	cell.detailTextLabel.text = [NSString stringWithFormat:@"by %@", book.author];
@@ -93,25 +101,45 @@
     */
 }
 
+#pragma mark -
+#pragma mark UISearchDisplayController delegate 
+
+-(void) filterListForSearchString:(NSString *)searchString scope:(NSString *)scope {
+	NSPredicate *predicate;
+	if ([scope isEqualToString:@"Title"]) {
+		predicate = [NSPredicate predicateWithFormat:@"title CONTAINS[cd] %@", searchString];
+	}
+	else if ([scope isEqualToString:@"Author"]) {
+		predicate = [NSPredicate predicateWithFormat:@"author CONTAINS[cd] %@", searchString];
+	}
+	else if ([scope isEqualToString:@"Publisher"]) {
+		predicate = [NSPredicate predicateWithFormat:@"publisher CONTAINS[cd] %@", searchString];
+	}
+	self.filteredList = [list filteredArrayUsingPredicate:predicate];
+}
+
+-(BOOL) searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString {
+	NSInteger scopeIndex = self.searchDisplayController.searchBar.selectedScopeButtonIndex;
+	NSString *scope = [self.searchDisplayController.searchBar.scopeButtonTitles objectAtIndex:scopeIndex];
+	[self filterListForSearchString:searchString scope:scope];
+	return YES;
+}
+
+-(BOOL) searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchScope:(NSInteger)searchOption {
+	NSString *scope = [self.searchDisplayController.searchBar.scopeButtonTitles objectAtIndex:searchOption];
+	NSString *searchString = self.searchDisplayController.searchBar.text;
+	[self filterListForSearchString:searchString scope:scope];
+	return YES;	
+}
+
 
 #pragma mark -
 #pragma mark Memory management
 
-- (void)didReceiveMemoryWarning {
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Relinquish ownership any cached data, images, etc. that aren't in use.
-}
-
-- (void)viewDidUnload {
-    // Relinquish ownership of anything that can be recreated in viewDidLoad or on demand.
-    // For example: self.myOutlet = nil;
-}
-
-
 - (void)dealloc {
+	[searchDisplayController release];
 	[list release];
+	[filteredList release];
     [super dealloc];
 }
 

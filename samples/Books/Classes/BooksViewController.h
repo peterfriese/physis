@@ -9,10 +9,14 @@
 #import <UIKit/UIKit.h>
 
 
-@interface BooksViewController : UITableViewController {
+@interface BooksViewController : UITableViewController<UISearchDisplayDelegate> {
 	NSArray *list;
+	NSArray *filteredList;
+	UISearchDisplayController *searchDisplayController;
 }
 
 @property (nonatomic, retain) NSArray *list;
+@property (nonatomic, retain) NSArray *filteredList;
+@property (nonatomic, retain) UISearchDisplayController *searchDisplayController;
 
 @end
