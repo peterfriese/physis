@@ -1,0 +1,4 @@
+import com::itemis::mobile::physis::physis;
+
+sortedGreetings(Model this) :
+	this.greetings.sortBy(g|g.name.toLowerCase());

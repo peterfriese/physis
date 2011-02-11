@@ -1,0 +1,26 @@
+grammar com.itemis.mobile.physis.Physis with org.eclipse.xtext.common.Terminals
+
+generate physis "http://www.itemis.com/mobile/physis/Physis"
+
+Model:
+	(datamodels += DataModel)*;
+	
+DataModel:
+	'datamodel' name=ID '{'
+		(types += Type)*
+	'}';
+		
+	
+Type:
+	SimpleType | Entity;
+	
+SimpleType:
+	'type' name=ID;
+	
+Entity:
+	'entity' name=ID '{'
+		(attributes += Attribute)*
+	'}';
+	
+Attribute:
+	name=ID type=[Type] (multiplicity?='[]')?;
