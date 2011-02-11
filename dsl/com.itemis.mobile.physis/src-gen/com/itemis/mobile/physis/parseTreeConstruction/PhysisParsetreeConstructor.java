@@ -685,11 +685,11 @@ protected class Entity_RightCurlyBracketKeyword_4 extends KeywordToken  {
 /************ begin Rule Attribute ****************
  *
  * Attribute:
- * 	name=ID type=[Type] multiplicity?="[]"?;
+ * 	name=ID ":" type=[Type] multiplicity?="[]"?;
  *
  **/
 
-// name=ID type=[Type] multiplicity?="[]"?
+// name=ID ":" type=[Type] multiplicity?="[]"?
 protected class Attribute_Group extends GroupToken {
 	
 	public Attribute_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -704,8 +704,8 @@ protected class Attribute_Group extends GroupToken {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Attribute_MultiplicityAssignment_2(lastRuleCallOrigin, this, 0, inst);
-			case 1: return new Attribute_TypeAssignment_1(lastRuleCallOrigin, this, 1, inst);
+			case 0: return new Attribute_MultiplicityAssignment_3(lastRuleCallOrigin, this, 0, inst);
+			case 1: return new Attribute_TypeAssignment_2(lastRuleCallOrigin, this, 1, inst);
 			default: return null;
 		}	
 	}
@@ -752,16 +752,16 @@ protected class Attribute_NameAssignment_0 extends AssignmentToken  {
 
 }
 
-// type=[Type]
-protected class Attribute_TypeAssignment_1 extends AssignmentToken  {
+// ":"
+protected class Attribute_ColonKeyword_1 extends KeywordToken  {
 	
-	public Attribute_TypeAssignment_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public Attribute_ColonKeyword_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
-	public Assignment getGrammarElement() {
-		return grammarAccess.getAttributeAccess().getTypeAssignment_1();
+	public Keyword getGrammarElement() {
+		return grammarAccess.getAttributeAccess().getColonKeyword_1();
 	}
 
     @Override
@@ -772,15 +772,37 @@ protected class Attribute_TypeAssignment_1 extends AssignmentToken  {
 		}	
 	}
 
+}
+
+// type=[Type]
+protected class Attribute_TypeAssignment_2 extends AssignmentToken  {
+	
+	public Attribute_TypeAssignment_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Assignment getGrammarElement() {
+		return grammarAccess.getAttributeAccess().getTypeAssignment_2();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new Attribute_ColonKeyword_1(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
     @Override	
 	public IEObjectConsumer tryConsume() {
 		if((value = eObjectConsumer.getConsumable("type",true)) == null) return null;
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("type");
 		if(value instanceof EObject) { // org::eclipse::xtext::impl::CrossReferenceImpl
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
-			if(param.isInstanceOf(grammarAccess.getAttributeAccess().getTypeTypeCrossReference_1_0().getType().getClassifier())) {
+			if(param.isInstanceOf(grammarAccess.getAttributeAccess().getTypeTypeCrossReference_2_0().getType().getClassifier())) {
 				type = AssignmentType.CROSS_REFERENCE;
-				element = grammarAccess.getAttributeAccess().getTypeTypeCrossReference_1_0(); 
+				element = grammarAccess.getAttributeAccess().getTypeTypeCrossReference_2_0(); 
 				return obj;
 			}
 		}
@@ -790,21 +812,21 @@ protected class Attribute_TypeAssignment_1 extends AssignmentToken  {
 }
 
 // multiplicity?="[]"?
-protected class Attribute_MultiplicityAssignment_2 extends AssignmentToken  {
+protected class Attribute_MultiplicityAssignment_3 extends AssignmentToken  {
 	
-	public Attribute_MultiplicityAssignment_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public Attribute_MultiplicityAssignment_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getAttributeAccess().getMultiplicityAssignment_2();
+		return grammarAccess.getAttributeAccess().getMultiplicityAssignment_3();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Attribute_TypeAssignment_1(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new Attribute_TypeAssignment_2(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -815,7 +837,7 @@ protected class Attribute_MultiplicityAssignment_2 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("multiplicity");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getAttributeAccess().getMultiplicityLeftSquareBracketRightSquareBracketKeyword_2_0();
+			element = grammarAccess.getAttributeAccess().getMultiplicityLeftSquareBracketRightSquareBracketKeyword_3_0();
 			return obj;
 		}
 		return null;

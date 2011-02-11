@@ -23,7 +23,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalPhysisParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'datamodel'", "'{'", "'}'", "'type'", "'entity'", "'[]'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'datamodel'", "'{'", "'}'", "'type'", "'entity'", "':'", "'[]'"
     };
     public static final int RULE_ID=4;
     public static final int RULE_STRING=6;
@@ -1672,30 +1672,21 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__Attribute__Group__1__Impl
-    // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:677:1: rule__Attribute__Group__1__Impl : ( ( rule__Attribute__TypeAssignment_1 ) ) ;
+    // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:677:1: rule__Attribute__Group__1__Impl : ( ':' ) ;
     public final void rule__Attribute__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:681:1: ( ( ( rule__Attribute__TypeAssignment_1 ) ) )
-            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:682:1: ( ( rule__Attribute__TypeAssignment_1 ) )
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:681:1: ( ( ':' ) )
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:682:1: ( ':' )
             {
-            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:682:1: ( ( rule__Attribute__TypeAssignment_1 ) )
-            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:683:1: ( rule__Attribute__TypeAssignment_1 )
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:682:1: ( ':' )
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:683:1: ':'
             {
-             before(grammarAccess.getAttributeAccess().getTypeAssignment_1()); 
-            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:684:1: ( rule__Attribute__TypeAssignment_1 )
-            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:684:2: rule__Attribute__TypeAssignment_1
-            {
-            pushFollow(FOLLOW_rule__Attribute__TypeAssignment_1_in_rule__Attribute__Group__1__Impl1319);
-            rule__Attribute__TypeAssignment_1();
-            _fsp--;
-
-
-            }
-
-             after(grammarAccess.getAttributeAccess().getTypeAssignment_1()); 
+             before(grammarAccess.getAttributeAccess().getColonKeyword_1()); 
+            match(input,16,FOLLOW_16_in_rule__Attribute__Group__1__Impl1320); 
+             after(grammarAccess.getAttributeAccess().getColonKeyword_1()); 
 
             }
 
@@ -1718,17 +1709,21 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__Attribute__Group__2
-    // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:694:1: rule__Attribute__Group__2 : rule__Attribute__Group__2__Impl ;
+    // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:696:1: rule__Attribute__Group__2 : rule__Attribute__Group__2__Impl rule__Attribute__Group__3 ;
     public final void rule__Attribute__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:698:1: ( rule__Attribute__Group__2__Impl )
-            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:699:2: rule__Attribute__Group__2__Impl
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:700:1: ( rule__Attribute__Group__2__Impl rule__Attribute__Group__3 )
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:701:2: rule__Attribute__Group__2__Impl rule__Attribute__Group__3
             {
-            pushFollow(FOLLOW_rule__Attribute__Group__2__Impl_in_rule__Attribute__Group__21349);
+            pushFollow(FOLLOW_rule__Attribute__Group__2__Impl_in_rule__Attribute__Group__21351);
             rule__Attribute__Group__2__Impl();
+            _fsp--;
+
+            pushFollow(FOLLOW_rule__Attribute__Group__3_in_rule__Attribute__Group__21354);
+            rule__Attribute__Group__3();
             _fsp--;
 
 
@@ -1750,41 +1745,30 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__Attribute__Group__2__Impl
-    // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:705:1: rule__Attribute__Group__2__Impl : ( ( rule__Attribute__MultiplicityAssignment_2 )? ) ;
+    // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:708:1: rule__Attribute__Group__2__Impl : ( ( rule__Attribute__TypeAssignment_2 ) ) ;
     public final void rule__Attribute__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:709:1: ( ( ( rule__Attribute__MultiplicityAssignment_2 )? ) )
-            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:710:1: ( ( rule__Attribute__MultiplicityAssignment_2 )? )
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:712:1: ( ( ( rule__Attribute__TypeAssignment_2 ) ) )
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:713:1: ( ( rule__Attribute__TypeAssignment_2 ) )
             {
-            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:710:1: ( ( rule__Attribute__MultiplicityAssignment_2 )? )
-            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:711:1: ( rule__Attribute__MultiplicityAssignment_2 )?
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:713:1: ( ( rule__Attribute__TypeAssignment_2 ) )
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:714:1: ( rule__Attribute__TypeAssignment_2 )
             {
-             before(grammarAccess.getAttributeAccess().getMultiplicityAssignment_2()); 
-            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:712:1: ( rule__Attribute__MultiplicityAssignment_2 )?
-            int alt5=2;
-            int LA5_0 = input.LA(1);
+             before(grammarAccess.getAttributeAccess().getTypeAssignment_2()); 
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:715:1: ( rule__Attribute__TypeAssignment_2 )
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:715:2: rule__Attribute__TypeAssignment_2
+            {
+            pushFollow(FOLLOW_rule__Attribute__TypeAssignment_2_in_rule__Attribute__Group__2__Impl1381);
+            rule__Attribute__TypeAssignment_2();
+            _fsp--;
 
-            if ( (LA5_0==16) ) {
-                alt5=1;
-            }
-            switch (alt5) {
-                case 1 :
-                    // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:712:2: rule__Attribute__MultiplicityAssignment_2
-                    {
-                    pushFollow(FOLLOW_rule__Attribute__MultiplicityAssignment_2_in_rule__Attribute__Group__2__Impl1376);
-                    rule__Attribute__MultiplicityAssignment_2();
-                    _fsp--;
-
-
-                    }
-                    break;
 
             }
 
-             after(grammarAccess.getAttributeAccess().getMultiplicityAssignment_2()); 
+             after(grammarAccess.getAttributeAccess().getTypeAssignment_2()); 
 
             }
 
@@ -1806,21 +1790,110 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
     // $ANTLR end rule__Attribute__Group__2__Impl
 
 
+    // $ANTLR start rule__Attribute__Group__3
+    // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:725:1: rule__Attribute__Group__3 : rule__Attribute__Group__3__Impl ;
+    public final void rule__Attribute__Group__3() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:729:1: ( rule__Attribute__Group__3__Impl )
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:730:2: rule__Attribute__Group__3__Impl
+            {
+            pushFollow(FOLLOW_rule__Attribute__Group__3__Impl_in_rule__Attribute__Group__31411);
+            rule__Attribute__Group__3__Impl();
+            _fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end rule__Attribute__Group__3
+
+
+    // $ANTLR start rule__Attribute__Group__3__Impl
+    // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:736:1: rule__Attribute__Group__3__Impl : ( ( rule__Attribute__MultiplicityAssignment_3 )? ) ;
+    public final void rule__Attribute__Group__3__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:740:1: ( ( ( rule__Attribute__MultiplicityAssignment_3 )? ) )
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:741:1: ( ( rule__Attribute__MultiplicityAssignment_3 )? )
+            {
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:741:1: ( ( rule__Attribute__MultiplicityAssignment_3 )? )
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:742:1: ( rule__Attribute__MultiplicityAssignment_3 )?
+            {
+             before(grammarAccess.getAttributeAccess().getMultiplicityAssignment_3()); 
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:743:1: ( rule__Attribute__MultiplicityAssignment_3 )?
+            int alt5=2;
+            int LA5_0 = input.LA(1);
+
+            if ( (LA5_0==17) ) {
+                alt5=1;
+            }
+            switch (alt5) {
+                case 1 :
+                    // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:743:2: rule__Attribute__MultiplicityAssignment_3
+                    {
+                    pushFollow(FOLLOW_rule__Attribute__MultiplicityAssignment_3_in_rule__Attribute__Group__3__Impl1438);
+                    rule__Attribute__MultiplicityAssignment_3();
+                    _fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getAttributeAccess().getMultiplicityAssignment_3()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end rule__Attribute__Group__3__Impl
+
+
     // $ANTLR start rule__Model__DatamodelsAssignment
-    // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:729:1: rule__Model__DatamodelsAssignment : ( ruleDataModel ) ;
+    // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:762:1: rule__Model__DatamodelsAssignment : ( ruleDataModel ) ;
     public final void rule__Model__DatamodelsAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:733:1: ( ( ruleDataModel ) )
-            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:734:1: ( ruleDataModel )
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:766:1: ( ( ruleDataModel ) )
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:767:1: ( ruleDataModel )
             {
-            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:734:1: ( ruleDataModel )
-            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:735:1: ruleDataModel
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:767:1: ( ruleDataModel )
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:768:1: ruleDataModel
             {
              before(grammarAccess.getModelAccess().getDatamodelsDataModelParserRuleCall_0()); 
-            pushFollow(FOLLOW_ruleDataModel_in_rule__Model__DatamodelsAssignment1418);
+            pushFollow(FOLLOW_ruleDataModel_in_rule__Model__DatamodelsAssignment1482);
             ruleDataModel();
             _fsp--;
 
@@ -1847,20 +1920,20 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__DataModel__NameAssignment_1
-    // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:744:1: rule__DataModel__NameAssignment_1 : ( RULE_ID ) ;
+    // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:777:1: rule__DataModel__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__DataModel__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:748:1: ( ( RULE_ID ) )
-            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:749:1: ( RULE_ID )
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:781:1: ( ( RULE_ID ) )
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:782:1: ( RULE_ID )
             {
-            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:749:1: ( RULE_ID )
-            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:750:1: RULE_ID
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:782:1: ( RULE_ID )
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:783:1: RULE_ID
             {
              before(grammarAccess.getDataModelAccess().getNameIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__DataModel__NameAssignment_11449); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__DataModel__NameAssignment_11513); 
              after(grammarAccess.getDataModelAccess().getNameIDTerminalRuleCall_1_0()); 
 
             }
@@ -1884,20 +1957,20 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__DataModel__TypesAssignment_3
-    // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:759:1: rule__DataModel__TypesAssignment_3 : ( ruleType ) ;
+    // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:792:1: rule__DataModel__TypesAssignment_3 : ( ruleType ) ;
     public final void rule__DataModel__TypesAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:763:1: ( ( ruleType ) )
-            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:764:1: ( ruleType )
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:796:1: ( ( ruleType ) )
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:797:1: ( ruleType )
             {
-            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:764:1: ( ruleType )
-            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:765:1: ruleType
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:797:1: ( ruleType )
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:798:1: ruleType
             {
              before(grammarAccess.getDataModelAccess().getTypesTypeParserRuleCall_3_0()); 
-            pushFollow(FOLLOW_ruleType_in_rule__DataModel__TypesAssignment_31480);
+            pushFollow(FOLLOW_ruleType_in_rule__DataModel__TypesAssignment_31544);
             ruleType();
             _fsp--;
 
@@ -1924,20 +1997,20 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__SimpleType__NameAssignment_1
-    // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:774:1: rule__SimpleType__NameAssignment_1 : ( RULE_ID ) ;
+    // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:807:1: rule__SimpleType__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__SimpleType__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:778:1: ( ( RULE_ID ) )
-            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:779:1: ( RULE_ID )
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:811:1: ( ( RULE_ID ) )
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:812:1: ( RULE_ID )
             {
-            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:779:1: ( RULE_ID )
-            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:780:1: RULE_ID
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:812:1: ( RULE_ID )
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:813:1: RULE_ID
             {
              before(grammarAccess.getSimpleTypeAccess().getNameIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__SimpleType__NameAssignment_11511); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__SimpleType__NameAssignment_11575); 
              after(grammarAccess.getSimpleTypeAccess().getNameIDTerminalRuleCall_1_0()); 
 
             }
@@ -1961,20 +2034,20 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__Entity__NameAssignment_1
-    // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:789:1: rule__Entity__NameAssignment_1 : ( RULE_ID ) ;
+    // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:822:1: rule__Entity__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Entity__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:793:1: ( ( RULE_ID ) )
-            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:794:1: ( RULE_ID )
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:826:1: ( ( RULE_ID ) )
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:827:1: ( RULE_ID )
             {
-            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:794:1: ( RULE_ID )
-            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:795:1: RULE_ID
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:827:1: ( RULE_ID )
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:828:1: RULE_ID
             {
              before(grammarAccess.getEntityAccess().getNameIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Entity__NameAssignment_11542); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Entity__NameAssignment_11606); 
              after(grammarAccess.getEntityAccess().getNameIDTerminalRuleCall_1_0()); 
 
             }
@@ -1998,20 +2071,20 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__Entity__AttributesAssignment_3
-    // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:804:1: rule__Entity__AttributesAssignment_3 : ( ruleAttribute ) ;
+    // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:837:1: rule__Entity__AttributesAssignment_3 : ( ruleAttribute ) ;
     public final void rule__Entity__AttributesAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:808:1: ( ( ruleAttribute ) )
-            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:809:1: ( ruleAttribute )
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:841:1: ( ( ruleAttribute ) )
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:842:1: ( ruleAttribute )
             {
-            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:809:1: ( ruleAttribute )
-            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:810:1: ruleAttribute
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:842:1: ( ruleAttribute )
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:843:1: ruleAttribute
             {
              before(grammarAccess.getEntityAccess().getAttributesAttributeParserRuleCall_3_0()); 
-            pushFollow(FOLLOW_ruleAttribute_in_rule__Entity__AttributesAssignment_31573);
+            pushFollow(FOLLOW_ruleAttribute_in_rule__Entity__AttributesAssignment_31637);
             ruleAttribute();
             _fsp--;
 
@@ -2038,20 +2111,20 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__Attribute__NameAssignment_0
-    // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:819:1: rule__Attribute__NameAssignment_0 : ( RULE_ID ) ;
+    // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:852:1: rule__Attribute__NameAssignment_0 : ( RULE_ID ) ;
     public final void rule__Attribute__NameAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:823:1: ( ( RULE_ID ) )
-            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:824:1: ( RULE_ID )
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:856:1: ( ( RULE_ID ) )
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:857:1: ( RULE_ID )
             {
-            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:824:1: ( RULE_ID )
-            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:825:1: RULE_ID
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:857:1: ( RULE_ID )
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:858:1: RULE_ID
             {
              before(grammarAccess.getAttributeAccess().getNameIDTerminalRuleCall_0_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Attribute__NameAssignment_01604); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Attribute__NameAssignment_01668); 
              after(grammarAccess.getAttributeAccess().getNameIDTerminalRuleCall_0_0()); 
 
             }
@@ -2074,30 +2147,30 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
     // $ANTLR end rule__Attribute__NameAssignment_0
 
 
-    // $ANTLR start rule__Attribute__TypeAssignment_1
-    // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:834:1: rule__Attribute__TypeAssignment_1 : ( ( RULE_ID ) ) ;
-    public final void rule__Attribute__TypeAssignment_1() throws RecognitionException {
+    // $ANTLR start rule__Attribute__TypeAssignment_2
+    // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:867:1: rule__Attribute__TypeAssignment_2 : ( ( RULE_ID ) ) ;
+    public final void rule__Attribute__TypeAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:838:1: ( ( ( RULE_ID ) ) )
-            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:839:1: ( ( RULE_ID ) )
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:871:1: ( ( ( RULE_ID ) ) )
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:872:1: ( ( RULE_ID ) )
             {
-            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:839:1: ( ( RULE_ID ) )
-            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:840:1: ( RULE_ID )
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:872:1: ( ( RULE_ID ) )
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:873:1: ( RULE_ID )
             {
-             before(grammarAccess.getAttributeAccess().getTypeTypeCrossReference_1_0()); 
-            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:841:1: ( RULE_ID )
-            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:842:1: RULE_ID
+             before(grammarAccess.getAttributeAccess().getTypeTypeCrossReference_2_0()); 
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:874:1: ( RULE_ID )
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:875:1: RULE_ID
             {
-             before(grammarAccess.getAttributeAccess().getTypeTypeIDTerminalRuleCall_1_0_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Attribute__TypeAssignment_11639); 
-             after(grammarAccess.getAttributeAccess().getTypeTypeIDTerminalRuleCall_1_0_1()); 
+             before(grammarAccess.getAttributeAccess().getTypeTypeIDTerminalRuleCall_2_0_1()); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Attribute__TypeAssignment_21703); 
+             after(grammarAccess.getAttributeAccess().getTypeTypeIDTerminalRuleCall_2_0_1()); 
 
             }
 
-             after(grammarAccess.getAttributeAccess().getTypeTypeCrossReference_1_0()); 
+             after(grammarAccess.getAttributeAccess().getTypeTypeCrossReference_2_0()); 
 
             }
 
@@ -2116,33 +2189,33 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Attribute__TypeAssignment_1
+    // $ANTLR end rule__Attribute__TypeAssignment_2
 
 
-    // $ANTLR start rule__Attribute__MultiplicityAssignment_2
-    // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:853:1: rule__Attribute__MultiplicityAssignment_2 : ( ( '[]' ) ) ;
-    public final void rule__Attribute__MultiplicityAssignment_2() throws RecognitionException {
+    // $ANTLR start rule__Attribute__MultiplicityAssignment_3
+    // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:886:1: rule__Attribute__MultiplicityAssignment_3 : ( ( '[]' ) ) ;
+    public final void rule__Attribute__MultiplicityAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:857:1: ( ( ( '[]' ) ) )
-            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:858:1: ( ( '[]' ) )
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:890:1: ( ( ( '[]' ) ) )
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:891:1: ( ( '[]' ) )
             {
-            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:858:1: ( ( '[]' ) )
-            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:859:1: ( '[]' )
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:891:1: ( ( '[]' ) )
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:892:1: ( '[]' )
             {
-             before(grammarAccess.getAttributeAccess().getMultiplicityLeftSquareBracketRightSquareBracketKeyword_2_0()); 
-            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:860:1: ( '[]' )
-            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:861:1: '[]'
+             before(grammarAccess.getAttributeAccess().getMultiplicityLeftSquareBracketRightSquareBracketKeyword_3_0()); 
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:893:1: ( '[]' )
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:894:1: '[]'
             {
-             before(grammarAccess.getAttributeAccess().getMultiplicityLeftSquareBracketRightSquareBracketKeyword_2_0()); 
-            match(input,16,FOLLOW_16_in_rule__Attribute__MultiplicityAssignment_21679); 
-             after(grammarAccess.getAttributeAccess().getMultiplicityLeftSquareBracketRightSquareBracketKeyword_2_0()); 
+             before(grammarAccess.getAttributeAccess().getMultiplicityLeftSquareBracketRightSquareBracketKeyword_3_0()); 
+            match(input,17,FOLLOW_17_in_rule__Attribute__MultiplicityAssignment_31743); 
+             after(grammarAccess.getAttributeAccess().getMultiplicityLeftSquareBracketRightSquareBracketKeyword_3_0()); 
 
             }
 
-             after(grammarAccess.getAttributeAccess().getMultiplicityLeftSquareBracketRightSquareBracketKeyword_2_0()); 
+             after(grammarAccess.getAttributeAccess().getMultiplicityLeftSquareBracketRightSquareBracketKeyword_3_0()); 
 
             }
 
@@ -2161,7 +2234,7 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Attribute__MultiplicityAssignment_2
+    // $ANTLR end rule__Attribute__MultiplicityAssignment_3
 
 
  
@@ -2219,22 +2292,25 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__Entity__AttributesAssignment_3_in_rule__Entity__Group__3__Impl1129 = new BitSet(new long[]{0x0000000000000012L});
     public static final BitSet FOLLOW_rule__Entity__Group__4__Impl_in_rule__Entity__Group__41160 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_13_in_rule__Entity__Group__4__Impl1188 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Attribute__Group__0__Impl_in_rule__Attribute__Group__01229 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__Attribute__Group__0__Impl_in_rule__Attribute__Group__01229 = new BitSet(new long[]{0x0000000000010000L});
     public static final BitSet FOLLOW_rule__Attribute__Group__1_in_rule__Attribute__Group__01232 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Attribute__NameAssignment_0_in_rule__Attribute__Group__0__Impl1259 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Attribute__Group__1__Impl_in_rule__Attribute__Group__11289 = new BitSet(new long[]{0x0000000000010002L});
+    public static final BitSet FOLLOW_rule__Attribute__Group__1__Impl_in_rule__Attribute__Group__11289 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_rule__Attribute__Group__2_in_rule__Attribute__Group__11292 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Attribute__TypeAssignment_1_in_rule__Attribute__Group__1__Impl1319 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Attribute__Group__2__Impl_in_rule__Attribute__Group__21349 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Attribute__MultiplicityAssignment_2_in_rule__Attribute__Group__2__Impl1376 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDataModel_in_rule__Model__DatamodelsAssignment1418 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__DataModel__NameAssignment_11449 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleType_in_rule__DataModel__TypesAssignment_31480 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__SimpleType__NameAssignment_11511 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Entity__NameAssignment_11542 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAttribute_in_rule__Entity__AttributesAssignment_31573 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Attribute__NameAssignment_01604 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Attribute__TypeAssignment_11639 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_16_in_rule__Attribute__MultiplicityAssignment_21679 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_16_in_rule__Attribute__Group__1__Impl1320 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Attribute__Group__2__Impl_in_rule__Attribute__Group__21351 = new BitSet(new long[]{0x0000000000020002L});
+    public static final BitSet FOLLOW_rule__Attribute__Group__3_in_rule__Attribute__Group__21354 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Attribute__TypeAssignment_2_in_rule__Attribute__Group__2__Impl1381 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Attribute__Group__3__Impl_in_rule__Attribute__Group__31411 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Attribute__MultiplicityAssignment_3_in_rule__Attribute__Group__3__Impl1438 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDataModel_in_rule__Model__DatamodelsAssignment1482 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__DataModel__NameAssignment_11513 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleType_in_rule__DataModel__TypesAssignment_31544 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__SimpleType__NameAssignment_11575 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Entity__NameAssignment_11606 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAttribute_in_rule__Entity__AttributesAssignment_31637 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Attribute__NameAssignment_01668 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Attribute__TypeAssignment_21703 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_17_in_rule__Attribute__MultiplicityAssignment_31743 = new BitSet(new long[]{0x0000000000000002L});
 
 }

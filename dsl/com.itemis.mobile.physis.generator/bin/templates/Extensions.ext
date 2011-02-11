@@ -1,4 +1,25 @@
 import com::itemis::mobile::physis::physis;
 
-sortedGreetings(Model this) :
-	this.greetings.sortBy(g|g.name.toLowerCase());
+entities(DataModel this):
+	this.types.typeSelect(Entity);
+
+entityClassName(Entity this):
+	this.name.toFirstUpper();
+	
+headerFileName(Entity this):
+	entityClassName() + '.h';
+	
+typeDeclaration(Attribute this):
+	this.type.typeDeclaration();
+	
+typeDeclaration(Type this):
+	this.name + (this.isPrimitiveType() ? ' ' : ' *');
+		
+isPrimitiveType(Type this):
+	switch (this.name) {
+		case 'NSInteger': true
+		default: false
+	};
+	
+moduleFileName(Entity this):
+	entityClassName() + '.m';

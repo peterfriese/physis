@@ -49,8 +49,8 @@ public class PhysisParser extends AbstractContentAssistParser {
 					put(grammarAccess.getEntityAccess().getNameAssignment_1(), "rule__Entity__NameAssignment_1");
 					put(grammarAccess.getEntityAccess().getAttributesAssignment_3(), "rule__Entity__AttributesAssignment_3");
 					put(grammarAccess.getAttributeAccess().getNameAssignment_0(), "rule__Attribute__NameAssignment_0");
-					put(grammarAccess.getAttributeAccess().getTypeAssignment_1(), "rule__Attribute__TypeAssignment_1");
-					put(grammarAccess.getAttributeAccess().getMultiplicityAssignment_2(), "rule__Attribute__MultiplicityAssignment_2");
+					put(grammarAccess.getAttributeAccess().getTypeAssignment_2(), "rule__Attribute__TypeAssignment_2");
+					put(grammarAccess.getAttributeAccess().getMultiplicityAssignment_3(), "rule__Attribute__MultiplicityAssignment_3");
 				}
 			};
 		}

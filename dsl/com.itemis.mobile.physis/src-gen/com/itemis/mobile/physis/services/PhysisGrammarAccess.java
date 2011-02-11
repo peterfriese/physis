@@ -162,17 +162,18 @@ public class PhysisGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
-		private final Assignment cTypeAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final CrossReference cTypeTypeCrossReference_1_0 = (CrossReference)cTypeAssignment_1.eContents().get(0);
-		private final RuleCall cTypeTypeIDTerminalRuleCall_1_0_1 = (RuleCall)cTypeTypeCrossReference_1_0.eContents().get(1);
-		private final Assignment cMultiplicityAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final Keyword cMultiplicityLeftSquareBracketRightSquareBracketKeyword_2_0 = (Keyword)cMultiplicityAssignment_2.eContents().get(0);
+		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cTypeAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final CrossReference cTypeTypeCrossReference_2_0 = (CrossReference)cTypeAssignment_2.eContents().get(0);
+		private final RuleCall cTypeTypeIDTerminalRuleCall_2_0_1 = (RuleCall)cTypeTypeCrossReference_2_0.eContents().get(1);
+		private final Assignment cMultiplicityAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final Keyword cMultiplicityLeftSquareBracketRightSquareBracketKeyword_3_0 = (Keyword)cMultiplicityAssignment_3.eContents().get(0);
 		
 		//Attribute:
-		//	name=ID type=[Type] multiplicity?="[]"?;
+		//	name=ID ":" type=[Type] multiplicity?="[]"?;
 		public ParserRule getRule() { return rule; }
 
-		//name=ID type=[Type] multiplicity?="[]"?
+		//name=ID ":" type=[Type] multiplicity?="[]"?
 		public Group getGroup() { return cGroup; }
 
 		//name=ID
@@ -181,20 +182,23 @@ public class PhysisGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_0_0() { return cNameIDTerminalRuleCall_0_0; }
 
+		//":"
+		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
+
 		//type=[Type]
-		public Assignment getTypeAssignment_1() { return cTypeAssignment_1; }
+		public Assignment getTypeAssignment_2() { return cTypeAssignment_2; }
 
 		//[Type]
-		public CrossReference getTypeTypeCrossReference_1_0() { return cTypeTypeCrossReference_1_0; }
+		public CrossReference getTypeTypeCrossReference_2_0() { return cTypeTypeCrossReference_2_0; }
 
 		//ID
-		public RuleCall getTypeTypeIDTerminalRuleCall_1_0_1() { return cTypeTypeIDTerminalRuleCall_1_0_1; }
+		public RuleCall getTypeTypeIDTerminalRuleCall_2_0_1() { return cTypeTypeIDTerminalRuleCall_2_0_1; }
 
 		//multiplicity?="[]"?
-		public Assignment getMultiplicityAssignment_2() { return cMultiplicityAssignment_2; }
+		public Assignment getMultiplicityAssignment_3() { return cMultiplicityAssignment_3; }
 
 		//"[]"
-		public Keyword getMultiplicityLeftSquareBracketRightSquareBracketKeyword_2_0() { return cMultiplicityLeftSquareBracketRightSquareBracketKeyword_2_0; }
+		public Keyword getMultiplicityLeftSquareBracketRightSquareBracketKeyword_3_0() { return cMultiplicityLeftSquareBracketRightSquareBracketKeyword_3_0; }
 	}
 	
 	
@@ -277,7 +281,7 @@ public class PhysisGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Attribute:
-	//	name=ID type=[Type] multiplicity?="[]"?;
+	//	name=ID ":" type=[Type] multiplicity?="[]"?;
 	public AttributeElements getAttributeAccess() {
 		return (pAttribute != null) ? pAttribute : (pAttribute = new AttributeElements());
 	}

@@ -419,7 +419,11 @@ ruleAttribute returns [EObject current=null]
 	    }
 
 )
-)(
+)	':' 
+    {
+        createLeafNode(grammarAccess.getAttributeAccess().getColonKeyword_1(), null); 
+    }
+(
 (
 		{
 			if ($current==null) {
@@ -429,15 +433,15 @@ ruleAttribute returns [EObject current=null]
         }
 	RULE_ID
 	{
-		createLeafNode(grammarAccess.getAttributeAccess().getTypeTypeCrossReference_1_0(), "type"); 
+		createLeafNode(grammarAccess.getAttributeAccess().getTypeTypeCrossReference_2_0(), "type"); 
 	}
 
 )
 )(
 (
-		lv_multiplicity_2_0=	'[]' 
+		lv_multiplicity_3_0=	'[]' 
     {
-        createLeafNode(grammarAccess.getAttributeAccess().getMultiplicityLeftSquareBracketRightSquareBracketKeyword_2_0(), "multiplicity"); 
+        createLeafNode(grammarAccess.getAttributeAccess().getMultiplicityLeftSquareBracketRightSquareBracketKeyword_3_0(), "multiplicity"); 
     }
  
 	    {

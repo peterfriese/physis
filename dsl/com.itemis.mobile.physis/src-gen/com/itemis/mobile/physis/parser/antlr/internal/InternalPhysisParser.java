@@ -24,7 +24,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalPhysisParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'datamodel'", "'{'", "'}'", "'type'", "'entity'", "'[]'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'datamodel'", "'{'", "'}'", "'type'", "'entity'", "':'", "'[]'"
     };
     public static final int RULE_ID=4;
     public static final int RULE_STRING=6;
@@ -812,21 +812,21 @@ public class InternalPhysisParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start ruleAttribute
-    // ../com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/parser/antlr/internal/InternalPhysis.g:392:1: ruleAttribute returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) ( ( RULE_ID ) ) ( (lv_multiplicity_2_0= '[]' ) )? ) ;
+    // ../com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/parser/antlr/internal/InternalPhysis.g:392:1: ruleAttribute returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) ':' ( ( RULE_ID ) ) ( (lv_multiplicity_3_0= '[]' ) )? ) ;
     public final EObject ruleAttribute() throws RecognitionException {
         EObject current = null;
 
         Token lv_name_0_0=null;
-        Token lv_multiplicity_2_0=null;
+        Token lv_multiplicity_3_0=null;
 
          EObject temp=null; setCurrentLookahead(); resetLookahead(); 
             
         try {
-            // ../com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/parser/antlr/internal/InternalPhysis.g:397:6: ( ( ( (lv_name_0_0= RULE_ID ) ) ( ( RULE_ID ) ) ( (lv_multiplicity_2_0= '[]' ) )? ) )
-            // ../com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/parser/antlr/internal/InternalPhysis.g:398:1: ( ( (lv_name_0_0= RULE_ID ) ) ( ( RULE_ID ) ) ( (lv_multiplicity_2_0= '[]' ) )? )
+            // ../com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/parser/antlr/internal/InternalPhysis.g:397:6: ( ( ( (lv_name_0_0= RULE_ID ) ) ':' ( ( RULE_ID ) ) ( (lv_multiplicity_3_0= '[]' ) )? ) )
+            // ../com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/parser/antlr/internal/InternalPhysis.g:398:1: ( ( (lv_name_0_0= RULE_ID ) ) ':' ( ( RULE_ID ) ) ( (lv_multiplicity_3_0= '[]' ) )? )
             {
-            // ../com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/parser/antlr/internal/InternalPhysis.g:398:1: ( ( (lv_name_0_0= RULE_ID ) ) ( ( RULE_ID ) ) ( (lv_multiplicity_2_0= '[]' ) )? )
-            // ../com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/parser/antlr/internal/InternalPhysis.g:398:2: ( (lv_name_0_0= RULE_ID ) ) ( ( RULE_ID ) ) ( (lv_multiplicity_2_0= '[]' ) )?
+            // ../com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/parser/antlr/internal/InternalPhysis.g:398:1: ( ( (lv_name_0_0= RULE_ID ) ) ':' ( ( RULE_ID ) ) ( (lv_multiplicity_3_0= '[]' ) )? )
+            // ../com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/parser/antlr/internal/InternalPhysis.g:398:2: ( (lv_name_0_0= RULE_ID ) ) ':' ( ( RULE_ID ) ) ( (lv_multiplicity_3_0= '[]' ) )?
             {
             // ../com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/parser/antlr/internal/InternalPhysis.g:398:2: ( (lv_name_0_0= RULE_ID ) )
             // ../com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/parser/antlr/internal/InternalPhysis.g:399:1: (lv_name_0_0= RULE_ID )
@@ -861,11 +861,15 @@ public class InternalPhysisParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/parser/antlr/internal/InternalPhysis.g:422:2: ( ( RULE_ID ) )
-            // ../com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/parser/antlr/internal/InternalPhysis.g:423:1: ( RULE_ID )
+            match(input,16,FOLLOW_16_in_ruleAttribute745); 
+
+                    createLeafNode(grammarAccess.getAttributeAccess().getColonKeyword_1(), null); 
+                
+            // ../com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/parser/antlr/internal/InternalPhysis.g:426:1: ( ( RULE_ID ) )
+            // ../com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/parser/antlr/internal/InternalPhysis.g:427:1: ( RULE_ID )
             {
-            // ../com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/parser/antlr/internal/InternalPhysis.g:423:1: ( RULE_ID )
-            // ../com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/parser/antlr/internal/InternalPhysis.g:424:3: RULE_ID
+            // ../com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/parser/antlr/internal/InternalPhysis.g:427:1: ( RULE_ID )
+            // ../com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/parser/antlr/internal/InternalPhysis.g:428:3: RULE_ID
             {
 
             			if (current==null) {
@@ -873,9 +877,9 @@ public class InternalPhysisParser extends AbstractInternalAntlrParser {
             	            associateNodeWithAstElement(currentNode, current);
             	        }
                     
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleAttribute753); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleAttribute763); 
 
-            		createLeafNode(grammarAccess.getAttributeAccess().getTypeTypeCrossReference_1_0(), "type"); 
+            		createLeafNode(grammarAccess.getAttributeAccess().getTypeTypeCrossReference_2_0(), "type"); 
             	
 
             }
@@ -883,24 +887,24 @@ public class InternalPhysisParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/parser/antlr/internal/InternalPhysis.g:436:2: ( (lv_multiplicity_2_0= '[]' ) )?
+            // ../com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/parser/antlr/internal/InternalPhysis.g:440:2: ( (lv_multiplicity_3_0= '[]' ) )?
             int alt5=2;
             int LA5_0 = input.LA(1);
 
-            if ( (LA5_0==16) ) {
+            if ( (LA5_0==17) ) {
                 alt5=1;
             }
             switch (alt5) {
                 case 1 :
-                    // ../com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/parser/antlr/internal/InternalPhysis.g:437:1: (lv_multiplicity_2_0= '[]' )
+                    // ../com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/parser/antlr/internal/InternalPhysis.g:441:1: (lv_multiplicity_3_0= '[]' )
                     {
-                    // ../com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/parser/antlr/internal/InternalPhysis.g:437:1: (lv_multiplicity_2_0= '[]' )
-                    // ../com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/parser/antlr/internal/InternalPhysis.g:438:3: lv_multiplicity_2_0= '[]'
+                    // ../com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/parser/antlr/internal/InternalPhysis.g:441:1: (lv_multiplicity_3_0= '[]' )
+                    // ../com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/parser/antlr/internal/InternalPhysis.g:442:3: lv_multiplicity_3_0= '[]'
                     {
-                    lv_multiplicity_2_0=(Token)input.LT(1);
-                    match(input,16,FOLLOW_16_in_ruleAttribute771); 
+                    lv_multiplicity_3_0=(Token)input.LT(1);
+                    match(input,17,FOLLOW_17_in_ruleAttribute781); 
 
-                            createLeafNode(grammarAccess.getAttributeAccess().getMultiplicityLeftSquareBracketRightSquareBracketKeyword_2_0(), "multiplicity"); 
+                            createLeafNode(grammarAccess.getAttributeAccess().getMultiplicityLeftSquareBracketRightSquareBracketKeyword_3_0(), "multiplicity"); 
                         
 
                     	        if (current==null) {
@@ -974,8 +978,9 @@ public class InternalPhysisParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_13_in_ruleEntity642 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleAttribute_in_entryRuleAttribute678 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleAttribute688 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleAttribute730 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleAttribute753 = new BitSet(new long[]{0x0000000000010002L});
-    public static final BitSet FOLLOW_16_in_ruleAttribute771 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleAttribute730 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_16_in_ruleAttribute745 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleAttribute763 = new BitSet(new long[]{0x0000000000020002L});
+    public static final BitSet FOLLOW_17_in_ruleAttribute781 = new BitSet(new long[]{0x0000000000000002L});
 
 }

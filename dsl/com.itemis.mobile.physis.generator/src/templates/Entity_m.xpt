@@ -1,0 +1,27 @@
+«IMPORT com::itemis::mobile::physis::physis»
+
+«EXTENSION templates::Extensions»
+
+«DEFINE moduleFile FOR Entity-»
+«FILE moduleFileName()-»
+//
+//  «entityClassName()».m
+//  [TODO: projectName]
+//
+//  Created by [TODO: authorname] on [TODO: generatedDate].
+//  [TODO: copyright string]
+//
+
+#import "«headerFileName()»"
+
+@implementation «entityClassName()»
+
+«EXPAND propertySynthesize FOREACH this.attributes-»
+
+@end
+«ENDFILE»
+«ENDDEFINE»
+
+«DEFINE propertySynthesize FOR Attribute-»
+@synthesize «this.name»;
+«ENDDEFINE»
