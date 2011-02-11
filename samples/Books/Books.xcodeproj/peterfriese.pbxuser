@@ -1,0 +1,76 @@
+// !$*UTF8*$!
+{
+	1D3623240D0F684500981E51 /* BooksAppDelegate.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {961, 247}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 247}";
+		};
+	};
+	1D6058900D05DD3D006BFB54 /* Books */ = {
+		activeExec = 0;
+		executables = (
+			8809057C13053B8500C7C50D /* Books */,
+		);
+	};
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = 8809057C13053B8500C7C50D /* Books */;
+		activeTarget = 1D6058900D05DD3D006BFB54 /* Books */;
+		addToTargets = (
+			1D6058900D05DD3D006BFB54 /* Books */,
+		);
+		codeSenseManager = 8809058813053BA500C7C50D /* Code sense */;
+		executables = (
+			8809057C13053B8500C7C50D /* Books */,
+		);
+		perUserDictionary = {
+			PBXPerProjectTemplateStateSaveDate = 319110021;
+			PBXWorkspaceStateSaveDate = 319110021;
+		};
+		sourceControlManager = 8809058713053BA500C7C50D /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	8809057C13053B8500C7C50D /* Books */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = Books;
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+	};
+	8809058713053BA500C7C50D /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	8809058813053BA500C7C50D /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+}
