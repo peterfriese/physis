@@ -12,6 +12,19 @@ Require-Bundle: org.eclipse.xtext,
  org.eclipse.emf.mwe.utils;resolution:=optional,
  org.eclipse.emf.mwe2.launch;resolution:=optional,
  com.ibm.icu;resolution:=optional,
- org.eclipse.xtext.xtend;resolution:=optional
+ org.eclipse.xtext.xtend;resolution:=optional,
+ org.eclipse.xtext.util,
+ org.eclipse.emf.ecore,
+ org.eclipse.emf.common,
+ org.antlr.runtime
 Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Export-Package: com.itemis.mobile.physis,
+ com.itemis.mobile.physis.services,
+ com.itemis.mobile.physis.physis,
+ com.itemis.mobile.physis.physis.impl,
+ com.itemis.mobile.physis.physis.util,
+ com.itemis.mobile.physis.parseTreeConstruction,
+ com.itemis.mobile.physis.parser.antlr,
+ com.itemis.mobile.physis.parser.antlr.internal,
+ com.itemis.mobile.physis.validation
