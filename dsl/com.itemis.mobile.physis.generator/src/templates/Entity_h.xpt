@@ -5,7 +5,7 @@
 «DEFINE headerFile FOR Entity-»
 «FILE headerFileName()-»
 //
-//  «name».h
+//  «headerFileName()»
 //  [TODO: projectName]
 //
 //  Created by [TODO: authorname] on [TODO: generatedDate].

@@ -23,3 +23,42 @@ isPrimitiveType(Type this):
 	
 moduleFileName(Entity this):
 	entityClassName() + '.m';
+	
+datamanagerClassName(DataModel this):
+	"DataManager";
+	
+headerFileName(DataModel this):
+	this.datamanagerClassName() + ".h";
+	
+moduleFileName(DataModel this):
+	this.datamanagerClassName() + ".m";
+	
+managedClassName(Entity this):
+	this.name.toFirstUpper();
+
+entityName(Entity this):
+	this.name.toFirstUpper();
+	
+entityDescriptionName(Entity this):
+	this.entityName() + "Entity";
+	
+attributeName(Attribute this):
+	this.name.toFirstLower();
+	
+attributeDescriptionName(Attribute this):
+	this.attributeName() + "Attribute";
+	
+typeName(Attribute this):
+	this.type.name;
+	
+attributeType(Attribute this):
+	this.typeName() + "AttributeType";
+	
+entityAttributeDescriptionCollectionName(Entity this):
+	this.name.toFirstLower() + "Properties";
+	
+entityAttributeDescriptionCollectionName(Attribute this):
+	this.entity().name.toFirstLower() + "Properties";
+	
+entity(Attribute this):
+	(Entity)this.eContainer();

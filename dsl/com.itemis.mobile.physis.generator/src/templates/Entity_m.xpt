@@ -5,7 +5,7 @@
 «DEFINE moduleFile FOR Entity-»
 «FILE moduleFileName()-»
 //
-//  «entityClassName()».m
+//  «moduleFileName()»
 //  [TODO: projectName]
 //
 //  Created by [TODO: authorname] on [TODO: generatedDate].

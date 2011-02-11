@@ -3,6 +3,6 @@
 «EXTENSION templates::Extensions»
 
 «DEFINE main FOR DataModel-»
-«EXPAND Entity::main FOREACH this.entities()»
-«EXPAND DataManager::main FOR this»
+«EXPAND DataManager_h::headerFile FOR this»
+«EXPAND DataManager_m::moduleFile FOR this»
 «ENDDEFINE»

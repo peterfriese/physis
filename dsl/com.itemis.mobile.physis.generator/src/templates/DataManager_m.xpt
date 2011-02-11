@@ -1,0 +1,150 @@
+«IMPORT com::itemis::mobile::physis::physis»
+
+«EXTENSION templates::Extensions»
+
+«DEFINE moduleFile FOR DataModel-»
+«FILE moduleFileName()-»
+//
+//  «moduleFileName()»
+//  [TODO: projectName]
+//
+//  Created by [TODO: authorname] on [TODO: generatedDate].
+//  [TODO: copyright string]
+//
+
+#import "«headerFileName()»"
+
+@implementation «datamanagerClassName()»
+
+«EXPAND logDir FOR this-»
+«EXPAND managedObjectModel FOR this-»
+«EXPAND managedObjectContext FOR this-»
+
+@end
+«ENDFILE»
+«ENDDEFINE»
+
+«DEFINE logDir FOR DataModel»
++ (NSURL *) applicationLogDirectory {
+    NSString *LOG_DIRECTORY = @"CDCLI";
+    static NSURL *ald = nil;
+	
+    if (ald == nil) {
+		
+        NSFileManager *fileManager = [[NSFileManager alloc] init];
+        NSError *error = nil;
+        NSURL *libraryURL = [fileManager URLForDirectory:NSLibraryDirectory inDomain:NSUserDomainMask
+									   appropriateForURL:nil create:YES error:&error];
+        if (libraryURL == nil) {
+            NSLog(@"Could not access Library directory\n%@", [error localizedDescription]);
+        }
+        else {
+            ald = [libraryURL URLByAppendingPathComponent:@"Logs"];
+            ald = [ald URLByAppendingPathComponent:LOG_DIRECTORY];
+            NSDictionary *properties = [ald resourceValuesForKeys:
+                                        [NSArray arrayWithObject:NSURLIsDirectoryKey] error:&error];
+            if (properties == nil) {
+                if (![fileManager createDirectoryAtPath:[ald path]
+							withIntermediateDirectories:YES attributes:nil error:&error]) {
+                    NSLog(@"Could not create directory %@\n%@",
+						  [ald path], [error localizedDescription]);
+                    ald = nil;
+                }
+            }
+        }
+    }
+    return ald;
+}
+«ENDDEFINE»
+
+«DEFINE managedObjectContext FOR DataModel»
++ (NSManagedObjectContext *) managedObjectContext {
+	static NSManagedObjectContext *moc = nil;
+	if (moc != nil) {
+		return moc;
+	}
+	moc = [[NSManagedObjectContext alloc] init];
+	NSPersistentStoreCoordinator *coordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[DataManager managedObjectModel]];
+	[moc setPersistentStoreCoordinator:coordinator];
+	
+	NSString *STORE_TYPE = NSXMLStoreType;
+	NSString *STORE_FILENAME = @"«this.name.toLowerCase()».xml";
+	
+	NSError *error = nil;
+	NSURL *url = [[self applicationLogDirectory] URLByAppendingPathComponent:STORE_FILENAME];
+	
+	NSPersistentStore *newStore = [coordinator addPersistentStoreWithType:STORE_TYPE 
+															configuration:nil 
+																	  URL:url 
+																  options:nil 
+																	error:&error];
+	if (newStore == nil) {
+		NSLog(@"Store configuration failure\n%@",
+			  ([error localizedDescription] != nil ?
+			   [error localizedDescription] : @"Unknown error"));
+	}
+	return moc;
+}
+«ENDDEFINE»
+
+«DEFINE managedObjectModel FOR DataModel»
++(NSManagedObjectModel *) managedObjectModel {
+	static NSManagedObjectModel *mom = nil;
+	if (mom != nil) {
+		return mom;
+	}
+	mom = [[NSManagedObjectModel alloc] init];
+	
+	«EXPAND entityDescriptions FOR this-»
+    
+	return mom;
+}
+«ENDDEFINE»
+
+«DEFINE entityDescriptions FOR DataModel-»
+    NSMutableArray *entities = [[NSMutableArray alloc] init];
+    
+    «EXPAND entityDescription FOREACH this.entities()-»
+    
+	[mom setEntities:entities];
+    [entities release];
+«ENDDEFINE»
+
+«DEFINE entityDescription FOR Entity-»
+	// Entity «this.entityName()»
+	NSEntityDescription *«entityDescriptionName()» = [[NSEntityDescription alloc] init];
+	[«entityDescriptionName()» setName:@"«this.entityName()»"];
+	[«entityDescriptionName()» setManagedObjectClassName:@"«managedClassName()»"];
+    [entities addObject:«entityDescriptionName()»];
+    
+    «EXPAND attributeDescriptions FOR this-»
+«ENDDEFINE»
+
+«DEFINE attributeDescriptions FOR Entity-»
+	NSArray *«entityAttributeDescriptionCollectionName()» = [[NSArray alloc] init];
+	«EXPAND attributeDescription FOREACH this.attributes»
+	[«entityDescriptionName()» setProperties:«entityAttributeDescriptionCollectionName()»];
+«ENDDEFINE»
+
+«DEFINE attributeDescription FOR Attribute»
+	// Attribute «this.entity().entityName()»::«this.attributeName()»
+	NSAttributeDescription *«attributeDescriptionName()» = [[NSAttributeDescription alloc] init];
+	[«attributeDescriptionName()» setName:@"«attributeName()»"];
+	[«attributeDescriptionName()» setAttributeType:«this.attributeType()»];
+	[«attributeDescriptionName()» setOptional:NO];
+	[«this.entityAttributeDescriptionCollectionName()» addObject:«attributeDescriptionName()»];
+«ENDDEFINE»
+
+«REM»
+	// MORE STUFF:
+	NSAttributeDescription *idAttribute = [[NSAttributeDescription alloc] init];
+	[idAttribute setName:@"processID"];
+	[idAttribute setAttributeType:NSInteger32AttributeType];
+	[idAttribute setOptional:NO];
+	[idAttribute setDefaultValue:[NSNumber numberWithInteger:-1]];
+	
+	NSPredicate *validationPredicate = [NSPredicate predicateWithFormat:@"SELF >0"];
+	NSString *validationWarning = @"Process ID < 1";
+	[idAttribute setValidationPredicates:[NSArray arrayWithObject:validationPredicate] 
+				  withValidationWarnings:[NSArray arrayWithObject:validationWarning]];
+«ENDREM»
