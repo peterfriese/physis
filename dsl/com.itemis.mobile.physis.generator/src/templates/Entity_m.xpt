@@ -13,15 +13,33 @@
 //
 
 #import "«headerFileName()»"
+#import "DataManager.h"
 
 @implementation «entityClassName()»
 
 «EXPAND propertySynthesize FOREACH this.attributes-»
+
+«EXPAND factories FOR this-»
 
 @end
 «ENDFILE»
 «ENDDEFINE»
 
 «DEFINE propertySynthesize FOR Attribute-»
-@synthesize «this.name»;
+@dynamic «this.name»;
+«ENDDEFINE»
+
+«DEFINE factories FOR Entity-»
+«entityContructor()» {
+	NSManagedObjectModel *mom = [DataManager managedObjectModel];
+	NSManagedObjectContext *moc = [DataManager managedObjectContext];
+	NSEntityDescription *«entityDescriptionName().toFirstLower()» = [[mom entitiesByName] objectForKey:@"«this.entityName()»"];
+	«LET this.entityName().toFirstLower() AS variable-»
+	«this.entityName()» *«variable» = [[«this.entityName()» alloc] initWithEntity:«entityDescriptionName().toFirstLower()» insertIntoManagedObjectContext:moc];
+	«FOREACH this.attributes AS attr-»
+	«variable».«attr.attributeName()» = «attr.attributeName()»;
+	«ENDFOREACH-»
+	return «variable»;	
+	«ENDLET-»
+}
 «ENDDEFINE»

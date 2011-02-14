@@ -11,35 +11,8 @@
 @implementation DataManager
 
 
-+ (NSURL *) applicationLogDirectory {
-    NSString *LOG_DIRECTORY = @"CDCLI";
-    static NSURL *ald = nil;
-	
-    if (ald == nil) {
-		
-        NSFileManager *fileManager = [[NSFileManager alloc] init];
-        NSError *error = nil;
-        NSURL *libraryURL = [fileManager URLForDirectory:NSLibraryDirectory inDomain:NSUserDomainMask
-									   appropriateForURL:nil create:YES error:&error];
-        if (libraryURL == nil) {
-            NSLog(@"Could not access Library directory\n%@", [error localizedDescription]);
-        }
-        else {
-            ald = [libraryURL URLByAppendingPathComponent:@"Logs"];
-            ald = [ald URLByAppendingPathComponent:LOG_DIRECTORY];
-            NSDictionary *properties = [ald resourceValuesForKeys:
-                                        [NSArray arrayWithObject:NSURLIsDirectoryKey] error:&error];
-            if (properties == nil) {
-                if (![fileManager createDirectoryAtPath:[ald path]
-							withIntermediateDirectories:YES attributes:nil error:&error]) {
-                    NSLog(@"Could not create directory %@\n%@",
-						  [ald path], [error localizedDescription]);
-                    ald = nil;
-                }
-            }
-        }
-    }
-    return ald;
++(NSString *)applicationDocumentsDirectory {
+	return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
 }
 
 +(NSManagedObjectModel *) managedObjectModel {
@@ -57,7 +30,7 @@
 	[BookEntity setManagedObjectClassName:@"Book"];
     [entities addObject:BookEntity];
     
-	NSArray *bookProperties = [[NSArray alloc] init];
+	NSMutableArray *bookProperties = [[NSMutableArray alloc] init];
 	
 	// Attribute Book::title
 	NSAttributeDescription *titleAttribute = [[NSAttributeDescription alloc] init];
@@ -81,6 +54,7 @@
 	[bookProperties addObject:publisherAttribute];
 
 	[BookEntity setProperties:bookProperties];
+	[bookProperties release];
     
 	[mom setEntities:entities];
     [entities release];
@@ -88,7 +62,7 @@
 	return mom;
 }
 
-+ (NSManagedObjectContext *) managedObjectContext {
++(NSManagedObjectContext *) managedObjectContext {
 	static NSManagedObjectContext *moc = nil;
 	if (moc != nil) {
 		return moc;
@@ -97,11 +71,11 @@
 	NSPersistentStoreCoordinator *coordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[DataManager managedObjectModel]];
 	[moc setPersistentStoreCoordinator:coordinator];
 	
-	NSString *STORE_TYPE = NSXMLStoreType;
-	NSString *STORE_FILENAME = @"default.xml";
+	NSString *STORE_TYPE = NSSQLiteStoreType;
+	NSString *STORE_FILENAME = @"default.sqlite";
 	
 	NSError *error = nil;
-	NSURL *url = [[self applicationLogDirectory] URLByAppendingPathComponent:STORE_FILENAME];
+	NSURL *url = [NSURL fileURLWithPath: [[self applicationDocumentsDirectory] stringByAppendingPathComponent:STORE_FILENAME]];
 	
 	NSPersistentStore *newStore = [coordinator addPersistentStoreWithType:STORE_TYPE 
 															configuration:nil 

@@ -9,6 +9,8 @@
 #import "BooksAppDelegate.h"
 #import "BooksViewController.h"
 #import "Book.h"
+#import "DataManager.h"
+#import <CoreData/CoreData.h>
 
 @implementation BooksAppDelegate
 
@@ -21,13 +23,53 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
 	
-	Book *book1 = [Book bookWithTitle:@"The Bible" author:@"God" publisher:@"The church"];
-	Book *book2 = [Book bookWithTitle:@"Tapworthy" author:@"Josh Clark" publisher:@"O'Reilly"];
-	NSArray *books = [NSArray arrayWithObjects:book1, book2, nil];
-	
 	BooksViewController *booksViewController = [[BooksViewController alloc] initWithStyle:UITableViewStylePlain];
 	booksViewController.title = @"Bookshelf";
-	booksViewController.list = books;
+	
+	// Init Core Data
+	NSManagedObjectModel *mom = [DataManager managedObjectModel];
+	NSLog(@"The managed object model is defined as follows:\n%@", mom);
+	NSManagedObjectContext *moc = [DataManager managedObjectContext];	
+	NSEntityDescription *bookEntity = [[mom entitiesByName] objectForKey:@"Book"];	
+	
+	/*
+	NSFetchRequest *countRequest = [[[NSFetchRequest alloc] init] autorelease];
+	[countRequest setEntity:bookEntity];	
+	NSError *error = nil;
+	NSArray *sampleData = [moc executeFetchRequest:countRequest error:&error];
+	if ([sampleData count] < 1) {
+		NSLog(@"Creating sample data");
+		// Create sample data
+		Book *book1 = [Book bookWithTitle:@"The Bible" author:@"God" publisher:@"The church"];
+		Book *book2 = [Book bookWithTitle:@"Tapworthy" author:@"Josh Clark" publisher:@"O'Reilly"];
+		
+		if (![moc save:&error]) {
+			NSLog(@"Error while saving\n%@",
+				  ([error localizedDescription] != nil
+				   ? [error localizedDescription]
+				   : @"Unknown error"));
+			exit(1);
+		}		
+	}
+	 */
+	
+	
+	// now fetch that data!
+	NSFetchRequest *request = [[[NSFetchRequest alloc] init] autorelease];
+	[request setEntity:bookEntity];	
+	NSError *error = nil;
+	NSArray *booksArray = [moc executeFetchRequest:request error:&error];
+	if ((error != nil) || (booksArray == nil)) {
+		NSLog(@"Error while fetching\n%@",
+			  ([error localizedDescription] != nil
+			   ? [error localizedDescription]
+			   : @"Unknown error"));
+		exit(1);
+	}	
+	booksViewController.list = booksArray;
+	for (Book *book in booksArray) {
+		NSLog(@"Book %@", book.title);
+	}
 	
 	navigationController = [[UINavigationController alloc] initWithRootViewController:booksViewController];
 	navigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
@@ -37,44 +79,6 @@
     [self.window makeKeyAndVisible];
     
     return YES;
-}
-
-
-- (void)applicationWillResignActive:(UIApplication *)application {
-    /*
-     Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-     Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
-     */
-}
-
-
-- (void)applicationDidEnterBackground:(UIApplication *)application {
-    /*
-     Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
-     If your application supports background execution, called instead of applicationWillTerminate: when the user quits.
-     */
-}
-
-
-- (void)applicationWillEnterForeground:(UIApplication *)application {
-    /*
-     Called as part of  transition from the background to the inactive state: here you can undo many of the changes made on entering the background.
-     */
-}
-
-
-- (void)applicationDidBecomeActive:(UIApplication *)application {
-    /*
-     Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-     */
-}
-
-
-- (void)applicationWillTerminate:(UIApplication *)application {
-    /*
-     Called when the application is about to terminate.
-     See also applicationDidEnterBackground:.
-     */
 }
 
 

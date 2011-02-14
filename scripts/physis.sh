@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+scriptDir=$(dirname $0)
 modelPath=$1
 targetDir=$2
 if [ -z "$modelPath" ]
@@ -22,4 +23,4 @@ echo "/_/            /____/                      "
 echo "physis 0.1"
 echo "(c) 2011 Peter Friese / itemis mobile"
 echo "Running physis generator..."
-java -jar physis.jar workflow.PhysisGenerator -pmodelPath=$modelPath -ptargetDir=$targetDir
+java -jar $scriptDir/physis.jar workflow.PhysisGenerator -pmodelPath=$modelPath -ptargetDir=$targetDir

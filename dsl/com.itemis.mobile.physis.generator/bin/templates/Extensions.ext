@@ -2,7 +2,7 @@ import com::itemis::mobile::physis::physis;
 
 entities(DataModel this):
 	this.types.typeSelect(Entity);
-
+	
 entityClassName(Entity this):
 	this.name.toFirstUpper();
 	
@@ -20,6 +20,18 @@ isPrimitiveType(Type this):
 		case 'NSInteger': true
 		default: false
 	};
+	
+entityContructor(Entity this):
+	'+(' + entityClassName() + ' *)' + this.attributes.first().entityConstructorMessageParameterDeclarationFirst() + ' ' + this.attributes.withoutFirst().entityConstructorMessageParameterDeclaration().toString(' ');
+	
+entityConstructorMessageParameterDeclarationFirst(Attribute this):
+	this.entity().name.toFirstLower() + 'With' + attributeName().toFirstUpper() + ':' + parameterDeclaration() + attributeName();
+	
+entityConstructorMessageParameterDeclaration(Attribute this):
+	attributeName() + ':' + parameterDeclaration() + attributeName();
+	
+parameterDeclaration(Attribute this):
+	'(' + typeDeclaration() + ')';	
 	
 moduleFileName(Entity this):
 	entityClassName() + '.m';

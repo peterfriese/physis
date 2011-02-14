@@ -13,7 +13,7 @@
     
 }
 
-+(NSURL *) applicationLogDirectory;
++(NSString *)applicationDocumentsDirectory;
 +(NSManagedObjectModel *) managedObjectModel;
 +(NSManagedObjectContext *) managedObjectContext;
 

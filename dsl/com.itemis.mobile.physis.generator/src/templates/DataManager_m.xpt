@@ -16,7 +16,7 @@
 
 @implementation «datamanagerClassName()»
 
-«EXPAND logDir FOR this-»
+«EXPAND documentsDir FOR this-»
 «EXPAND managedObjectModel FOR this-»
 «EXPAND managedObjectContext FOR this-»
 
@@ -24,41 +24,14 @@
 «ENDFILE»
 «ENDDEFINE»
 
-«DEFINE logDir FOR DataModel»
-+ (NSURL *) applicationLogDirectory {
-    NSString *LOG_DIRECTORY = @"CDCLI";
-    static NSURL *ald = nil;
-	
-    if (ald == nil) {
-		
-        NSFileManager *fileManager = [[NSFileManager alloc] init];
-        NSError *error = nil;
-        NSURL *libraryURL = [fileManager URLForDirectory:NSLibraryDirectory inDomain:NSUserDomainMask
-									   appropriateForURL:nil create:YES error:&error];
-        if (libraryURL == nil) {
-            NSLog(@"Could not access Library directory\n%@", [error localizedDescription]);
-        }
-        else {
-            ald = [libraryURL URLByAppendingPathComponent:@"Logs"];
-            ald = [ald URLByAppendingPathComponent:LOG_DIRECTORY];
-            NSDictionary *properties = [ald resourceValuesForKeys:
-                                        [NSArray arrayWithObject:NSURLIsDirectoryKey] error:&error];
-            if (properties == nil) {
-                if (![fileManager createDirectoryAtPath:[ald path]
-							withIntermediateDirectories:YES attributes:nil error:&error]) {
-                    NSLog(@"Could not create directory %@\n%@",
-						  [ald path], [error localizedDescription]);
-                    ald = nil;
-                }
-            }
-        }
-    }
-    return ald;
+«DEFINE documentsDir FOR DataModel»
++(NSString *)applicationDocumentsDirectory {
+	return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
 }
 «ENDDEFINE»
 
 «DEFINE managedObjectContext FOR DataModel»
-+ (NSManagedObjectContext *) managedObjectContext {
++(NSManagedObjectContext *) managedObjectContext {
 	static NSManagedObjectContext *moc = nil;
 	if (moc != nil) {
 		return moc;
@@ -67,11 +40,11 @@
 	NSPersistentStoreCoordinator *coordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[DataManager managedObjectModel]];
 	[moc setPersistentStoreCoordinator:coordinator];
 	
-	NSString *STORE_TYPE = NSXMLStoreType;
-	NSString *STORE_FILENAME = @"«this.name.toLowerCase()».xml";
+	NSString *STORE_TYPE = NSSQLiteStoreType;
+	NSString *STORE_FILENAME = @"«this.name.toLowerCase()».sqlite";
 	
 	NSError *error = nil;
-	NSURL *url = [[self applicationLogDirectory] URLByAppendingPathComponent:STORE_FILENAME];
+	NSURL *url = [NSURL fileURLWithPath: [[self applicationDocumentsDirectory] stringByAppendingPathComponent:STORE_FILENAME]];
 	
 	NSPersistentStore *newStore = [coordinator addPersistentStoreWithType:STORE_TYPE 
 															configuration:nil 
@@ -121,9 +94,10 @@
 «ENDDEFINE»
 
 «DEFINE attributeDescriptions FOR Entity-»
-	NSArray *«entityAttributeDescriptionCollectionName()» = [[NSArray alloc] init];
+	NSMutableArray *«entityAttributeDescriptionCollectionName()» = [[NSMutableArray alloc] init];
 	«EXPAND attributeDescription FOREACH this.attributes»
 	[«entityDescriptionName()» setProperties:«entityAttributeDescriptionCollectionName()»];
+	[«entityAttributeDescriptionCollectionName()» release];
 «ENDDEFINE»
 
 «DEFINE attributeDescription FOR Attribute»
