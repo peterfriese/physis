@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "PhysisUITableViewController.h"
 
-@interface BooksViewController : PhysisUITableViewController<UISearchDisplayDelegate> {
+@interface BookViewController : PhysisUITableViewController<UISearchDisplayDelegate> {
 	NSArray *list;
 	NSArray *filteredList;
 	UISearchDisplayController *searchDisplayController;

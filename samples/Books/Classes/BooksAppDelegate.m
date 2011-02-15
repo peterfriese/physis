@@ -7,7 +7,7 @@
 //
 
 #import "BooksAppDelegate.h"
-#import "BooksViewController.h"
+#import "BookViewController.h"
 #import "Book.h"
 #import "DataManager.h"
 #import <CoreData/CoreData.h>
@@ -22,7 +22,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
 	
-	BooksViewController *booksViewController = [[BooksViewController alloc] initWithStyle:UITableViewStylePlain];
+	BookViewController *booksViewController = [[BookViewController alloc] initWithStyle:UITableViewStylePlain];
 	booksViewController.title = @"Bookshelf";
 	
 	// Init Core Data

@@ -17,4 +17,10 @@
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, retain) NSFetchRequest *fetchRequest;
 
+- (void)tableView:(UITableView *)tableView 
+				 customizeCell:(UITableViewCell *)cell 
+			 withManagedObject:(NSManagedObject *)managedObject 
+			 forRowAtIndexPath:(NSIndexPath *)indexPath;
+
+
 @end

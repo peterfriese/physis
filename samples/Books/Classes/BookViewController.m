@@ -6,10 +6,10 @@
 //  Copyright 2011 itemis. All rights reserved.
 //
 
-#import "BooksViewController.h"
+#import "BookViewController.h"
 #import "Book.h"
 
-@implementation BooksViewController
+@implementation BookViewController
 
 @synthesize list;
 @synthesize filteredList;
@@ -86,6 +86,11 @@
     return cell;
 }
 */
+
+-(void) tableView:(UITableView *)tableView customizeCell:(UITableViewCell *)cell withManagedObject:(NSManagedObject *)managedObject forRowAtIndexPath:(NSIndexPath *)indexPath {
+	cell.textLabel.text = [managedObject valueForKey:@"title"];
+	cell.detailTextLabel.text = [managedObject valueForKey:@"author"];
+}
 
 #pragma mark -
 #pragma mark Table view delegate

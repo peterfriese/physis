@@ -27,9 +27,22 @@
 #pragma mark -
 #pragma mark Core Data
 
-// either derive from class name or let subclasses override:
 - (NSString *)entityName {
-	return @"Book";
+	NSMutableString *className = [NSMutableString stringWithString:NSStringFromClass([self class])];
+	NSRange match = [className rangeOfString:@"UITableViewController"];
+	if (match.location == NSNotFound) {
+		match = [className rangeOfString:@"UIViewController"];
+		if (match.location == NSNotFound) {
+			match = [className rangeOfString:@"ViewController"];
+		}		
+	}
+	if (match.location != NSNotFound) {
+		[className deleteCharactersInRange:match];
+		NSLog(@"Entity name: %@", className);
+		return className;
+	}
+	[NSException raise:@"Could not determine entity name for view controller!" format:@"You need to override PhysisUITableViewController:entityName or name your controller EntityNameUIViewController, EntityViewController or EntityUITableViewController!"];
+	return nil;
 }
 
 - (NSEntityDescription *)entityDescription {
@@ -177,19 +190,26 @@
 	return count;
 }
 
+- (void)tableView:(UITableView *)tableView 
+				 customizeCell:(UITableViewCell *)cell 
+			 withManagedObject:(NSManagedObject *)managedObject 
+			 forRowAtIndexPath:(NSIndexPath *)indexPath {
+// do nothing	
+}
+
+
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	static NSString *CellIdentifier = @"Cell";
     
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 	if (cell == nil) {
-		cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+		cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
 	}
     
 	// Configure the cell.
 	NSManagedObject *managedObject = [fetchedResultsController objectAtIndexPath:indexPath];
-	cell.textLabel.text = [[managedObject valueForKey:@"title"] description];
-	
+	[self tableView:tableView customizeCell:cell withManagedObject:managedObject forRowAtIndexPath:indexPath];
 	return cell;
 }
 
