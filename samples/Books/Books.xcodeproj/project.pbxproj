@@ -17,6 +17,7 @@
 		8809060C13059DE900C7C50D /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = 8809060913059DE900C7C50D /* Book.m */; };
 		8809060D13059DE900C7C50D /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8809060B13059DE900C7C50D /* DataManager.m */; };
 		8809062213059F5900C7C50D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8809062113059F5900C7C50D /* CoreData.framework */; };
+		88BB2ACC130A9B88005007EF /* PhysisDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 88BB2ACB130A9B88005007EF /* PhysisDataManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,8 @@
 		8809060A13059DE900C7C50D /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
 		8809060B13059DE900C7C50D /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
 		8809062113059F5900C7C50D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		88BB2ACA130A9B88005007EF /* PhysisDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhysisDataManager.h; sourceTree = "<group>"; };
+		88BB2ACB130A9B88005007EF /* PhysisDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhysisDataManager.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Books-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Books-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -76,6 +79,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				88BB2AC9130A9B5C005007EF /* Runtime */,
 				8809060713059DE900C7C50D /* Generated */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -124,6 +128,15 @@
 				8809060B13059DE900C7C50D /* DataManager.m */,
 			);
 			path = Generated;
+			sourceTree = "<group>";
+		};
+		88BB2AC9130A9B5C005007EF /* Runtime */ = {
+			isa = PBXGroup;
+			children = (
+				88BB2ACA130A9B88005007EF /* PhysisDataManager.h */,
+				88BB2ACB130A9B88005007EF /* PhysisDataManager.m */,
+			);
+			path = Runtime;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,6 +204,7 @@
 				8809058E13053CE100C7C50D /* BooksViewController.m in Sources */,
 				8809060C13059DE900C7C50D /* Book.m in Sources */,
 				8809060D13059DE900C7C50D /* DataManager.m in Sources */,
+				88BB2ACC130A9B88005007EF /* PhysisDataManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

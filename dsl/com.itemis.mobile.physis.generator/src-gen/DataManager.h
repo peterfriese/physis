@@ -7,14 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <CoreData/CoreData.h>
+#import "PhysisDataManager.h"
 
-@interface DataManager : NSObject {
+@interface DataManager : PhysisDataManager {
     
 }
 
-+(NSString *)applicationDocumentsDirectory;
 +(NSManagedObjectModel *) managedObjectModel;
-+(NSManagedObjectContext *) managedObjectContext;
 
 @end
