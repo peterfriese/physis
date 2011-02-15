@@ -17,7 +17,6 @@
 @synthesize window;
 @synthesize navigationController;
 
-
 #pragma mark -
 #pragma mark Application lifecycle
 
@@ -80,7 +79,6 @@
     
     return YES;
 }
-
 
 #pragma mark -
 #pragma mark Memory management

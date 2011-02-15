@@ -45,7 +45,7 @@
 
 #pragma mark -
 #pragma mark Table view data source
-
+/*
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
@@ -85,7 +85,7 @@
     
     return cell;
 }
-
+*/
 
 #pragma mark -
 #pragma mark Table view delegate
@@ -131,7 +131,6 @@
 	[self filterListForSearchString:searchString scope:scope];
 	return YES;	
 }
-
 
 #pragma mark -
 #pragma mark Memory management
