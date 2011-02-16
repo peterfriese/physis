@@ -10,18 +10,36 @@
 #import "DataManager.h"
 
 @implementation PhysisUITableViewController
+
 @synthesize fetchedResultsController;
-@synthesize fetchRequest;
+@synthesize filteredFetchedResultsController;
+@synthesize searchDisplayController;
+
+@synthesize searchWasActive;
+@synthesize savedSearchScope;
+@synthesize savedSearchScopeIndex;
+@synthesize savedSearchTerm;
+
 
 #pragma mark -
 #pragma mark View lifecycle
 
 -(void) viewDidLoad {
-	NSError *error = nil;
-	if (![[self fetchedResultsController] performFetch:&error]) {
-		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-		exit(-1);
-	}
+	// create the search bar
+	UISearchBar *searchBar = [[[UISearchBar alloc] init] autorelease];
+	searchBar.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+	searchBar.autocorrectionType = UITextAutocorrectionTypeNo;
+	[searchBar sizeToFit];
+	// TODO: make customizable
+	searchBar.scopeButtonTitles = [NSArray arrayWithObjects:@"Title", @"Author", @"Publisher", nil]; 
+	searchBar.placeholder = @"Search Books";
+	self.tableView.tableHeaderView = searchBar;	
+	
+	// create search display controller (CAVE: requires iOS 4.x)
+	self.searchDisplayController = [[UISearchDisplayController alloc] initWithSearchBar:searchBar contentsController:self];
+	self.searchDisplayController.delegate = self;	
+	self.searchDisplayController.searchResultsDataSource = self;
+	self.searchDisplayController.searchResultsDelegate = self;
 }
 
 #pragma mark -
@@ -56,42 +74,84 @@
 	return mySortDescriptor;
 }
 
-- (NSFetchRequest *)fetchRequest {
-	if (fetchRequest == nil) {
-		NSFetchRequest *myFetchRequest = [[NSFetchRequest alloc] init];
-
-		NSEntityDescription *myEntityDescription = [self entityDescription];
-		[myFetchRequest setEntity:myEntityDescription];
-		
-		[myFetchRequest setFetchBatchSize:20];
-		
-		NSSortDescriptor *mySortDescriptor = [self sortDescriptor];
-		NSArray *sortDescriptors = [NSArray arrayWithObject:mySortDescriptor];									
-		[myFetchRequest setSortDescriptors:sortDescriptors];
-		
-		self.fetchRequest = myFetchRequest;
-		[myFetchRequest release];
+- (NSPredicate *)predicateForSearchString:(NSString *)searchString scope:(NSString *)scope {
+	NSPredicate *predicate;
+	if ([scope isEqualToString:@"Title"]) {
+		predicate = [NSPredicate predicateWithFormat:@"title CONTAINS[cd] %@", searchString];
 	}
-	return fetchRequest;
+	else if ([scope isEqualToString:@"Author"]) {
+		predicate = [NSPredicate predicateWithFormat:@"author CONTAINS[cd] %@", searchString];
+	}
+	else if ([scope isEqualToString:@"Publisher"]) {
+		predicate = [NSPredicate predicateWithFormat:@"publisher CONTAINS[cd] %@", searchString];
+	}
+	return predicate;
+}
+
+- (NSFetchRequest *)fetchRequestWithSearchPredicate:(NSPredicate *)searchPredicate {
+	NSFetchRequest *fetchRequest = [[[NSFetchRequest alloc] init] autorelease];
+	
+	NSEntityDescription *myEntityDescription = [self entityDescription];
+	[fetchRequest setEntity:myEntityDescription];
+	
+	[fetchRequest setFetchBatchSize:20];
+	
+	NSSortDescriptor *mySortDescriptor = [self sortDescriptor];
+	NSArray *sortDescriptors = [NSArray arrayWithObject:mySortDescriptor];									
+	[fetchRequest setSortDescriptors:sortDescriptors];
+	
+	if (searchPredicate != nil) {
+		[fetchRequest setPredicate:searchPredicate];
+	}
+	
+	return fetchRequest;	
+}
+
+- (NSFetchedResultsController *)newFetchedResultsControllerWithSearchPredicate:(NSPredicate *)searchPredicate {
+	NSManagedObjectContext *moc = [DataManager managedObjectContext];
+	NSFetchRequest *myFetchRequest = [self fetchRequestWithSearchPredicate:searchPredicate];
+		
+	NSFetchedResultsController *myFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:myFetchRequest 
+																								 managedObjectContext:moc 
+																								   sectionNameKeyPath:nil 
+																											cacheName:nil];
+	myFetchedResultsController.delegate = self;
+	NSError *error = nil;
+	if (![myFetchedResultsController performFetch:&error]) {
+		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+		abort();
+	}			
+	return myFetchedResultsController;	
+}
+
+- (NSFetchedResultsController *)fetchedResultsControllerForTableView:(UITableView *)tableView {
+	if (tableView == self.tableView) {
+		return self.fetchedResultsController;
+	}
+	else {
+		return self.filteredFetchedResultsController;
+	}
+	
 }
 
 - (NSFetchedResultsController *)fetchedResultsController {
 	if (fetchedResultsController != nil) {
 		return fetchedResultsController;
 	}
-	
-	NSManagedObjectContext *moc = [DataManager managedObjectContext];
-	NSFetchRequest *myFetchRequest = [self fetchRequest];	
-	
-	NSFetchedResultsController *myFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:myFetchRequest 
-																								 managedObjectContext:moc 
-																								   sectionNameKeyPath:nil 
-																											cacheName:@"Root"];
-	myFetchedResultsController.delegate = self;
-	self.fetchedResultsController = myFetchedResultsController;
-	[fetchedResultsController release];
-	return fetchedResultsController;
+	fetchedResultsController = [self newFetchedResultsControllerWithSearchPredicate:nil];
+	return [[fetchedResultsController retain] autorelease];	
 }
+
+- (NSFetchedResultsController *)filteredFetchedResultsController {
+	if (filteredFetchedResultsController != nil) {
+		return filteredFetchedResultsController;
+	}
+	NSPredicate *searchPredicate = [self predicateForSearchString:savedSearchTerm scope:savedSearchScope];	
+	filteredFetchedResultsController = [self newFetchedResultsControllerWithSearchPredicate:searchPredicate];
+	return [[fetchedResultsController retain] autorelease];
+}
+
+
 
 #pragma mark -
 #pragma mark NSFetchedResultsControllerDelegate
@@ -172,7 +232,7 @@
 #pragma mark Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-	NSUInteger count = [[fetchedResultsController sections] count];
+	NSUInteger count = [[[self fetchedResultsControllerForTableView:tableView] sections] count];
 	if (count == 0) {
 		count = 1;
 	}
@@ -181,13 +241,13 @@
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	NSArray *sections = [fetchedResultsController sections];
+	NSArray *sections = [[self fetchedResultsControllerForTableView:tableView] sections];
 	NSUInteger count = 0;
 	if ([sections count]) {
 		id <NSFetchedResultsSectionInfo> sectionInfo = [sections objectAtIndex:section];
 		count = [sectionInfo numberOfObjects];
 	}
-	return count;
+	return count;		
 }
 
 - (void)tableView:(UITableView *)tableView 
@@ -208,9 +268,47 @@
 	}
     
 	// Configure the cell.
-	NSManagedObject *managedObject = [fetchedResultsController objectAtIndexPath:indexPath];
+	NSManagedObject *managedObject = [[self fetchedResultsControllerForTableView:tableView] objectAtIndexPath:indexPath];
 	[self tableView:tableView customizeCell:cell withManagedObject:managedObject forRowAtIndexPath:indexPath];
+	
 	return cell;
+}
+
+#pragma mark -
+#pragma mark UISearchDisplayController delegate 
+
+-(void) searchDisplayController:(UISearchDisplayController *)controller willUnloadSearchResultsTableView:(UITableView *)tableView {
+	searchWasActive = NO;
+	savedSearchTerm = nil;
+	savedSearchScope = nil;
+	savedSearchScopeIndex = -1;
+	self.filteredFetchedResultsController.delegate = nil;
+	self.filteredFetchedResultsController = nil;
+}
+
+-(BOOL) searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString {
+	searchWasActive = YES;
+	savedSearchTerm = searchString;
+	savedSearchScopeIndex = self.searchDisplayController.searchBar.selectedScopeButtonIndex;
+	savedSearchScope = [self.searchDisplayController.searchBar.scopeButtonTitles objectAtIndex:savedSearchScopeIndex];
+	self.filteredFetchedResultsController.delegate = nil;
+	self.filteredFetchedResultsController = nil;	
+	
+	// by returning YES, we make sure the table view gets reloaded:
+	return YES;
+}
+
+-(BOOL) searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchScope:(NSInteger)searchOption {
+	searchWasActive = YES;
+	savedSearchTerm = self.searchDisplayController.searchBar.text;
+	savedSearchScopeIndex = searchOption;
+	savedSearchScope = [self.searchDisplayController.searchBar.scopeButtonTitles objectAtIndex:searchOption];
+	self.filteredFetchedResultsController.delegate = nil;
+	self.filteredFetchedResultsController = nil;
+	
+
+	// by returning YES, we make sure the table view gets reloaded:	
+	return YES;	
 }
 
 #pragma mark -
@@ -230,8 +328,8 @@
 
 
 - (void)dealloc {
-	[fetchRequest release];
 	[fetchedResultsController release];
+	[searchDisplayController release];
     [super dealloc];
 }
 

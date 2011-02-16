@@ -54,6 +54,7 @@
 	
 	
 	// now fetch that data!
+	/*
 	NSFetchRequest *request = [[[NSFetchRequest alloc] init] autorelease];
 	[request setEntity:bookEntity];	
 	NSError *error = nil;
@@ -69,6 +70,7 @@
 	for (Book *book in booksArray) {
 		NSLog(@"Book %@", book.title);
 	}
+	 */
 	
 	navigationController = [[UINavigationController alloc] initWithRootViewController:booksViewController];
 	navigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;

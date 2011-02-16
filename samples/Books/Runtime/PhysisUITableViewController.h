@@ -9,13 +9,27 @@
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
 
-@interface PhysisUITableViewController : UITableViewController<NSFetchedResultsControllerDelegate> {
+@interface PhysisUITableViewController : UITableViewController<UISearchDisplayDelegate, NSFetchedResultsControllerDelegate> {
 	NSFetchedResultsController *fetchedResultsController;
-	NSFetchRequest *fetchRequest;
+	NSFetchedResultsController *filteredFetchedResultsController;;
+	UISearchDisplayController *searchDisplayController;
+	
+	NSString *savedSearchTerm;
+	NSInteger savedSearchScopeIndex;
+	NSString *savedSearchScope;
+	BOOL searchWasActive;
+	
 }
 
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
-@property (nonatomic, retain) NSFetchRequest *fetchRequest;
+@property (nonatomic, retain) NSFetchedResultsController *filteredFetchedResultsController;
+@property (nonatomic, retain) UISearchDisplayController *searchDisplayController;
+
+@property (nonatomic, copy) NSString *savedSearchTerm;
+@property (nonatomic) NSInteger savedSearchScopeIndex;
+@property (nonatomic, copy) NSString *savedSearchScope;
+@property (nonatomic) BOOL searchWasActive;
+
 
 - (void)tableView:(UITableView *)tableView 
 				 customizeCell:(UITableViewCell *)cell 

@@ -11,31 +11,8 @@
 
 @implementation BookViewController
 
-@synthesize list;
-@synthesize filteredList;
-@synthesize searchDisplayController;
-
-#pragma mark -
-#pragma mark Initialization
-
 #pragma mark -
 #pragma mark View lifecycle
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-	
-	UISearchBar *searchBar = [[UISearchBar alloc] init];
-	searchBar.scopeButtonTitles = [NSArray arrayWithObjects:@"Title", @"Author", @"Publisher", nil];
-	searchBar.placeholder = @"Search Books";
-	[searchBar sizeToFit];
-	self.tableView.tableHeaderView = searchBar;	
-	
-	searchDisplayController = [[UISearchDisplayController alloc] initWithSearchBar:searchBar contentsController:self];
-	[self setSearchDisplayController:searchDisplayController];
-	searchDisplayController.delegate = self;
-	searchDisplayController.searchResultsDataSource = self;
-	[searchBar release];
-}
 
 // Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -105,48 +82,6 @@
     [detailViewController release];
     */
 }
-
-#pragma mark -
-#pragma mark UISearchDisplayController delegate 
-
--(void) filterListForSearchString:(NSString *)searchString scope:(NSString *)scope {
-	NSPredicate *predicate;
-	if ([scope isEqualToString:@"Title"]) {
-		predicate = [NSPredicate predicateWithFormat:@"title CONTAINS[cd] %@", searchString];
-	}
-	else if ([scope isEqualToString:@"Author"]) {
-		predicate = [NSPredicate predicateWithFormat:@"author CONTAINS[cd] %@", searchString];
-	}
-	else if ([scope isEqualToString:@"Publisher"]) {
-		predicate = [NSPredicate predicateWithFormat:@"publisher CONTAINS[cd] %@", searchString];
-	}
-	self.filteredList = [list filteredArrayUsingPredicate:predicate];
-}
-
--(BOOL) searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString {
-	NSInteger scopeIndex = self.searchDisplayController.searchBar.selectedScopeButtonIndex;
-	NSString *scope = [self.searchDisplayController.searchBar.scopeButtonTitles objectAtIndex:scopeIndex];
-	[self filterListForSearchString:searchString scope:scope];
-	return YES;
-}
-
--(BOOL) searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchScope:(NSInteger)searchOption {
-	NSString *scope = [self.searchDisplayController.searchBar.scopeButtonTitles objectAtIndex:searchOption];
-	NSString *searchString = self.searchDisplayController.searchBar.text;
-	[self filterListForSearchString:searchString scope:scope];
-	return YES;	
-}
-
-#pragma mark -
-#pragma mark Memory management
-
-- (void)dealloc {
-	[searchDisplayController release];
-	[list release];
-	[filteredList release];
-    [super dealloc];
-}
-
 
 @end
 
