@@ -7,7 +7,7 @@
 //
 
 #import "BooksAppDelegate.h"
-#import "BooksViewController.h"
+#import "BookViewController.h"
 #import "Book.h"
 #import "DataManager.h"
 #import <CoreData/CoreData.h>
@@ -17,13 +17,12 @@
 @synthesize window;
 @synthesize navigationController;
 
-
 #pragma mark -
 #pragma mark Application lifecycle
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
 	
-	BooksViewController *booksViewController = [[BooksViewController alloc] initWithStyle:UITableViewStylePlain];
+	BookViewController *booksViewController = [[BookViewController alloc] initWithStyle:UITableViewStylePlain];
 	booksViewController.title = @"Bookshelf";
 	
 	// Init Core Data
@@ -55,6 +54,7 @@
 	
 	
 	// now fetch that data!
+	/*
 	NSFetchRequest *request = [[[NSFetchRequest alloc] init] autorelease];
 	[request setEntity:bookEntity];	
 	NSError *error = nil;
@@ -70,6 +70,7 @@
 	for (Book *book in booksArray) {
 		NSLog(@"Book %@", book.title);
 	}
+	 */
 	
 	navigationController = [[UINavigationController alloc] initWithRootViewController:booksViewController];
 	navigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
@@ -80,7 +81,6 @@
     
     return YES;
 }
-
 
 #pragma mark -
 #pragma mark Memory management

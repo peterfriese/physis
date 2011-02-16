@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
 
 @interface BooksAppDelegate : NSObject <UIApplicationDelegate> {
     UIWindow *window;

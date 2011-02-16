@@ -16,51 +16,13 @@
 
 @implementation «datamanagerClassName()»
 
-«EXPAND documentsDir FOR this-»
 «EXPAND managedObjectModel FOR this-»
-«EXPAND managedObjectContext FOR this-»
 
 @end
 «ENDFILE»
 «ENDDEFINE»
 
-«DEFINE documentsDir FOR DataModel»
-+(NSString *)applicationDocumentsDirectory {
-	return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-}
-«ENDDEFINE»
-
-«DEFINE managedObjectContext FOR DataModel»
-+(NSManagedObjectContext *) managedObjectContext {
-	static NSManagedObjectContext *moc = nil;
-	if (moc != nil) {
-		return moc;
-	}
-	moc = [[NSManagedObjectContext alloc] init];
-	NSPersistentStoreCoordinator *coordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[DataManager managedObjectModel]];
-	[moc setPersistentStoreCoordinator:coordinator];
-	
-	NSString *STORE_TYPE = NSSQLiteStoreType;
-	NSString *STORE_FILENAME = @"«this.name.toLowerCase()».sqlite";
-	
-	NSError *error = nil;
-	NSURL *url = [NSURL fileURLWithPath: [[self applicationDocumentsDirectory] stringByAppendingPathComponent:STORE_FILENAME]];
-	
-	NSPersistentStore *newStore = [coordinator addPersistentStoreWithType:STORE_TYPE 
-															configuration:nil 
-																	  URL:url 
-																  options:nil 
-																	error:&error];
-	if (newStore == nil) {
-		NSLog(@"Store configuration failure\n%@",
-			  ([error localizedDescription] != nil ?
-			   [error localizedDescription] : @"Unknown error"));
-	}
-	return moc;
-}
-«ENDDEFINE»
-
-«DEFINE managedObjectModel FOR DataModel»
+«DEFINE managedObjectModel FOR DataModel-»
 +(NSManagedObjectModel *) managedObjectModel {
 	static NSManagedObjectModel *mom = nil;
 	if (mom != nil) {
