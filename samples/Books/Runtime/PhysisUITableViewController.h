@@ -19,6 +19,8 @@
 	NSString *savedSearchScope;
 	BOOL searchWasActive;
 	
+	NSArray *scopes;
+	NSString *placeholderText;
 }
 
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
@@ -30,6 +32,8 @@
 @property (nonatomic, copy) NSString *savedSearchScope;
 @property (nonatomic) BOOL searchWasActive;
 
+@property (nonatomic, retain) NSArray *scopes;
+@property (nonatomic, retain) NSString *placeholderText;
 
 - (void)tableView:(UITableView *)tableView 
 				 customizeCell:(UITableViewCell *)cell 

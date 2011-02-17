@@ -20,6 +20,9 @@
 @synthesize savedSearchScopeIndex;
 @synthesize savedSearchTerm;
 
+@synthesize scopes;
+@synthesize placeholderText;
+
 
 #pragma mark -
 #pragma mark View lifecycle
@@ -30,9 +33,12 @@
 	searchBar.autoresizingMask = UIViewAutoresizingFlexibleWidth;
 	searchBar.autocorrectionType = UITextAutocorrectionTypeNo;
 	[searchBar sizeToFit];
-	// TODO: make customizable
-	searchBar.scopeButtonTitles = [NSArray arrayWithObjects:@"Title", @"Author", @"Publisher", nil]; 
-	searchBar.placeholder = @"Search Books";
+	if (scopes != nil) {
+		searchBar.scopeButtonTitles = scopes;
+	}
+	if (placeholderText != nil) {
+		searchBar.placeholder = placeholderText;
+	}
 	self.tableView.tableHeaderView = searchBar;	
 	
 	// create search display controller (CAVE: requires iOS 4.x)
@@ -59,7 +65,7 @@
 		NSLog(@"Entity name: %@", className);
 		return className;
 	}
-	[NSException raise:@"Could not determine entity name for view controller!" format:@"You need to override PhysisUITableViewController:entityName or name your controller EntityNameUIViewController, EntityViewController or EntityUITableViewController!"];
+	[NSException raise:@"PHEntityNameException" format:@"You need to override PhysisUITableViewController:entityName or name your controller EntityNameUIViewController, EntityViewController or EntityUITableViewController!"];
 	return nil;
 }
 
@@ -75,17 +81,8 @@
 }
 
 - (NSPredicate *)predicateForSearchString:(NSString *)searchString scope:(NSString *)scope {
-	NSPredicate *predicate;
-	if ([scope isEqualToString:@"Title"]) {
-		predicate = [NSPredicate predicateWithFormat:@"title CONTAINS[cd] %@", searchString];
-	}
-	else if ([scope isEqualToString:@"Author"]) {
-		predicate = [NSPredicate predicateWithFormat:@"author CONTAINS[cd] %@", searchString];
-	}
-	else if ([scope isEqualToString:@"Publisher"]) {
-		predicate = [NSPredicate predicateWithFormat:@"publisher CONTAINS[cd] %@", searchString];
-	}
-	return predicate;
+    // TODO: make sure this also works when we do not have a scopes bar (need to search SELF then)
+	return [NSPredicate predicateWithFormat:@"%K CONTAINS[cd] %@", [scope lowercaseString], searchString];
 }
 
 - (NSFetchRequest *)fetchRequestWithSearchPredicate:(NSPredicate *)searchPredicate {

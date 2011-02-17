@@ -24,6 +24,8 @@
 	
 	BookViewController *booksViewController = [[BookViewController alloc] initWithStyle:UITableViewStylePlain];
 	booksViewController.title = @"Bookshelf";
+	booksViewController.scopes = [NSArray arrayWithObjects:@"Title", @"Author", @"Publisher", nil];
+    booksViewController.placeholderText = @"Search Books";
 	
 	// Init Core Data
 	NSManagedObjectModel *mom = [DataManager managedObjectModel];
