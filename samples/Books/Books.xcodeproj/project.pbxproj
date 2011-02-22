@@ -17,9 +17,49 @@
 		8809060C13059DE900C7C50D /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = 8809060913059DE900C7C50D /* Book.m */; };
 		8809060D13059DE900C7C50D /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8809060B13059DE900C7C50D /* DataManager.m */; };
 		8809062213059F5900C7C50D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8809062113059F5900C7C50D /* CoreData.framework */; };
+		882247161313C9D000E93C89 /* libjson.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 882247131313C9C600E93C89 /* libjson.a */; };
+		882247931313DA6000E93C89 /* sampledata.json in Resources */ = {isa = PBXBuildFile; fileRef = 882247921313DA6000E93C89 /* sampledata.json */; };
 		88BB2ACC130A9B88005007EF /* PhysisDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 88BB2ACB130A9B88005007EF /* PhysisDataManager.m */; };
 		88BB2AF7130AA12B005007EF /* PhysisUITableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88BB2AF6130AA12B005007EF /* PhysisUITableViewController.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8822470E1313C9C600E93C89 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 882247051313C9C600E93C89 /* JSON.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 53D229810C96121600276605 /* JSON.framework */;
+			remoteInfo = JSON;
+		};
+		882247101313C9C600E93C89 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 882247051313C9C600E93C89 /* JSON.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 53D2298D0C96122A00276605 /* Tests.octest */;
+			remoteInfo = Tests;
+		};
+		882247121313C9C600E93C89 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 882247051313C9C600E93C89 /* JSON.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FE2BBD800D8B0D3900184787 /* libjson.a */;
+			remoteInfo = libjson;
+		};
+		882247141313C9C600E93C89 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 882247051313C9C600E93C89 /* JSON.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FE2BBDAB0D8B0EE000184787 /* libjsontests.octest */;
+			remoteInfo = libjsontests;
+		};
+		8822472A1313CA0C00E93C89 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 882247051313C9C600E93C89 /* JSON.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = FE2BBD7F0D8B0D3900184787 /* libjson */;
+			remoteInfo = libjson;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -38,6 +78,8 @@
 		8809060A13059DE900C7C50D /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
 		8809060B13059DE900C7C50D /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
 		8809062113059F5900C7C50D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		882247051313C9C600E93C89 /* JSON.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = JSON.xcodeproj; path = ../../libraries/json/JSON.xcodeproj; sourceTree = SOURCE_ROOT; };
+		882247921313DA6000E93C89 /* sampledata.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sampledata.json; sourceTree = "<group>"; };
 		88BB2ACA130A9B88005007EF /* PhysisDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhysisDataManager.h; sourceTree = "<group>"; };
 		88BB2ACB130A9B88005007EF /* PhysisDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhysisDataManager.m; sourceTree = "<group>"; };
 		88BB2AF5130AA12B005007EF /* PhysisUITableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhysisUITableViewController.h; sourceTree = "<group>"; };
@@ -54,6 +96,7 @@
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */,
 				8809062213059F5900C7C50D /* CoreData.framework in Frameworks */,
+				882247161313C9D000E93C89 /* libjson.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +125,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				882247051313C9C600E93C89 /* JSON.xcodeproj */,
 				88BB2AC9130A9B5C005007EF /* Runtime */,
 				8809060713059DE900C7C50D /* Generated */,
 				080E96DDFE201D6D7F000001 /* Classes */,
@@ -105,6 +149,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				882247921313DA6000E93C89 /* sampledata.json */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* Books-Info.plist */,
 			);
@@ -133,6 +178,17 @@
 			path = Generated;
 			sourceTree = "<group>";
 		};
+		882247061313C9C600E93C89 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8822470F1313C9C600E93C89 /* JSON.framework */,
+				882247111313C9C600E93C89 /* Tests.octest */,
+				882247131313C9C600E93C89 /* libjson.a */,
+				882247151313C9C600E93C89 /* libjsontests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		88BB2AC9130A9B5C005007EF /* Runtime */ = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +214,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				8822472B1313CA0C00E93C89 /* PBXTargetDependency */,
 			);
 			name = Books;
 			productName = Books;
@@ -181,6 +238,12 @@
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 882247061313C9C600E93C89 /* Products */;
+					ProjectRef = 882247051313C9C600E93C89 /* JSON.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				1D6058900D05DD3D006BFB54 /* Books */,
@@ -188,12 +251,44 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		8822470F1313C9C600E93C89 /* JSON.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = JSON.framework;
+			remoteRef = 8822470E1313C9C600E93C89 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		882247111313C9C600E93C89 /* Tests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = Tests.octest;
+			remoteRef = 882247101313C9C600E93C89 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		882247131313C9C600E93C89 /* libjson.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libjson.a;
+			remoteRef = 882247121313C9C600E93C89 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		882247151313C9C600E93C89 /* libjsontests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = libjsontests.octest;
+			remoteRef = 882247141313C9C600E93C89 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		1D60588D0D05DD3D006BFB54 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
+				882247931313DA6000E93C89 /* sampledata.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,6 +311,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		8822472B1313CA0C00E93C89 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = libjson;
+			targetProxy = 8822472A1313CA0C00E93C89 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
 		1D6058940D05DD3E006BFB54 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -226,7 +329,9 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Books_Prefix.pch;
+				HEADER_SEARCH_PATHS = /tmp/JSON.dst/usr/local/include;
 				INFOPLIST_FILE = "Books-Info.plist";
+				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = Books;
 			};
 			name = Debug;
@@ -238,7 +343,9 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Books_Prefix.pch;
+				HEADER_SEARCH_PATHS = /tmp/JSON.dst/usr/local/include;
 				INFOPLIST_FILE = "Books-Info.plist";
+				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = Books;
 				VALIDATE_PRODUCT = YES;
 			};

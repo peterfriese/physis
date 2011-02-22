@@ -11,6 +11,7 @@
 #import "Book.h"
 #import "DataManager.h"
 #import <CoreData/CoreData.h>
+#import <JSON/JSON.h>
 
 @implementation BooksAppDelegate
 
@@ -26,6 +27,7 @@
 	booksViewController.title = @"Bookshelf";
 	booksViewController.scopes = [NSArray arrayWithObjects:@"Title", @"Author", @"Publisher", nil];
     booksViewController.placeholderText = @"Search Books";
+    
 	
 	// Init Core Data
 	NSManagedObjectModel *mom = [DataManager managedObjectModel];
@@ -33,7 +35,15 @@
 	NSManagedObjectContext *moc = [DataManager managedObjectContext];	
 	NSEntityDescription *bookEntity = [[mom entitiesByName] objectForKey:@"Book"];	
 	
-	/*
+	NSError *error;
+	NSString *jsonString = [[NSString alloc] 
+							initWithContentsOfFile:[[NSBundle mainBundle] 
+													pathForResource:@"sampledata" 
+													ofType:@"json"] 
+							encoding:NSUTF8StringEncoding error:&error];
+	NSLog(@"JSON loaded from file: %@", jsonString);
+	
+/*    
 	NSFetchRequest *countRequest = [[[NSFetchRequest alloc] init] autorelease];
 	[countRequest setEntity:bookEntity];	
 	NSError *error = nil;
@@ -52,14 +62,12 @@
 			exit(1);
 		}		
 	}
-	 */
-	
+*/
 	
 	// now fetch that data!
-	/*
 	NSFetchRequest *request = [[[NSFetchRequest alloc] init] autorelease];
 	[request setEntity:bookEntity];	
-	NSError *error = nil;
+	//NSError *error = nil;
 	NSArray *booksArray = [moc executeFetchRequest:request error:&error];
 	if ((error != nil) || (booksArray == nil)) {
 		NSLog(@"Error while fetching\n%@",
@@ -68,12 +76,12 @@
 			   : @"Unknown error"));
 		exit(1);
 	}	
-	booksViewController.list = booksArray;
 	for (Book *book in booksArray) {
 		NSLog(@"Book %@", book.title);
 	}
-	 */
-	
+	NSString *json = [booksArray JSONRepresentation];
+	NSLog(@"JSON: %@", json);
+		
 	navigationController = [[UINavigationController alloc] initWithRootViewController:booksViewController];
 	navigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
 	[booksViewController release];

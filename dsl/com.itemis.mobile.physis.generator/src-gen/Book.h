@@ -20,5 +20,6 @@
 @property(nonatomic, retain) NSString *publisher;
 
 +(Book *)bookWithTitle:(NSString *)title author:(NSString *)author publisher:(NSString *)publisher;
+- (id)proxyForJson;
 
 @end

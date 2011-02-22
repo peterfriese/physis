@@ -76,8 +76,7 @@
 }
 
 - (NSSortDescriptor *)sortDescriptor {
-	NSSortDescriptor *mySortDescriptor = [[[NSSortDescriptor alloc] initWithKey:@"title" ascending:YES] autorelease];
-	return mySortDescriptor;
+    return [[[NSSortDescriptor alloc] initWithKey:@"title" ascending:YES] autorelease];
 }
 
 - (NSPredicate *)predicateForSearchString:(NSString *)searchString scope:(NSString *)scope {

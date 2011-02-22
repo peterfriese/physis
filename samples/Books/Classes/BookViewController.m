@@ -21,48 +21,7 @@
 
 
 #pragma mark -
-#pragma mark Table view data source
-/*
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
-}
-
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	if (tableView == self.searchDisplayController.searchResultsTableView) {
-		return [filteredList count];
-	}
-	else {
-	    return [list count];
-	}
-}
-
-
-// Customize the appearance of table view cells.
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    static NSString *CellIdentifier = @"Cell";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
-    }
-    
-    // Configure the cell...
-	Book *book;
-	if (tableView == self.searchDisplayController.searchResultsTableView) {
-		book = [filteredList objectAtIndex:[indexPath row]];
-	}
-	else {
-		book = [list objectAtIndex:[indexPath row]];
-	}
-	
-	cell.textLabel.text = book.title;
-	cell.detailTextLabel.text = [NSString stringWithFormat:@"by %@", book.author];
-    
-    return cell;
-}
-*/
+#pragma mark Configure Cell
 
 -(void) tableView:(UITableView *)tableView customizeCell:(UITableViewCell *)cell withManagedObject:(NSManagedObject *)managedObject forRowAtIndexPath:(NSIndexPath *)indexPath {
 	cell.textLabel.text = [managedObject valueForKey:@"title"];

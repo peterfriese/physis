@@ -26,4 +26,8 @@
 	return book;	
 }
 
+- (id)proxyForJson {
+    return [NSDictionary dictionaryWithObjectsAndKeys:title, @"title", author, @"author", publisher, @"publisher", nil];
+}
+
 @end

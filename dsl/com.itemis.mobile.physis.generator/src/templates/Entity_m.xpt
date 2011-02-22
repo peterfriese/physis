@@ -20,7 +20,7 @@
 «EXPAND propertySynthesize FOREACH this.attributes-»
 
 «EXPAND factories FOR this-»
-
+«EXPAND json FOR this-»
 @end
 «ENDFILE»
 «ENDDEFINE»
@@ -41,5 +41,16 @@
 	«ENDFOREACH-»
 	return «variable»;	
 	«ENDLET-»
+}
+«ENDDEFINE»
+
+«DEFINE json FOR Entity»
+- (id)proxyForJson {
+	return [NSDictionary dictionaryWithObjectsAndKeys:
+	«FOREACH this.attributes AS attr-»
+		«attr.name», @"«attr.name»",
+	«ENDFOREACH-»
+		nil
+	];
 }
 «ENDDEFINE»

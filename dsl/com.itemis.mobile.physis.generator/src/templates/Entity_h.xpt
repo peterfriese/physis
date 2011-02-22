@@ -22,6 +22,7 @@
 «EXPAND propertyDeclaration FOREACH this.attributes-»
 
 «EXPAND factories FOR this-»
+«EXPAND json FOR this-»
 
 @end
 «ENDFILE»
@@ -37,4 +38,8 @@
 
 «DEFINE propertyDeclaration FOR Attribute-»
 @property(nonatomic, retain) «this.typeDeclaration()»«this.name»;
+«ENDDEFINE»
+
+«DEFINE json FOR Entity-»
+- (id)proxyForJson;
 «ENDDEFINE»
