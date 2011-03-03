@@ -97,10 +97,20 @@
 			   ? [error localizedDescription]
 			   : @"Unknown error"));
 	}	
+	/*
 	for (id *element in results) {
-		NSLog(@"Element %@", element);
-	}
+		NSLog(@"Element %@ %@", [element class], element);
+	}*/
 	return results;
+}
+
++ (NSString *)localNameForRemoteField:(NSString *)remoteName {
+	if ([remoteName isEqualToString:[self remoteIdField]]) {
+		return [self localIdField];
+	}
+	else {
+		return remoteName;
+	}
 }
 
 + (void)fetchAllRemote {
@@ -127,7 +137,17 @@
 				
 				// if there is a remote ID, try to find the matching local record
 				if (remoteId != nil) {
-					id result = [self findLocalByID:remoteId];
+					id results = [self findLocalByID:remoteId];
+					if ([results isKindOfClass:[NSArray class]]) {
+						NSArray *resultsArray = (NSArray *)results;
+						if ([resultsArray count] > 0) {
+							resource = [resultsArray objectAtIndex:0]; // uh-oh
+						}
+						else {
+							NSLog(@"NO RESULTS, creating new resource");
+							resource = [[self alloc] initWithEntity:description insertIntoManagedObjectContext:context];
+						}
+					}
 				}
 				// otherwise create new local record
 				else {
@@ -136,7 +156,9 @@
 				
 				[properties enumerateKeysAndObjectsUsingBlock: ^(id key, id object, BOOL *stop){
 					@try {
-						[resource setValue:object forKey:key];						
+						NSString *propertyName = [self localNameForRemoteField:key];
+						NSLog(@"Updating entity %@, setting value of local field %@ (mapped from remote field %@) to value %@", [self entityName], propertyName, key, object);
+						[resource setValue:object forKey:propertyName];
 					}
 					@catch (NSException * e) {
 						// An exception will be thrown when we try to set a vlue for an unknow key.
