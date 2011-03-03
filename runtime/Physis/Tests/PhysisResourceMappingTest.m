@@ -7,12 +7,13 @@
 //
 
 #import <GHUnitIOS/GHUnit.h>
-#import "PhysisContentProvider.h"
+#import "Book.h"
+#import "DataManager.h"
 
-@interface PhysisContentProviderTest : GHAsyncTestCase { }
+@interface PhysisResourceMappingTest : GHAsyncTestCase { }
 @end
 
-@implementation PhysisContentProviderTest
+@implementation PhysisResourceMappingTest
 
 - (void)setUp {
 	// Run before each test method
@@ -24,12 +25,14 @@
 
 - (void)testFetchData {
 	[self prepare];
+	[DataManager sharedInstance];
+	PhysisDataMappingRegistry *registry = [[DataManager sharedInstance] mappingRegistry];
+	[registry registerURL:@"http://localhost/~peterfriese/books/books.json" forEntity:@"Book" verb:@"findAll"];
 	
-	PhysisContentProvider *contentProvider = [[PhysisContentProvider alloc] init];
-	[contentProvider findAll:@"Book" withBlock: ^(id results) {
-		[self notify:kGHUnitWaitStatusFailure];
-	}];
-	[self waitForStatus:kGHUnitWaitStatusSuccess timeout:2.0];
+	[Book findAllRemote];
+	[self waitForTimeout:1.0];
+	
+	[DataManager setSharedInstance:nil];
 }
 
 @end

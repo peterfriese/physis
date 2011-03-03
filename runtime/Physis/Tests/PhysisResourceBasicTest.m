@@ -17,12 +17,12 @@
 
 - (void)setUp {
 	// Run before each test method
-	[[DataManager alloc] init];	
+	[DataManager sharedInstance];
 }
 
 - (void)tearDown {
 	// Run after each test method
-	[DataManager setSharedInstance:nil];	
+//	[DataManager setSharedInstance:nil];	
 }
 
 - (void)testEntityName {

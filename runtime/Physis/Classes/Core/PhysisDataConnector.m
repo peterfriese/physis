@@ -8,20 +8,27 @@
 
 #import "PhysisDataConnector.h"
 #import "ASIHTTPRequest.h"
+#import "PhysisDataManager.h"
 
 @implementation PhysisDataConnector
 
 @synthesize transformer;
-@synthesize resultsAvailableBlock;
 
-- (void)fetch:(NSURL *)url {
+- (PhysisDataTransformer *)transformer {
+	if (transformer == nil) {
+		self.transformer = [[PhysisDataManager sharedInstance] dataTransformer];
+	}
+	return transformer;
+}
+
+- (void)fetch:(NSURL *)url withBlock:(ResultsAvailableBlock)block {
     __block ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
     [request setCompletionBlock: ^{
         NSString *responseString = [request responseString];		
-		if (transformer) {
-			id results = [transformer transform:responseString];
-			if (resultsAvailableBlock) {
-				resultsAvailableBlock(results);			
+		if (self.transformer) {
+			id results = [self.transformer transform:responseString];
+			if (block) {
+				block(results);			
 			}			
 		}
     }];
@@ -29,7 +36,6 @@
 }
 
 - (void)dealloc {
-	[resultsAvailableBlock release];
 	[transformer release];
 	[super dealloc];
 }

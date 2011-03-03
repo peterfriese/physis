@@ -19,8 +19,7 @@
 		883DE754131E467F005DC877 /* PhysisDataConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 883DE753131E467F005DC877 /* PhysisDataConnector.m */; };
 		883DE7CC131E552D005DC877 /* PhysisDataTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 883DE7CB131E552D005DC877 /* PhysisDataTransformer.m */; };
 		883DE7DA131E5670005DC877 /* PhysisDataTransformerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 883DE7D9131E5670005DC877 /* PhysisDataTransformerTest.m */; };
-		883DE8E0131E92D9005DC877 /* PhysisContentProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 883DE8DF131E92D9005DC877 /* PhysisContentProvider.m */; };
-		883DE8E2131E92EE005DC877 /* PhysisContentProviderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 883DE8E1131E92EE005DC877 /* PhysisContentProviderTest.m */; };
+		883DE8E2131E92EE005DC877 /* PhysisResourceMappingTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 883DE8E1131E92EE005DC877 /* PhysisResourceMappingTest.m */; };
 		883DE8E5131E970B005DC877 /* PhysisCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 883DE8E4131E970B005DC877 /* PhysisCacheManager.m */; };
 		883DE8E6131E970B005DC877 /* PhysisCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 883DE8E4131E970B005DC877 /* PhysisCacheManager.m */; };
 		883DE8F9131EA0BD005DC877 /* PhysisDataMappingRegistry.m in Sources */ = {isa = PBXBuildFile; fileRef = 883DE8F8131EA0BD005DC877 /* PhysisDataMappingRegistry.m */; };
@@ -85,9 +84,7 @@
 		883DE7CA131E552D005DC877 /* PhysisDataTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhysisDataTransformer.h; sourceTree = "<group>"; };
 		883DE7CB131E552D005DC877 /* PhysisDataTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhysisDataTransformer.m; sourceTree = "<group>"; };
 		883DE7D9131E5670005DC877 /* PhysisDataTransformerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhysisDataTransformerTest.m; sourceTree = "<group>"; };
-		883DE8DE131E92D9005DC877 /* PhysisContentProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhysisContentProvider.h; sourceTree = "<group>"; };
-		883DE8DF131E92D9005DC877 /* PhysisContentProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhysisContentProvider.m; sourceTree = "<group>"; };
-		883DE8E1131E92EE005DC877 /* PhysisContentProviderTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhysisContentProviderTest.m; sourceTree = "<group>"; };
+		883DE8E1131E92EE005DC877 /* PhysisResourceMappingTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhysisResourceMappingTest.m; sourceTree = "<group>"; };
 		883DE8E3131E970B005DC877 /* PhysisCacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhysisCacheManager.h; sourceTree = "<group>"; };
 		883DE8E4131E970B005DC877 /* PhysisCacheManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhysisCacheManager.m; sourceTree = "<group>"; };
 		883DE8F7131EA0BD005DC877 /* PhysisDataMappingRegistry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhysisDataMappingRegistry.h; sourceTree = "<group>"; };
@@ -196,9 +193,9 @@
 				0080407D1290AC280033DA60 /* GHUnitIOSTestMain.m */,
 				002D9D4D0F4918F1007932FE /* MyTest.m */,
 				88D6C74A131D3FBF00F5825B /* PhysisResourceBasicTest.m */,
+				883DE8E1131E92EE005DC877 /* PhysisResourceMappingTest.m */,
 				883DE74E131E4625005DC877 /* PhysisDataConnectorTest.m */,
 				883DE7D9131E5670005DC877 /* PhysisDataTransformerTest.m */,
-				883DE8E1131E92EE005DC877 /* PhysisContentProviderTest.m */,
 				883DE928131EAB28005DC877 /* PhysisDataMappingRegistryTest.m */,
 			);
 			path = Tests;
@@ -379,8 +376,6 @@
 				883DE753131E467F005DC877 /* PhysisDataConnector.m */,
 				883DE7CA131E552D005DC877 /* PhysisDataTransformer.h */,
 				883DE7CB131E552D005DC877 /* PhysisDataTransformer.m */,
-				883DE8DE131E92D9005DC877 /* PhysisContentProvider.h */,
-				883DE8DF131E92D9005DC877 /* PhysisContentProvider.m */,
 				883DE8E3131E970B005DC877 /* PhysisCacheManager.h */,
 				883DE8E4131E970B005DC877 /* PhysisCacheManager.m */,
 				883DE8F7131EA0BD005DC877 /* PhysisDataMappingRegistry.h */,
@@ -542,8 +537,7 @@
 				883DE754131E467F005DC877 /* PhysisDataConnector.m in Sources */,
 				883DE7CC131E552D005DC877 /* PhysisDataTransformer.m in Sources */,
 				883DE7DA131E5670005DC877 /* PhysisDataTransformerTest.m in Sources */,
-				883DE8E0131E92D9005DC877 /* PhysisContentProvider.m in Sources */,
-				883DE8E2131E92EE005DC877 /* PhysisContentProviderTest.m in Sources */,
+				883DE8E2131E92EE005DC877 /* PhysisResourceMappingTest.m in Sources */,
 				883DE8E5131E970B005DC877 /* PhysisCacheManager.m in Sources */,
 				883DE8FA131EA0BD005DC877 /* PhysisDataMappingRegistry.m in Sources */,
 				883DE929131EAB28005DC877 /* PhysisDataMappingRegistryTest.m in Sources */,

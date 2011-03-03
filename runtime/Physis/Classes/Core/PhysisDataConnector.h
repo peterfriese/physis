@@ -9,15 +9,14 @@
 #import <Foundation/Foundation.h>
 #import "PhysisDataTransformer.h"
 
-typedef void(^ResultsAvailableBlock)(NSArray *);
+typedef void(^ResultsAvailableBlock)(id);
 
 @interface PhysisDataConnector : NSObject {
 	PhysisDataTransformer *transformer;
 }
 
 @property(nonatomic, retain) PhysisDataTransformer *transformer;
-@property(nonatomic, copy) ResultsAvailableBlock resultsAvailableBlock;
 
-- (void)fetch:(NSURL *)url;
+- (void)fetch:(NSURL *)url withBlock:(ResultsAvailableBlock)block;
 
 @end

@@ -13,4 +13,6 @@
 
 }
 
+- (id)cache:(id)elements forEntity:(NSString *)entityName;
+
 @end

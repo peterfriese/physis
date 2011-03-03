@@ -10,13 +10,14 @@
 
 @implementation Book
 
+@dynamic ID;
 @dynamic title;
 @dynamic author;
 @dynamic publisher;
 
 +(Book *)bookWithTitle:(NSString *)title author:(NSString *)author publisher:(NSString *)publisher {
 	NSEntityDescription *bookEntity = [self entityDescription];
-	Book *book = [[Book alloc] initWithEntity:bookEntity insertIntoManagedObjectContext:[self managedObjectContext]];
+	Book *book = [[[Book alloc] initWithEntity:bookEntity insertIntoManagedObjectContext:[self managedObjectContext]] autorelease];
 	book.title = title;
 	book.author = author;
 	book.publisher = publisher;

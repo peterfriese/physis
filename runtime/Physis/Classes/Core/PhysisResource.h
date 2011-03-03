@@ -13,10 +13,7 @@
 #import "ASIHTTPRequest.h"
 
 @interface PhysisResource : NSManagedObject {
-	NSMutableData *receivedData;
 }
-
-@property (nonatomic, retain) NSMutableData *receivedData;
 
 #pragma mark -
 #pragma mark Core Data 

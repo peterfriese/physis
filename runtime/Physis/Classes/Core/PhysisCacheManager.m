@@ -11,4 +11,8 @@
 
 @implementation PhysisCacheManager
 
+- (id)cache:(id)elements forEntity:(NSString *)entityName {
+	// Run *run = [[Run alloc] initWithEntity:runEntity insertIntoManagedObjectContext:moc];	
+}
+
 @end

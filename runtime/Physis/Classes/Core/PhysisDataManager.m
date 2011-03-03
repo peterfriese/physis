@@ -13,40 +13,65 @@
 
 @synthesize remoteSiteURL;
 @synthesize remoteSiteProtocol;
+@synthesize created;
 
 #pragma mark -
 #pragma mark Singleton handling
-static PhysisDataManager *instance;
+
+static PhysisDataManager *instance = nil;	
+
 +(PhysisDataManager *)sharedInstance {
+	if (instance == nil) {
+		instance = [[[self class] alloc] init];
+		[instance setCreated:[NSDate date]];
+		NSLog(@"Created manager at %@", [instance created]);
+	}
     return instance;
 }
 
 +(void)setSharedInstance:(PhysisDataManager *)newInstance {
+	[instance release];
     instance = newInstance;
 }
 
 - (id) init {
-    return [self initWithOptions:nil];
-}
-
-- (id) initWithOptions:(NSDictionary*)options {
     if ((self = [super init])) {
-        if (instance == nil) {
-            instance = self;
-        }
-        remoteSiteProtocol = @"json";
-        managedObjectModel = [self createManagedObjectModel];
-        managedObjectContext = [self createManagedObjectContext];
+		// set up defaults
+		remoteSiteProtocol = @"json";
+		mappingRegistry = [[PhysisDataMappingRegistry alloc] init];
+		dataTransformer = [[PhysisDataTransformer alloc] init];
+		dataConnector = [[PhysisDataConnector alloc] init];
+		cacheManager = [[PhysisCacheManager alloc] init];
+		
+        self.managedObjectModel = [self createManagedObjectModel];
+        self.managedObjectContext = [self createManagedObjectContext];
     }
     return self;
 }
 
+- (void)dealloc {
+	[created release];
+	[cacheManager release];
+	[mappingRegistry release];
+	[dataTransformer release];
+	[dataConnector release];
+	
+	[super dealloc];
+}
 
 #pragma mark -
 
 +(NSString *)applicationDocumentsDirectory {
 	return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
 }
+
+#pragma mark -
+#pragma mark The Network of Helpers(tm)
+@synthesize mappingRegistry;
+@synthesize dataTransformer;
+@synthesize dataConnector;
+@synthesize cacheManager;
+
 
 #pragma mark -
 #pragma mark Object Model
@@ -59,7 +84,7 @@ static PhysisDataManager *instance;
 }
 
 -(NSManagedObjectContext *) createManagedObjectContext {
-	NSManagedObjectContext *moc = [[NSManagedObjectContext alloc] init];
+	NSManagedObjectContext *moc = [[[NSManagedObjectContext alloc] init] autorelease];
 	NSPersistentStoreCoordinator *coordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
 	[moc setPersistentStoreCoordinator:coordinator];
 	
@@ -79,6 +104,10 @@ static PhysisDataManager *instance;
 			  ([error localizedDescription] != nil ?
 			   [error localizedDescription] : @"Unknown error"));
 	}
+	else {
+		NSLog(@"The persistence store will be place in %@", [url standardizedURL]);
+	}
+	[coordinator release];
 	return moc;
 }
 
