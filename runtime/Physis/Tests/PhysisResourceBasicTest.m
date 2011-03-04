@@ -44,7 +44,7 @@
 	
 	NSArray *properties = [desc properties];
 	GHAssertNotNil(properties, nil);
-	GHAssertEquals((NSUInteger)3, [properties count], nil);
+	GHAssertEquals((NSUInteger)4, [properties count], nil);
 }
 
 - (void)testEntityDescriptionAttributesSetupProperly {
