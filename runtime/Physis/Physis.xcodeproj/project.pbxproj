@@ -26,6 +26,9 @@
 		883DE8F9131EA0BD005DC877 /* PhysisDataMappingRegistry.m in Sources */ = {isa = PBXBuildFile; fileRef = 883DE8F8131EA0BD005DC877 /* PhysisDataMappingRegistry.m */; };
 		883DE8FA131EA0BD005DC877 /* PhysisDataMappingRegistry.m in Sources */ = {isa = PBXBuildFile; fileRef = 883DE8F8131EA0BD005DC877 /* PhysisDataMappingRegistry.m */; };
 		883DE929131EAB28005DC877 /* PhysisDataMappingRegistryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 883DE928131EAB28005DC877 /* PhysisDataMappingRegistryTest.m */; };
+		88A8E9E4132144A8000C05B9 /* pulltorefresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 88A8E9E1132144A8000C05B9 /* pulltorefresh.png */; };
+		88A8E9E5132144A8000C05B9 /* PullRefreshTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88A8E9E3132144A8000C05B9 /* PullRefreshTableViewController.m */; };
+		88A8E9E713214641000C05B9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88A8E9E613214641000C05B9 /* QuartzCore.framework */; };
 		88B0C308131D4CA40096BA6F /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = 88B0C305131D4CA40096BA6F /* Book.m */; };
 		88B0C309131D4CA40096BA6F /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 88B0C307131D4CA40096BA6F /* DataManager.m */; };
 		88D6C6B6131D3D2E00F5825B /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 88D6C687131D3D2E00F5825B /* ASIAuthenticationDialog.m */; };
@@ -93,6 +96,10 @@
 		883DE8F7131EA0BD005DC877 /* PhysisDataMappingRegistry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhysisDataMappingRegistry.h; sourceTree = "<group>"; };
 		883DE8F8131EA0BD005DC877 /* PhysisDataMappingRegistry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhysisDataMappingRegistry.m; sourceTree = "<group>"; };
 		883DE928131EAB28005DC877 /* PhysisDataMappingRegistryTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhysisDataMappingRegistryTest.m; sourceTree = "<group>"; };
+		88A8E9E1132144A8000C05B9 /* pulltorefresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pulltorefresh.png; sourceTree = "<group>"; };
+		88A8E9E2132144A8000C05B9 /* PullRefreshTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullRefreshTableViewController.h; sourceTree = "<group>"; };
+		88A8E9E3132144A8000C05B9 /* PullRefreshTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullRefreshTableViewController.m; sourceTree = "<group>"; };
+		88A8E9E613214641000C05B9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		88B0C304131D4CA40096BA6F /* Book.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Book.h; sourceTree = "<group>"; };
 		88B0C305131D4CA40096BA6F /* Book.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Book.m; sourceTree = "<group>"; };
 		88B0C306131D4CA40096BA6F /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
@@ -165,6 +172,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88A8E9E713214641000C05B9 /* QuartzCore.framework in Frameworks */,
 				002D9E0E0F491B49007932FE /* Foundation.framework in Frameworks */,
 				002D9E100F491B4C007932FE /* UIKit.framework in Frameworks */,
 				00DA16640F899AF4001FE08E /* CoreGraphics.framework in Frameworks */,
@@ -208,6 +216,7 @@
 		00DA15A30F897CDD001FE08E /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				88A8E9E0132144A8000C05B9 /* PullToRefresh */,
 				88D6C685131D3D2E00F5825B /* ASIHTTP */,
 				88D6C69A131D3D2E00F5825B /* JSONFramework */,
 				88D6C6AE131D3D2E00F5825B /* JSONKit */,
@@ -239,6 +248,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				88A8E9E613214641000C05B9 /* QuartzCore.framework */,
 				00CDDE300F7703B40089C60E /* Makefile */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				00DA15A30F897CDD001FE08E /* Libraries */,
@@ -283,6 +293,16 @@
 				88D6C6DF131D3D8F00F5825B /* CoreData.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		88A8E9E0132144A8000C05B9 /* PullToRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				88A8E9E1132144A8000C05B9 /* pulltorefresh.png */,
+				88A8E9E2132144A8000C05B9 /* PullRefreshTableViewController.h */,
+				88A8E9E3132144A8000C05B9 /* PullRefreshTableViewController.m */,
+			);
+			path = PullToRefresh;
 			sourceTree = "<group>";
 		};
 		88B0C303131D4CA40096BA6F /* DataModel */ = {
@@ -478,6 +498,7 @@
 			files = (
 				88D6C6C7131D3D2E00F5825B /* CHANGELOG.md in Resources */,
 				88D6C6C9131D3D2E00F5825B /* README.md in Resources */,
+				88A8E9E4132144A8000C05B9 /* pulltorefresh.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -549,6 +570,7 @@
 				883DE929131EAB28005DC877 /* PhysisDataMappingRegistryTest.m in Sources */,
 				88E4A0901321045300B3EC19 /* NSPredicate+PhysisTest.m in Sources */,
 				8807113713211191007FFDC7 /* NSPredicate+Physis.m in Sources */,
+				88A8E9E5132144A8000C05B9 /* PullRefreshTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

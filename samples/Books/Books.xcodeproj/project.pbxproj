@@ -52,6 +52,9 @@
 		883AD932131BA8A000B08451 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 883AD931131BA8A000B08451 /* SystemConfiguration.framework */; };
 		883AD934131BA8AB00B08451 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 883AD933131BA8AB00B08451 /* MobileCoreServices.framework */; };
 		883AD936131BA8CD00B08451 /* libz.1.2.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 883AD935131BA8CD00B08451 /* libz.1.2.3.dylib */; };
+		88A8E9EC1321466C000C05B9 /* PullRefreshTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88A8E9EA1321466C000C05B9 /* PullRefreshTableViewController.m */; };
+		88A8E9ED1321466C000C05B9 /* pulltorefresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 88A8E9EB1321466C000C05B9 /* pulltorefresh.png */; };
+		88A8E9EF1321468E000C05B9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88A8E9EE1321468D000C05B9 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -139,6 +142,10 @@
 		883AD931131BA8A000B08451 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		883AD933131BA8AB00B08451 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		883AD935131BA8CD00B08451 /* libz.1.2.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.3.dylib; path = usr/lib/libz.1.2.3.dylib; sourceTree = SDKROOT; };
+		88A8E9E91321466C000C05B9 /* PullRefreshTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullRefreshTableViewController.h; sourceTree = "<group>"; };
+		88A8E9EA1321466C000C05B9 /* PullRefreshTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullRefreshTableViewController.m; sourceTree = "<group>"; };
+		88A8E9EB1321466C000C05B9 /* pulltorefresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pulltorefresh.png; sourceTree = "<group>"; };
+		88A8E9EE1321468D000C05B9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		8D1107310486CEB800E47090 /* Books-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Books-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -147,6 +154,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88A8E9EF1321468E000C05B9 /* QuartzCore.framework in Frameworks */,
 				883AD936131BA8CD00B08451 /* libz.1.2.3.dylib in Frameworks */,
 				883AD934131BA8AB00B08451 /* MobileCoreServices.framework in Frameworks */,
 				883AD932131BA8A000B08451 /* SystemConfiguration.framework in Frameworks */,
@@ -183,6 +191,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				88A8E9EE1321468D000C05B9 /* QuartzCore.framework */,
 				88071146132112D3007FFDC7 /* Libraries */,
 				8809060713059DE900C7C50D /* Generated */,
 				080E96DDFE201D6D7F000001 /* Classes */,
@@ -231,6 +240,7 @@
 		88071146132112D3007FFDC7 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				88A8E9E813214667000C05B9 /* PullToRefresh */,
 				880711841321132E007FFDC7 /* ASIHTTP */,
 				8807119A1321132E007FFDC7 /* JSONFramework */,
 				880711AE1321132E007FFDC7 /* JSONKit */,
@@ -380,6 +390,17 @@
 			path = Generated;
 			sourceTree = "<group>";
 		};
+		88A8E9E813214667000C05B9 /* PullToRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				88A8E9E91321466C000C05B9 /* PullRefreshTableViewController.h */,
+				88A8E9EA1321466C000C05B9 /* PullRefreshTableViewController.m */,
+				88A8E9EB1321466C000C05B9 /* pulltorefresh.png */,
+			);
+			name = PullToRefresh;
+			path = ../../../runtime/Physis/Libraries/PullToRefresh;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -433,6 +454,7 @@
 				882247931313DA6000E93C89 /* sampledata.json in Resources */,
 				880711C81321132E007FFDC7 /* CHANGELOG.md in Resources */,
 				880711CA1321132E007FFDC7 /* README.md in Resources */,
+				88A8E9ED1321466C000C05B9 /* pulltorefresh.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,6 +498,7 @@
 				880711C71321132E007FFDC7 /* SBJsonWriter.m in Sources */,
 				880711C91321132E007FFDC7 /* JSONKit.m in Sources */,
 				880711CB1321132E007FFDC7 /* Reachability.m in Sources */,
+				88A8E9EC1321466C000C05B9 /* PullRefreshTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
