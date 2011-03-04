@@ -3,3 +3,5 @@ bin
 .DS_Store
 *.pbxuser
 *.perspectivev3
+xcuserdata
+project.xcworkspace
