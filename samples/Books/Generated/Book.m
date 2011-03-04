@@ -21,7 +21,7 @@
 	book.title = title;
 	book.author = author;
 	book.publisher = publisher;
-	return book;	
+	return book;
 }
 
 - (id)proxyForJson {
