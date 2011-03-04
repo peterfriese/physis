@@ -14,6 +14,4 @@
     
 }
 
-+(NSManagedObjectModel *) managedObjectModel;
-
 @end

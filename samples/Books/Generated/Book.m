@@ -7,19 +7,17 @@
 //
 
 #import "Book.h"
-#import "DataManager.h"
 
 @implementation Book
 
+@dynamic ID;
 @dynamic title;
 @dynamic author;
 @dynamic publisher;
 
 +(Book *)bookWithTitle:(NSString *)title author:(NSString *)author publisher:(NSString *)publisher {
-	NSManagedObjectModel *mom = [DataManager managedObjectModel];
-	NSManagedObjectContext *moc = [DataManager managedObjectContext];
-	NSEntityDescription *bookEntity = [[mom entitiesByName] objectForKey:@"Book"];
-	Book *book = [[Book alloc] initWithEntity:bookEntity insertIntoManagedObjectContext:moc];
+	NSEntityDescription *bookEntity = [self entityDescription];
+	Book *book = [[[Book alloc] initWithEntity:bookEntity insertIntoManagedObjectContext:[self managedObjectContext]] autorelease];
 	book.title = title;
 	book.author = author;
 	book.publisher = publisher;

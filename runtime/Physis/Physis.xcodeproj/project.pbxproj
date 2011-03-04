@@ -15,6 +15,7 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
+		8807113713211191007FFDC7 /* NSPredicate+Physis.m in Sources */ = {isa = PBXBuildFile; fileRef = 8807113613211191007FFDC7 /* NSPredicate+Physis.m */; };
 		883DE74F131E4625005DC877 /* PhysisDataConnectorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 883DE74E131E4625005DC877 /* PhysisDataConnectorTest.m */; };
 		883DE754131E467F005DC877 /* PhysisDataConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 883DE753131E467F005DC877 /* PhysisDataConnector.m */; };
 		883DE7CC131E552D005DC877 /* PhysisDataTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 883DE7CB131E552D005DC877 /* PhysisDataTransformer.m */; };
@@ -62,12 +63,12 @@
 		88D6C713131D3E4D00F5825B /* NSString+Pluralizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 88D6C709131D3E4D00F5825B /* NSString+Pluralizer.m */; };
 		88D6C714131D3E4D00F5825B /* PhysisUITableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88D6C70C131D3E4D00F5825B /* PhysisUITableViewController.m */; };
 		88D6C74B131D3FBF00F5825B /* PhysisResourceBasicTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 88D6C74A131D3FBF00F5825B /* PhysisResourceBasicTest.m */; };
+		88E4A0901321045300B3EC19 /* NSPredicate+PhysisTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 88E4A08F1321045300B3EC19 /* NSPredicate+PhysisTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		002D9D030F49177B007932FE /* Tests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tests.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		002D9D050F49177B007932FE /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
-		002D9D4D0F4918F1007932FE /* MyTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTest.m; sourceTree = "<group>"; };
 		006A590E0FC4A7B600C79A81 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		0080407D1290AC280033DA60 /* GHUnitIOSTestMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHUnitIOSTestMain.m; sourceTree = "<group>"; };
 		008040951290AC9E0033DA60 /* RunTests.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = RunTests.sh; sourceTree = "<group>"; };
@@ -78,6 +79,8 @@
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		32CA4F630368D1EE00C91783 /* Physis_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Physis_Prefix.pch; sourceTree = "<group>"; };
+		8807113513211191007FFDC7 /* NSPredicate+Physis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSPredicate+Physis.h"; sourceTree = "<group>"; };
+		8807113613211191007FFDC7 /* NSPredicate+Physis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSPredicate+Physis.m"; sourceTree = "<group>"; };
 		883DE74E131E4625005DC877 /* PhysisDataConnectorTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhysisDataConnectorTest.m; sourceTree = "<group>"; };
 		883DE752131E467F005DC877 /* PhysisDataConnector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhysisDataConnector.h; sourceTree = "<group>"; };
 		883DE753131E467F005DC877 /* PhysisDataConnector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhysisDataConnector.m; sourceTree = "<group>"; };
@@ -153,6 +156,7 @@
 		88D6C70B131D3E4D00F5825B /* PhysisUITableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhysisUITableViewController.h; sourceTree = "<group>"; };
 		88D6C70C131D3E4D00F5825B /* PhysisUITableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhysisUITableViewController.m; sourceTree = "<group>"; };
 		88D6C74A131D3FBF00F5825B /* PhysisResourceBasicTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhysisResourceBasicTest.m; sourceTree = "<group>"; };
+		88E4A08F1321045300B3EC19 /* NSPredicate+PhysisTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSPredicate+PhysisTest.m"; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -191,12 +195,12 @@
 			children = (
 				88B0C303131D4CA40096BA6F /* DataModel */,
 				0080407D1290AC280033DA60 /* GHUnitIOSTestMain.m */,
-				002D9D4D0F4918F1007932FE /* MyTest.m */,
 				88D6C74A131D3FBF00F5825B /* PhysisResourceBasicTest.m */,
 				883DE8E1131E92EE005DC877 /* PhysisResourceMappingTest.m */,
 				883DE74E131E4625005DC877 /* PhysisDataConnectorTest.m */,
 				883DE7D9131E5670005DC877 /* PhysisDataTransformerTest.m */,
 				883DE928131EAB28005DC877 /* PhysisDataMappingRegistryTest.m */,
+				88E4A08F1321045300B3EC19 /* NSPredicate+PhysisTest.m */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -387,6 +391,8 @@
 		88D6C707131D3E4D00F5825B /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				8807113513211191007FFDC7 /* NSPredicate+Physis.h */,
+				8807113613211191007FFDC7 /* NSPredicate+Physis.m */,
 				88D6C708131D3E4D00F5825B /* NSString+Pluralizer.h */,
 				88D6C709131D3E4D00F5825B /* NSString+Pluralizer.m */,
 			);
@@ -541,6 +547,8 @@
 				883DE8E5131E970B005DC877 /* PhysisCacheManager.m in Sources */,
 				883DE8FA131EA0BD005DC877 /* PhysisDataMappingRegistry.m in Sources */,
 				883DE929131EAB28005DC877 /* PhysisDataMappingRegistryTest.m in Sources */,
+				88E4A0901321045300B3EC19 /* NSPredicate+PhysisTest.m in Sources */,
+				8807113713211191007FFDC7 /* NSPredicate+Physis.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

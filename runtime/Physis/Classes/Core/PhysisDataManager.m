@@ -11,8 +11,6 @@
 
 @implementation PhysisDataManager
 
-@synthesize remoteSiteURL;
-@synthesize remoteSiteProtocol;
 @synthesize created;
 
 #pragma mark -
@@ -37,7 +35,6 @@ static PhysisDataManager *instance = nil;
 - (id) init {
     if ((self = [super init])) {
 		// set up defaults
-		remoteSiteProtocol = @"json";
 		mappingRegistry = [[PhysisDataMappingRegistry alloc] init];
 		dataTransformer = [[PhysisDataTransformer alloc] init];
 		dataConnector = [[PhysisDataConnector alloc] init];
@@ -100,6 +97,11 @@ static PhysisDataManager *instance = nil;
 																  options:nil 
 																	error:&error];
 	if (newStore == nil) {
+        if ([error code] == 134100) {
+            NSLog(@"Data store incompatible.\n%@", 
+                  ([error localizedDescription] != nil ?
+                   [error localizedDescription] : @"Unknown error"));
+        }
 		NSLog(@"Store configuration failure\n%@",
 			  ([error localizedDescription] != nil ?
 			   [error localizedDescription] : @"Unknown error"));

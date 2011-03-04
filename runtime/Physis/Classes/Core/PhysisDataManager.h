@@ -18,8 +18,6 @@
     NSManagedObjectModel *managedObjectModel;
     NSManagedObjectContext *managedObjectContext;
 	
-    NSString *remoteSiteURL;   
-    NSString *remoteSiteProtocol;
 	NSDate *created;
 	
 	PhysisDataMappingRegistry *mappingRegistry;
@@ -52,10 +50,5 @@
 
 @property (nonatomic, retain) NSManagedObjectModel *managedObjectModel;
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
-
-#pragma mark -
-#pragma mark Remote Data Access
-@property (nonatomic, retain) NSString *remoteSiteURL;
-@property (nonatomic, retain) NSString *remoteSiteProtocol;
 
 @end

@@ -8,10 +8,10 @@
 
 #import "BooksAppDelegate.h"
 #import "BookViewController.h"
+#import "PhysisResource.h"
 #import "Book.h"
 #import "DataManager.h"
 #import <CoreData/CoreData.h>
-#import <JSON/JSON.h>
 
 @implementation BooksAppDelegate
 
@@ -30,19 +30,23 @@
     
 	
 	// Init Core Data
-	NSManagedObjectModel *mom = [DataManager managedObjectModel];
+    PhysisDataManager *dataManager = [DataManager sharedInstance];
+    [dataManager.mappingRegistry registerURL:@"http://peterfriese.local/~peterfriese/books/books.json" forEntity:@"Book" verb:@"findAll"];
+    
+    /*
+	NSManagedObjectModel *mom = [dataManager managedObjectModel];
 	NSLog(@"The managed object model is defined as follows:\n%@", mom);
-	NSManagedObjectContext *moc = [DataManager managedObjectContext];	
+	NSManagedObjectContext *moc = [dataManager managedObjectContext];	
 	NSEntityDescription *bookEntity = [[mom entitiesByName] objectForKey:@"Book"];	
 	
-	NSError *error;
+	NSError *error = nil;
 	NSString *jsonString = [[NSString alloc] 
 							initWithContentsOfFile:[[NSBundle mainBundle] 
 													pathForResource:@"sampledata" 
 													ofType:@"json"] 
 							encoding:NSUTF8StringEncoding error:&error];
 	NSLog(@"JSON loaded from file: %@", jsonString);
-	
+	*/
 /*    
 	NSFetchRequest *countRequest = [[[NSFetchRequest alloc] init] autorelease];
 	[countRequest setEntity:bookEntity];	
@@ -63,7 +67,9 @@
 		}		
 	}
 */
-	
+    
+    [Book findAllRemote];
+/*	
 	// now fetch that data!
 	NSFetchRequest *request = [[[NSFetchRequest alloc] init] autorelease];
 	[request setEntity:bookEntity];	
@@ -81,7 +87,7 @@
 	}
 	NSString *json = [booksArray JSONRepresentation];
 	NSLog(@"JSON: %@", json);
-		
+*/		
 	navigationController = [[UINavigationController alloc] initWithRootViewController:booksViewController];
 	navigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
 	[booksViewController release];
