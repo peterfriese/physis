@@ -11,6 +11,7 @@
 #import "JSONKit.h"
 #import "PhysisDataTransformer.h"
 #import "PhysisDataConnector.h"
+#import "NSPredicate+Physis.h"
 
 @implementation PhysisResource
 
@@ -80,15 +81,16 @@
 #pragma mark -
 #pragma mark Finders / Remote handling
 
-+ (id)findLocalByID:(id)localId {
++ (id)findLocalWithParameters:(NSDictionary *)parameters {
 	NSEntityDescription *description = [self entityDescription];
 	NSManagedObjectContext *context = [self managedObjectContext];	
 	
 	NSFetchRequest *request = [[[NSFetchRequest alloc] init] autorelease];
-
-	[request setPredicate:[NSPredicate predicateWithFormat:@"%K == %@", [self localIdField], localId]];
 	[request setEntity:description];
 	
+	NSPredicate *predicate = [NSPredicate predicateWithParameters:parameters];
+	[request setPredicate:predicate];
+
 	NSError *error = nil;
 	NSArray *results = [context executeFetchRequest:request error:&error];
 	if ((error != nil) || (results == nil)) {
@@ -97,11 +99,12 @@
 			   ? [error localizedDescription]
 			   : @"Unknown error"));
 	}	
-	/*
-	for (id *element in results) {
-		NSLog(@"Element %@ %@", [element class], element);
-	}*/
-	return results;
+	return results;	
+}
+
++ (id)findLocalByID:(id)localId {
+	NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:localId, [self localIdField], nil];
+	return [self findLocalWithParameters:parameters];
 }
 
 + (NSString *)localNameForRemoteField:(NSString *)remoteName {
@@ -184,8 +187,6 @@
 				   : @"Unknown error"));			
 		}
 		
-		// send data down to caller
-//		block(cachedResults);
 	}];
 }
 
