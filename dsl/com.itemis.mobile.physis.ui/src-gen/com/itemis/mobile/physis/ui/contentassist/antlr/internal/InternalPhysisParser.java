@@ -27,6 +27,13 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
     };
     public static final int RULE_ID=4;
     public static final int RULE_STRING=6;
+    public static final int T__16=16;
+    public static final int T__15=15;
+    public static final int T__17=17;
+    public static final int T__12=12;
+    public static final int T__11=11;
+    public static final int T__14=14;
+    public static final int T__13=13;
     public static final int RULE_ANY_OTHER=10;
     public static final int RULE_INT=5;
     public static final int RULE_WS=9;
@@ -34,12 +41,20 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
     public static final int EOF=-1;
     public static final int RULE_ML_COMMENT=7;
 
+    // delegates
+    // delegators
+
+
         public InternalPhysisParser(TokenStream input) {
-            super(input);
+            this(input, new RecognizerSharedState());
+        }
+        public InternalPhysisParser(TokenStream input, RecognizerSharedState state) {
+            super(input, state);
+             
         }
         
 
-    public String[] getTokenNames() { return tokenNames; }
+    public String[] getTokenNames() { return InternalPhysisParser.tokenNames; }
     public String getGrammarFileName() { return "../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g"; }
 
 
@@ -63,7 +78,7 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
 
 
 
-    // $ANTLR start entryRuleModel
+    // $ANTLR start "entryRuleModel"
     // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:61:1: entryRuleModel : ruleModel EOF ;
     public final void entryRuleModel() throws RecognitionException {
         try {
@@ -73,7 +88,8 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
              before(grammarAccess.getModelRule()); 
             pushFollow(FOLLOW_ruleModel_in_entryRuleModel61);
             ruleModel();
-            _fsp--;
+
+            state._fsp--;
 
              after(grammarAccess.getModelRule()); 
             match(input,EOF,FOLLOW_EOF_in_entryRuleModel68); 
@@ -89,10 +105,10 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end entryRuleModel
+    // $ANTLR end "entryRuleModel"
 
 
-    // $ANTLR start ruleModel
+    // $ANTLR start "ruleModel"
     // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:70:1: ruleModel : ( ( rule__Model__DatamodelsAssignment )* ) ;
     public final void ruleModel() throws RecognitionException {
 
@@ -123,7 +139,8 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
             	    {
             	    pushFollow(FOLLOW_rule__Model__DatamodelsAssignment_in_ruleModel94);
             	    rule__Model__DatamodelsAssignment();
-            	    _fsp--;
+
+            	    state._fsp--;
 
 
             	    }
@@ -153,10 +170,10 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end ruleModel
+    // $ANTLR end "ruleModel"
 
 
-    // $ANTLR start entryRuleDataModel
+    // $ANTLR start "entryRuleDataModel"
     // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:89:1: entryRuleDataModel : ruleDataModel EOF ;
     public final void entryRuleDataModel() throws RecognitionException {
         try {
@@ -166,7 +183,8 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
              before(grammarAccess.getDataModelRule()); 
             pushFollow(FOLLOW_ruleDataModel_in_entryRuleDataModel122);
             ruleDataModel();
-            _fsp--;
+
+            state._fsp--;
 
              after(grammarAccess.getDataModelRule()); 
             match(input,EOF,FOLLOW_EOF_in_entryRuleDataModel129); 
@@ -182,10 +200,10 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end entryRuleDataModel
+    // $ANTLR end "entryRuleDataModel"
 
 
-    // $ANTLR start ruleDataModel
+    // $ANTLR start "ruleDataModel"
     // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:98:1: ruleDataModel : ( ( rule__DataModel__Group__0 ) ) ;
     public final void ruleDataModel() throws RecognitionException {
 
@@ -204,7 +222,8 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
             {
             pushFollow(FOLLOW_rule__DataModel__Group__0_in_ruleDataModel155);
             rule__DataModel__Group__0();
-            _fsp--;
+
+            state._fsp--;
 
 
             }
@@ -228,10 +247,10 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end ruleDataModel
+    // $ANTLR end "ruleDataModel"
 
 
-    // $ANTLR start entryRuleType
+    // $ANTLR start "entryRuleType"
     // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:117:1: entryRuleType : ruleType EOF ;
     public final void entryRuleType() throws RecognitionException {
         try {
@@ -241,7 +260,8 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
              before(grammarAccess.getTypeRule()); 
             pushFollow(FOLLOW_ruleType_in_entryRuleType182);
             ruleType();
-            _fsp--;
+
+            state._fsp--;
 
              after(grammarAccess.getTypeRule()); 
             match(input,EOF,FOLLOW_EOF_in_entryRuleType189); 
@@ -257,10 +277,10 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end entryRuleType
+    // $ANTLR end "entryRuleType"
 
 
-    // $ANTLR start ruleType
+    // $ANTLR start "ruleType"
     // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:126:1: ruleType : ( ( rule__Type__Alternatives ) ) ;
     public final void ruleType() throws RecognitionException {
 
@@ -279,7 +299,8 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
             {
             pushFollow(FOLLOW_rule__Type__Alternatives_in_ruleType215);
             rule__Type__Alternatives();
-            _fsp--;
+
+            state._fsp--;
 
 
             }
@@ -303,10 +324,10 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end ruleType
+    // $ANTLR end "ruleType"
 
 
-    // $ANTLR start entryRuleSimpleType
+    // $ANTLR start "entryRuleSimpleType"
     // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:145:1: entryRuleSimpleType : ruleSimpleType EOF ;
     public final void entryRuleSimpleType() throws RecognitionException {
         try {
@@ -316,7 +337,8 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
              before(grammarAccess.getSimpleTypeRule()); 
             pushFollow(FOLLOW_ruleSimpleType_in_entryRuleSimpleType242);
             ruleSimpleType();
-            _fsp--;
+
+            state._fsp--;
 
              after(grammarAccess.getSimpleTypeRule()); 
             match(input,EOF,FOLLOW_EOF_in_entryRuleSimpleType249); 
@@ -332,10 +354,10 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end entryRuleSimpleType
+    // $ANTLR end "entryRuleSimpleType"
 
 
-    // $ANTLR start ruleSimpleType
+    // $ANTLR start "ruleSimpleType"
     // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:154:1: ruleSimpleType : ( ( rule__SimpleType__Group__0 ) ) ;
     public final void ruleSimpleType() throws RecognitionException {
 
@@ -354,7 +376,8 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
             {
             pushFollow(FOLLOW_rule__SimpleType__Group__0_in_ruleSimpleType275);
             rule__SimpleType__Group__0();
-            _fsp--;
+
+            state._fsp--;
 
 
             }
@@ -378,10 +401,10 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end ruleSimpleType
+    // $ANTLR end "ruleSimpleType"
 
 
-    // $ANTLR start entryRuleEntity
+    // $ANTLR start "entryRuleEntity"
     // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:173:1: entryRuleEntity : ruleEntity EOF ;
     public final void entryRuleEntity() throws RecognitionException {
         try {
@@ -391,7 +414,8 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
              before(grammarAccess.getEntityRule()); 
             pushFollow(FOLLOW_ruleEntity_in_entryRuleEntity302);
             ruleEntity();
-            _fsp--;
+
+            state._fsp--;
 
              after(grammarAccess.getEntityRule()); 
             match(input,EOF,FOLLOW_EOF_in_entryRuleEntity309); 
@@ -407,10 +431,10 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end entryRuleEntity
+    // $ANTLR end "entryRuleEntity"
 
 
-    // $ANTLR start ruleEntity
+    // $ANTLR start "ruleEntity"
     // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:182:1: ruleEntity : ( ( rule__Entity__Group__0 ) ) ;
     public final void ruleEntity() throws RecognitionException {
 
@@ -429,7 +453,8 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
             {
             pushFollow(FOLLOW_rule__Entity__Group__0_in_ruleEntity335);
             rule__Entity__Group__0();
-            _fsp--;
+
+            state._fsp--;
 
 
             }
@@ -453,10 +478,10 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end ruleEntity
+    // $ANTLR end "ruleEntity"
 
 
-    // $ANTLR start entryRuleAttribute
+    // $ANTLR start "entryRuleAttribute"
     // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:201:1: entryRuleAttribute : ruleAttribute EOF ;
     public final void entryRuleAttribute() throws RecognitionException {
         try {
@@ -466,7 +491,8 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
              before(grammarAccess.getAttributeRule()); 
             pushFollow(FOLLOW_ruleAttribute_in_entryRuleAttribute362);
             ruleAttribute();
-            _fsp--;
+
+            state._fsp--;
 
              after(grammarAccess.getAttributeRule()); 
             match(input,EOF,FOLLOW_EOF_in_entryRuleAttribute369); 
@@ -482,10 +508,10 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end entryRuleAttribute
+    // $ANTLR end "entryRuleAttribute"
 
 
-    // $ANTLR start ruleAttribute
+    // $ANTLR start "ruleAttribute"
     // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:210:1: ruleAttribute : ( ( rule__Attribute__Group__0 ) ) ;
     public final void ruleAttribute() throws RecognitionException {
 
@@ -504,7 +530,8 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
             {
             pushFollow(FOLLOW_rule__Attribute__Group__0_in_ruleAttribute395);
             rule__Attribute__Group__0();
-            _fsp--;
+
+            state._fsp--;
 
 
             }
@@ -528,10 +555,10 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end ruleAttribute
+    // $ANTLR end "ruleAttribute"
 
 
-    // $ANTLR start rule__Type__Alternatives
+    // $ANTLR start "rule__Type__Alternatives"
     // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:229:1: rule__Type__Alternatives : ( ( ruleSimpleType ) | ( ruleEntity ) );
     public final void rule__Type__Alternatives() throws RecognitionException {
 
@@ -550,7 +577,7 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("229:1: rule__Type__Alternatives : ( ( ruleSimpleType ) | ( ruleEntity ) );", 2, 0, input);
+                    new NoViableAltException("", 2, 0, input);
 
                 throw nvae;
             }
@@ -564,7 +591,8 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
                      before(grammarAccess.getTypeAccess().getSimpleTypeParserRuleCall_0()); 
                     pushFollow(FOLLOW_ruleSimpleType_in_rule__Type__Alternatives431);
                     ruleSimpleType();
-                    _fsp--;
+
+                    state._fsp--;
 
                      after(grammarAccess.getTypeAccess().getSimpleTypeParserRuleCall_0()); 
 
@@ -582,7 +610,8 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
                      before(grammarAccess.getTypeAccess().getEntityParserRuleCall_1()); 
                     pushFollow(FOLLOW_ruleEntity_in_rule__Type__Alternatives448);
                     ruleEntity();
-                    _fsp--;
+
+                    state._fsp--;
 
                      after(grammarAccess.getTypeAccess().getEntityParserRuleCall_1()); 
 
@@ -605,10 +634,10 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Type__Alternatives
+    // $ANTLR end "rule__Type__Alternatives"
 
 
-    // $ANTLR start rule__DataModel__Group__0
+    // $ANTLR start "rule__DataModel__Group__0"
     // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:253:1: rule__DataModel__Group__0 : rule__DataModel__Group__0__Impl rule__DataModel__Group__1 ;
     public final void rule__DataModel__Group__0() throws RecognitionException {
 
@@ -620,11 +649,13 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
             {
             pushFollow(FOLLOW_rule__DataModel__Group__0__Impl_in_rule__DataModel__Group__0478);
             rule__DataModel__Group__0__Impl();
-            _fsp--;
+
+            state._fsp--;
 
             pushFollow(FOLLOW_rule__DataModel__Group__1_in_rule__DataModel__Group__0481);
             rule__DataModel__Group__1();
-            _fsp--;
+
+            state._fsp--;
 
 
             }
@@ -641,10 +672,10 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__DataModel__Group__0
+    // $ANTLR end "rule__DataModel__Group__0"
 
 
-    // $ANTLR start rule__DataModel__Group__0__Impl
+    // $ANTLR start "rule__DataModel__Group__0__Impl"
     // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:265:1: rule__DataModel__Group__0__Impl : ( 'datamodel' ) ;
     public final void rule__DataModel__Group__0__Impl() throws RecognitionException {
 
@@ -678,10 +709,10 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__DataModel__Group__0__Impl
+    // $ANTLR end "rule__DataModel__Group__0__Impl"
 
 
-    // $ANTLR start rule__DataModel__Group__1
+    // $ANTLR start "rule__DataModel__Group__1"
     // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:284:1: rule__DataModel__Group__1 : rule__DataModel__Group__1__Impl rule__DataModel__Group__2 ;
     public final void rule__DataModel__Group__1() throws RecognitionException {
 
@@ -693,11 +724,13 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
             {
             pushFollow(FOLLOW_rule__DataModel__Group__1__Impl_in_rule__DataModel__Group__1540);
             rule__DataModel__Group__1__Impl();
-            _fsp--;
+
+            state._fsp--;
 
             pushFollow(FOLLOW_rule__DataModel__Group__2_in_rule__DataModel__Group__1543);
             rule__DataModel__Group__2();
-            _fsp--;
+
+            state._fsp--;
 
 
             }
@@ -714,10 +747,10 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__DataModel__Group__1
+    // $ANTLR end "rule__DataModel__Group__1"
 
 
-    // $ANTLR start rule__DataModel__Group__1__Impl
+    // $ANTLR start "rule__DataModel__Group__1__Impl"
     // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:296:1: rule__DataModel__Group__1__Impl : ( ( rule__DataModel__NameAssignment_1 ) ) ;
     public final void rule__DataModel__Group__1__Impl() throws RecognitionException {
 
@@ -736,7 +769,8 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
             {
             pushFollow(FOLLOW_rule__DataModel__NameAssignment_1_in_rule__DataModel__Group__1__Impl570);
             rule__DataModel__NameAssignment_1();
-            _fsp--;
+
+            state._fsp--;
 
 
             }
@@ -760,10 +794,10 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__DataModel__Group__1__Impl
+    // $ANTLR end "rule__DataModel__Group__1__Impl"
 
 
-    // $ANTLR start rule__DataModel__Group__2
+    // $ANTLR start "rule__DataModel__Group__2"
     // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:313:1: rule__DataModel__Group__2 : rule__DataModel__Group__2__Impl rule__DataModel__Group__3 ;
     public final void rule__DataModel__Group__2() throws RecognitionException {
 
@@ -775,11 +809,13 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
             {
             pushFollow(FOLLOW_rule__DataModel__Group__2__Impl_in_rule__DataModel__Group__2600);
             rule__DataModel__Group__2__Impl();
-            _fsp--;
+
+            state._fsp--;
 
             pushFollow(FOLLOW_rule__DataModel__Group__3_in_rule__DataModel__Group__2603);
             rule__DataModel__Group__3();
-            _fsp--;
+
+            state._fsp--;
 
 
             }
@@ -796,10 +832,10 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__DataModel__Group__2
+    // $ANTLR end "rule__DataModel__Group__2"
 
 
-    // $ANTLR start rule__DataModel__Group__2__Impl
+    // $ANTLR start "rule__DataModel__Group__2__Impl"
     // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:325:1: rule__DataModel__Group__2__Impl : ( '{' ) ;
     public final void rule__DataModel__Group__2__Impl() throws RecognitionException {
 
@@ -833,10 +869,10 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__DataModel__Group__2__Impl
+    // $ANTLR end "rule__DataModel__Group__2__Impl"
 
 
-    // $ANTLR start rule__DataModel__Group__3
+    // $ANTLR start "rule__DataModel__Group__3"
     // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:344:1: rule__DataModel__Group__3 : rule__DataModel__Group__3__Impl rule__DataModel__Group__4 ;
     public final void rule__DataModel__Group__3() throws RecognitionException {
 
@@ -848,11 +884,13 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
             {
             pushFollow(FOLLOW_rule__DataModel__Group__3__Impl_in_rule__DataModel__Group__3662);
             rule__DataModel__Group__3__Impl();
-            _fsp--;
+
+            state._fsp--;
 
             pushFollow(FOLLOW_rule__DataModel__Group__4_in_rule__DataModel__Group__3665);
             rule__DataModel__Group__4();
-            _fsp--;
+
+            state._fsp--;
 
 
             }
@@ -869,10 +907,10 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__DataModel__Group__3
+    // $ANTLR end "rule__DataModel__Group__3"
 
 
-    // $ANTLR start rule__DataModel__Group__3__Impl
+    // $ANTLR start "rule__DataModel__Group__3__Impl"
     // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:356:1: rule__DataModel__Group__3__Impl : ( ( rule__DataModel__TypesAssignment_3 )* ) ;
     public final void rule__DataModel__Group__3__Impl() throws RecognitionException {
 
@@ -903,7 +941,8 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
             	    {
             	    pushFollow(FOLLOW_rule__DataModel__TypesAssignment_3_in_rule__DataModel__Group__3__Impl692);
             	    rule__DataModel__TypesAssignment_3();
-            	    _fsp--;
+
+            	    state._fsp--;
 
 
             	    }
@@ -933,10 +972,10 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__DataModel__Group__3__Impl
+    // $ANTLR end "rule__DataModel__Group__3__Impl"
 
 
-    // $ANTLR start rule__DataModel__Group__4
+    // $ANTLR start "rule__DataModel__Group__4"
     // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:373:1: rule__DataModel__Group__4 : rule__DataModel__Group__4__Impl ;
     public final void rule__DataModel__Group__4() throws RecognitionException {
 
@@ -948,7 +987,8 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
             {
             pushFollow(FOLLOW_rule__DataModel__Group__4__Impl_in_rule__DataModel__Group__4723);
             rule__DataModel__Group__4__Impl();
-            _fsp--;
+
+            state._fsp--;
 
 
             }
@@ -965,10 +1005,10 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__DataModel__Group__4
+    // $ANTLR end "rule__DataModel__Group__4"
 
 
-    // $ANTLR start rule__DataModel__Group__4__Impl
+    // $ANTLR start "rule__DataModel__Group__4__Impl"
     // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:384:1: rule__DataModel__Group__4__Impl : ( '}' ) ;
     public final void rule__DataModel__Group__4__Impl() throws RecognitionException {
 
@@ -1002,10 +1042,10 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__DataModel__Group__4__Impl
+    // $ANTLR end "rule__DataModel__Group__4__Impl"
 
 
-    // $ANTLR start rule__SimpleType__Group__0
+    // $ANTLR start "rule__SimpleType__Group__0"
     // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:413:1: rule__SimpleType__Group__0 : rule__SimpleType__Group__0__Impl rule__SimpleType__Group__1 ;
     public final void rule__SimpleType__Group__0() throws RecognitionException {
 
@@ -1017,11 +1057,13 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
             {
             pushFollow(FOLLOW_rule__SimpleType__Group__0__Impl_in_rule__SimpleType__Group__0792);
             rule__SimpleType__Group__0__Impl();
-            _fsp--;
+
+            state._fsp--;
 
             pushFollow(FOLLOW_rule__SimpleType__Group__1_in_rule__SimpleType__Group__0795);
             rule__SimpleType__Group__1();
-            _fsp--;
+
+            state._fsp--;
 
 
             }
@@ -1038,10 +1080,10 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__SimpleType__Group__0
+    // $ANTLR end "rule__SimpleType__Group__0"
 
 
-    // $ANTLR start rule__SimpleType__Group__0__Impl
+    // $ANTLR start "rule__SimpleType__Group__0__Impl"
     // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:425:1: rule__SimpleType__Group__0__Impl : ( 'type' ) ;
     public final void rule__SimpleType__Group__0__Impl() throws RecognitionException {
 
@@ -1075,10 +1117,10 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__SimpleType__Group__0__Impl
+    // $ANTLR end "rule__SimpleType__Group__0__Impl"
 
 
-    // $ANTLR start rule__SimpleType__Group__1
+    // $ANTLR start "rule__SimpleType__Group__1"
     // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:444:1: rule__SimpleType__Group__1 : rule__SimpleType__Group__1__Impl ;
     public final void rule__SimpleType__Group__1() throws RecognitionException {
 
@@ -1090,7 +1132,8 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
             {
             pushFollow(FOLLOW_rule__SimpleType__Group__1__Impl_in_rule__SimpleType__Group__1854);
             rule__SimpleType__Group__1__Impl();
-            _fsp--;
+
+            state._fsp--;
 
 
             }
@@ -1107,10 +1150,10 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__SimpleType__Group__1
+    // $ANTLR end "rule__SimpleType__Group__1"
 
 
-    // $ANTLR start rule__SimpleType__Group__1__Impl
+    // $ANTLR start "rule__SimpleType__Group__1__Impl"
     // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:455:1: rule__SimpleType__Group__1__Impl : ( ( rule__SimpleType__NameAssignment_1 ) ) ;
     public final void rule__SimpleType__Group__1__Impl() throws RecognitionException {
 
@@ -1129,7 +1172,8 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
             {
             pushFollow(FOLLOW_rule__SimpleType__NameAssignment_1_in_rule__SimpleType__Group__1__Impl881);
             rule__SimpleType__NameAssignment_1();
-            _fsp--;
+
+            state._fsp--;
 
 
             }
@@ -1153,10 +1197,10 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__SimpleType__Group__1__Impl
+    // $ANTLR end "rule__SimpleType__Group__1__Impl"
 
 
-    // $ANTLR start rule__Entity__Group__0
+    // $ANTLR start "rule__Entity__Group__0"
     // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:476:1: rule__Entity__Group__0 : rule__Entity__Group__0__Impl rule__Entity__Group__1 ;
     public final void rule__Entity__Group__0() throws RecognitionException {
 
@@ -1168,11 +1212,13 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
             {
             pushFollow(FOLLOW_rule__Entity__Group__0__Impl_in_rule__Entity__Group__0915);
             rule__Entity__Group__0__Impl();
-            _fsp--;
+
+            state._fsp--;
 
             pushFollow(FOLLOW_rule__Entity__Group__1_in_rule__Entity__Group__0918);
             rule__Entity__Group__1();
-            _fsp--;
+
+            state._fsp--;
 
 
             }
@@ -1189,10 +1235,10 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Entity__Group__0
+    // $ANTLR end "rule__Entity__Group__0"
 
 
-    // $ANTLR start rule__Entity__Group__0__Impl
+    // $ANTLR start "rule__Entity__Group__0__Impl"
     // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:488:1: rule__Entity__Group__0__Impl : ( 'entity' ) ;
     public final void rule__Entity__Group__0__Impl() throws RecognitionException {
 
@@ -1226,10 +1272,10 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Entity__Group__0__Impl
+    // $ANTLR end "rule__Entity__Group__0__Impl"
 
 
-    // $ANTLR start rule__Entity__Group__1
+    // $ANTLR start "rule__Entity__Group__1"
     // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:507:1: rule__Entity__Group__1 : rule__Entity__Group__1__Impl rule__Entity__Group__2 ;
     public final void rule__Entity__Group__1() throws RecognitionException {
 
@@ -1241,11 +1287,13 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
             {
             pushFollow(FOLLOW_rule__Entity__Group__1__Impl_in_rule__Entity__Group__1977);
             rule__Entity__Group__1__Impl();
-            _fsp--;
+
+            state._fsp--;
 
             pushFollow(FOLLOW_rule__Entity__Group__2_in_rule__Entity__Group__1980);
             rule__Entity__Group__2();
-            _fsp--;
+
+            state._fsp--;
 
 
             }
@@ -1262,10 +1310,10 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Entity__Group__1
+    // $ANTLR end "rule__Entity__Group__1"
 
 
-    // $ANTLR start rule__Entity__Group__1__Impl
+    // $ANTLR start "rule__Entity__Group__1__Impl"
     // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:519:1: rule__Entity__Group__1__Impl : ( ( rule__Entity__NameAssignment_1 ) ) ;
     public final void rule__Entity__Group__1__Impl() throws RecognitionException {
 
@@ -1284,7 +1332,8 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
             {
             pushFollow(FOLLOW_rule__Entity__NameAssignment_1_in_rule__Entity__Group__1__Impl1007);
             rule__Entity__NameAssignment_1();
-            _fsp--;
+
+            state._fsp--;
 
 
             }
@@ -1308,10 +1357,10 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Entity__Group__1__Impl
+    // $ANTLR end "rule__Entity__Group__1__Impl"
 
 
-    // $ANTLR start rule__Entity__Group__2
+    // $ANTLR start "rule__Entity__Group__2"
     // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:536:1: rule__Entity__Group__2 : rule__Entity__Group__2__Impl rule__Entity__Group__3 ;
     public final void rule__Entity__Group__2() throws RecognitionException {
 
@@ -1323,11 +1372,13 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
             {
             pushFollow(FOLLOW_rule__Entity__Group__2__Impl_in_rule__Entity__Group__21037);
             rule__Entity__Group__2__Impl();
-            _fsp--;
+
+            state._fsp--;
 
             pushFollow(FOLLOW_rule__Entity__Group__3_in_rule__Entity__Group__21040);
             rule__Entity__Group__3();
-            _fsp--;
+
+            state._fsp--;
 
 
             }
@@ -1344,10 +1395,10 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Entity__Group__2
+    // $ANTLR end "rule__Entity__Group__2"
 
 
-    // $ANTLR start rule__Entity__Group__2__Impl
+    // $ANTLR start "rule__Entity__Group__2__Impl"
     // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:548:1: rule__Entity__Group__2__Impl : ( '{' ) ;
     public final void rule__Entity__Group__2__Impl() throws RecognitionException {
 
@@ -1381,10 +1432,10 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Entity__Group__2__Impl
+    // $ANTLR end "rule__Entity__Group__2__Impl"
 
 
-    // $ANTLR start rule__Entity__Group__3
+    // $ANTLR start "rule__Entity__Group__3"
     // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:567:1: rule__Entity__Group__3 : rule__Entity__Group__3__Impl rule__Entity__Group__4 ;
     public final void rule__Entity__Group__3() throws RecognitionException {
 
@@ -1396,11 +1447,13 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
             {
             pushFollow(FOLLOW_rule__Entity__Group__3__Impl_in_rule__Entity__Group__31099);
             rule__Entity__Group__3__Impl();
-            _fsp--;
+
+            state._fsp--;
 
             pushFollow(FOLLOW_rule__Entity__Group__4_in_rule__Entity__Group__31102);
             rule__Entity__Group__4();
-            _fsp--;
+
+            state._fsp--;
 
 
             }
@@ -1417,10 +1470,10 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Entity__Group__3
+    // $ANTLR end "rule__Entity__Group__3"
 
 
-    // $ANTLR start rule__Entity__Group__3__Impl
+    // $ANTLR start "rule__Entity__Group__3__Impl"
     // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:579:1: rule__Entity__Group__3__Impl : ( ( rule__Entity__AttributesAssignment_3 )* ) ;
     public final void rule__Entity__Group__3__Impl() throws RecognitionException {
 
@@ -1451,7 +1504,8 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
             	    {
             	    pushFollow(FOLLOW_rule__Entity__AttributesAssignment_3_in_rule__Entity__Group__3__Impl1129);
             	    rule__Entity__AttributesAssignment_3();
-            	    _fsp--;
+
+            	    state._fsp--;
 
 
             	    }
@@ -1481,10 +1535,10 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Entity__Group__3__Impl
+    // $ANTLR end "rule__Entity__Group__3__Impl"
 
 
-    // $ANTLR start rule__Entity__Group__4
+    // $ANTLR start "rule__Entity__Group__4"
     // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:596:1: rule__Entity__Group__4 : rule__Entity__Group__4__Impl ;
     public final void rule__Entity__Group__4() throws RecognitionException {
 
@@ -1496,7 +1550,8 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
             {
             pushFollow(FOLLOW_rule__Entity__Group__4__Impl_in_rule__Entity__Group__41160);
             rule__Entity__Group__4__Impl();
-            _fsp--;
+
+            state._fsp--;
 
 
             }
@@ -1513,10 +1568,10 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Entity__Group__4
+    // $ANTLR end "rule__Entity__Group__4"
 
 
-    // $ANTLR start rule__Entity__Group__4__Impl
+    // $ANTLR start "rule__Entity__Group__4__Impl"
     // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:607:1: rule__Entity__Group__4__Impl : ( '}' ) ;
     public final void rule__Entity__Group__4__Impl() throws RecognitionException {
 
@@ -1550,10 +1605,10 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Entity__Group__4__Impl
+    // $ANTLR end "rule__Entity__Group__4__Impl"
 
 
-    // $ANTLR start rule__Attribute__Group__0
+    // $ANTLR start "rule__Attribute__Group__0"
     // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:636:1: rule__Attribute__Group__0 : rule__Attribute__Group__0__Impl rule__Attribute__Group__1 ;
     public final void rule__Attribute__Group__0() throws RecognitionException {
 
@@ -1565,11 +1620,13 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
             {
             pushFollow(FOLLOW_rule__Attribute__Group__0__Impl_in_rule__Attribute__Group__01229);
             rule__Attribute__Group__0__Impl();
-            _fsp--;
+
+            state._fsp--;
 
             pushFollow(FOLLOW_rule__Attribute__Group__1_in_rule__Attribute__Group__01232);
             rule__Attribute__Group__1();
-            _fsp--;
+
+            state._fsp--;
 
 
             }
@@ -1586,10 +1643,10 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Attribute__Group__0
+    // $ANTLR end "rule__Attribute__Group__0"
 
 
-    // $ANTLR start rule__Attribute__Group__0__Impl
+    // $ANTLR start "rule__Attribute__Group__0__Impl"
     // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:648:1: rule__Attribute__Group__0__Impl : ( ( rule__Attribute__NameAssignment_0 ) ) ;
     public final void rule__Attribute__Group__0__Impl() throws RecognitionException {
 
@@ -1608,7 +1665,8 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
             {
             pushFollow(FOLLOW_rule__Attribute__NameAssignment_0_in_rule__Attribute__Group__0__Impl1259);
             rule__Attribute__NameAssignment_0();
-            _fsp--;
+
+            state._fsp--;
 
 
             }
@@ -1632,10 +1690,10 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Attribute__Group__0__Impl
+    // $ANTLR end "rule__Attribute__Group__0__Impl"
 
 
-    // $ANTLR start rule__Attribute__Group__1
+    // $ANTLR start "rule__Attribute__Group__1"
     // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:665:1: rule__Attribute__Group__1 : rule__Attribute__Group__1__Impl rule__Attribute__Group__2 ;
     public final void rule__Attribute__Group__1() throws RecognitionException {
 
@@ -1647,11 +1705,13 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
             {
             pushFollow(FOLLOW_rule__Attribute__Group__1__Impl_in_rule__Attribute__Group__11289);
             rule__Attribute__Group__1__Impl();
-            _fsp--;
+
+            state._fsp--;
 
             pushFollow(FOLLOW_rule__Attribute__Group__2_in_rule__Attribute__Group__11292);
             rule__Attribute__Group__2();
-            _fsp--;
+
+            state._fsp--;
 
 
             }
@@ -1668,10 +1728,10 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Attribute__Group__1
+    // $ANTLR end "rule__Attribute__Group__1"
 
 
-    // $ANTLR start rule__Attribute__Group__1__Impl
+    // $ANTLR start "rule__Attribute__Group__1__Impl"
     // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:677:1: rule__Attribute__Group__1__Impl : ( ':' ) ;
     public final void rule__Attribute__Group__1__Impl() throws RecognitionException {
 
@@ -1705,10 +1765,10 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Attribute__Group__1__Impl
+    // $ANTLR end "rule__Attribute__Group__1__Impl"
 
 
-    // $ANTLR start rule__Attribute__Group__2
+    // $ANTLR start "rule__Attribute__Group__2"
     // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:696:1: rule__Attribute__Group__2 : rule__Attribute__Group__2__Impl rule__Attribute__Group__3 ;
     public final void rule__Attribute__Group__2() throws RecognitionException {
 
@@ -1720,11 +1780,13 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
             {
             pushFollow(FOLLOW_rule__Attribute__Group__2__Impl_in_rule__Attribute__Group__21351);
             rule__Attribute__Group__2__Impl();
-            _fsp--;
+
+            state._fsp--;
 
             pushFollow(FOLLOW_rule__Attribute__Group__3_in_rule__Attribute__Group__21354);
             rule__Attribute__Group__3();
-            _fsp--;
+
+            state._fsp--;
 
 
             }
@@ -1741,10 +1803,10 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Attribute__Group__2
+    // $ANTLR end "rule__Attribute__Group__2"
 
 
-    // $ANTLR start rule__Attribute__Group__2__Impl
+    // $ANTLR start "rule__Attribute__Group__2__Impl"
     // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:708:1: rule__Attribute__Group__2__Impl : ( ( rule__Attribute__TypeAssignment_2 ) ) ;
     public final void rule__Attribute__Group__2__Impl() throws RecognitionException {
 
@@ -1763,7 +1825,8 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
             {
             pushFollow(FOLLOW_rule__Attribute__TypeAssignment_2_in_rule__Attribute__Group__2__Impl1381);
             rule__Attribute__TypeAssignment_2();
-            _fsp--;
+
+            state._fsp--;
 
 
             }
@@ -1787,10 +1850,10 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Attribute__Group__2__Impl
+    // $ANTLR end "rule__Attribute__Group__2__Impl"
 
 
-    // $ANTLR start rule__Attribute__Group__3
+    // $ANTLR start "rule__Attribute__Group__3"
     // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:725:1: rule__Attribute__Group__3 : rule__Attribute__Group__3__Impl ;
     public final void rule__Attribute__Group__3() throws RecognitionException {
 
@@ -1802,7 +1865,8 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
             {
             pushFollow(FOLLOW_rule__Attribute__Group__3__Impl_in_rule__Attribute__Group__31411);
             rule__Attribute__Group__3__Impl();
-            _fsp--;
+
+            state._fsp--;
 
 
             }
@@ -1819,10 +1883,10 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Attribute__Group__3
+    // $ANTLR end "rule__Attribute__Group__3"
 
 
-    // $ANTLR start rule__Attribute__Group__3__Impl
+    // $ANTLR start "rule__Attribute__Group__3__Impl"
     // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:736:1: rule__Attribute__Group__3__Impl : ( ( rule__Attribute__MultiplicityAssignment_3 )? ) ;
     public final void rule__Attribute__Group__3__Impl() throws RecognitionException {
 
@@ -1849,7 +1913,8 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
                     {
                     pushFollow(FOLLOW_rule__Attribute__MultiplicityAssignment_3_in_rule__Attribute__Group__3__Impl1438);
                     rule__Attribute__MultiplicityAssignment_3();
-                    _fsp--;
+
+                    state._fsp--;
 
 
                     }
@@ -1876,10 +1941,10 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Attribute__Group__3__Impl
+    // $ANTLR end "rule__Attribute__Group__3__Impl"
 
 
-    // $ANTLR start rule__Model__DatamodelsAssignment
+    // $ANTLR start "rule__Model__DatamodelsAssignment"
     // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:762:1: rule__Model__DatamodelsAssignment : ( ruleDataModel ) ;
     public final void rule__Model__DatamodelsAssignment() throws RecognitionException {
 
@@ -1895,7 +1960,8 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
              before(grammarAccess.getModelAccess().getDatamodelsDataModelParserRuleCall_0()); 
             pushFollow(FOLLOW_ruleDataModel_in_rule__Model__DatamodelsAssignment1482);
             ruleDataModel();
-            _fsp--;
+
+            state._fsp--;
 
              after(grammarAccess.getModelAccess().getDatamodelsDataModelParserRuleCall_0()); 
 
@@ -1916,10 +1982,10 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Model__DatamodelsAssignment
+    // $ANTLR end "rule__Model__DatamodelsAssignment"
 
 
-    // $ANTLR start rule__DataModel__NameAssignment_1
+    // $ANTLR start "rule__DataModel__NameAssignment_1"
     // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:777:1: rule__DataModel__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__DataModel__NameAssignment_1() throws RecognitionException {
 
@@ -1953,10 +2019,10 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__DataModel__NameAssignment_1
+    // $ANTLR end "rule__DataModel__NameAssignment_1"
 
 
-    // $ANTLR start rule__DataModel__TypesAssignment_3
+    // $ANTLR start "rule__DataModel__TypesAssignment_3"
     // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:792:1: rule__DataModel__TypesAssignment_3 : ( ruleType ) ;
     public final void rule__DataModel__TypesAssignment_3() throws RecognitionException {
 
@@ -1972,7 +2038,8 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
              before(grammarAccess.getDataModelAccess().getTypesTypeParserRuleCall_3_0()); 
             pushFollow(FOLLOW_ruleType_in_rule__DataModel__TypesAssignment_31544);
             ruleType();
-            _fsp--;
+
+            state._fsp--;
 
              after(grammarAccess.getDataModelAccess().getTypesTypeParserRuleCall_3_0()); 
 
@@ -1993,10 +2060,10 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__DataModel__TypesAssignment_3
+    // $ANTLR end "rule__DataModel__TypesAssignment_3"
 
 
-    // $ANTLR start rule__SimpleType__NameAssignment_1
+    // $ANTLR start "rule__SimpleType__NameAssignment_1"
     // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:807:1: rule__SimpleType__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__SimpleType__NameAssignment_1() throws RecognitionException {
 
@@ -2030,10 +2097,10 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__SimpleType__NameAssignment_1
+    // $ANTLR end "rule__SimpleType__NameAssignment_1"
 
 
-    // $ANTLR start rule__Entity__NameAssignment_1
+    // $ANTLR start "rule__Entity__NameAssignment_1"
     // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:822:1: rule__Entity__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Entity__NameAssignment_1() throws RecognitionException {
 
@@ -2067,10 +2134,10 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Entity__NameAssignment_1
+    // $ANTLR end "rule__Entity__NameAssignment_1"
 
 
-    // $ANTLR start rule__Entity__AttributesAssignment_3
+    // $ANTLR start "rule__Entity__AttributesAssignment_3"
     // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:837:1: rule__Entity__AttributesAssignment_3 : ( ruleAttribute ) ;
     public final void rule__Entity__AttributesAssignment_3() throws RecognitionException {
 
@@ -2086,7 +2153,8 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
              before(grammarAccess.getEntityAccess().getAttributesAttributeParserRuleCall_3_0()); 
             pushFollow(FOLLOW_ruleAttribute_in_rule__Entity__AttributesAssignment_31637);
             ruleAttribute();
-            _fsp--;
+
+            state._fsp--;
 
              after(grammarAccess.getEntityAccess().getAttributesAttributeParserRuleCall_3_0()); 
 
@@ -2107,10 +2175,10 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Entity__AttributesAssignment_3
+    // $ANTLR end "rule__Entity__AttributesAssignment_3"
 
 
-    // $ANTLR start rule__Attribute__NameAssignment_0
+    // $ANTLR start "rule__Attribute__NameAssignment_0"
     // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:852:1: rule__Attribute__NameAssignment_0 : ( RULE_ID ) ;
     public final void rule__Attribute__NameAssignment_0() throws RecognitionException {
 
@@ -2144,10 +2212,10 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Attribute__NameAssignment_0
+    // $ANTLR end "rule__Attribute__NameAssignment_0"
 
 
-    // $ANTLR start rule__Attribute__TypeAssignment_2
+    // $ANTLR start "rule__Attribute__TypeAssignment_2"
     // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:867:1: rule__Attribute__TypeAssignment_2 : ( ( RULE_ID ) ) ;
     public final void rule__Attribute__TypeAssignment_2() throws RecognitionException {
 
@@ -2189,10 +2257,10 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Attribute__TypeAssignment_2
+    // $ANTLR end "rule__Attribute__TypeAssignment_2"
 
 
-    // $ANTLR start rule__Attribute__MultiplicityAssignment_3
+    // $ANTLR start "rule__Attribute__MultiplicityAssignment_3"
     // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:886:1: rule__Attribute__MultiplicityAssignment_3 : ( ( '[]' ) ) ;
     public final void rule__Attribute__MultiplicityAssignment_3() throws RecognitionException {
 
@@ -2234,7 +2302,9 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Attribute__MultiplicityAssignment_3
+    // $ANTLR end "rule__Attribute__MultiplicityAssignment_3"
+
+    // Delegated rules
 
 
  
@@ -2268,7 +2338,7 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__DataModel__Group__2__Impl_in_rule__DataModel__Group__2600 = new BitSet(new long[]{0x000000000000E000L});
     public static final BitSet FOLLOW_rule__DataModel__Group__3_in_rule__DataModel__Group__2603 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_12_in_rule__DataModel__Group__2__Impl631 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__DataModel__Group__3__Impl_in_rule__DataModel__Group__3662 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_rule__DataModel__Group__3__Impl_in_rule__DataModel__Group__3662 = new BitSet(new long[]{0x000000000000E000L});
     public static final BitSet FOLLOW_rule__DataModel__Group__4_in_rule__DataModel__Group__3665 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__DataModel__TypesAssignment_3_in_rule__DataModel__Group__3__Impl692 = new BitSet(new long[]{0x000000000000C002L});
     public static final BitSet FOLLOW_rule__DataModel__Group__4__Impl_in_rule__DataModel__Group__4723 = new BitSet(new long[]{0x0000000000000002L});
@@ -2287,7 +2357,7 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__Entity__Group__2__Impl_in_rule__Entity__Group__21037 = new BitSet(new long[]{0x0000000000002010L});
     public static final BitSet FOLLOW_rule__Entity__Group__3_in_rule__Entity__Group__21040 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_12_in_rule__Entity__Group__2__Impl1068 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Entity__Group__3__Impl_in_rule__Entity__Group__31099 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_rule__Entity__Group__3__Impl_in_rule__Entity__Group__31099 = new BitSet(new long[]{0x0000000000002010L});
     public static final BitSet FOLLOW_rule__Entity__Group__4_in_rule__Entity__Group__31102 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Entity__AttributesAssignment_3_in_rule__Entity__Group__3__Impl1129 = new BitSet(new long[]{0x0000000000000012L});
     public static final BitSet FOLLOW_rule__Entity__Group__4__Impl_in_rule__Entity__Group__41160 = new BitSet(new long[]{0x0000000000000002L});
@@ -2298,7 +2368,7 @@ public class InternalPhysisParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__Attribute__Group__1__Impl_in_rule__Attribute__Group__11289 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_rule__Attribute__Group__2_in_rule__Attribute__Group__11292 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_16_in_rule__Attribute__Group__1__Impl1320 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Attribute__Group__2__Impl_in_rule__Attribute__Group__21351 = new BitSet(new long[]{0x0000000000020002L});
+    public static final BitSet FOLLOW_rule__Attribute__Group__2__Impl_in_rule__Attribute__Group__21351 = new BitSet(new long[]{0x0000000000020000L});
     public static final BitSet FOLLOW_rule__Attribute__Group__3_in_rule__Attribute__Group__21354 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Attribute__TypeAssignment_2_in_rule__Attribute__Group__2__Impl1381 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Attribute__Group__3__Impl_in_rule__Attribute__Group__31411 = new BitSet(new long[]{0x0000000000000002L});

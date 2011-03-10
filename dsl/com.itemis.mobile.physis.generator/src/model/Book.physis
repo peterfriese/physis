@@ -1,9 +1,0 @@
-datamodel default {
-	type NSString
-
-	entity Book {
-		title: NSString
-		author: NSString
-		publisher: NSString
-	}
-}

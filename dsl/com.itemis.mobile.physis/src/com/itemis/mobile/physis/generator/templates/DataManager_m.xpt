@@ -1,0 +1,86 @@
+«IMPORT com::itemis::mobile::physis::physis»
+
+«EXTENSION templates::Extensions»
+
+«DEFINE moduleFile FOR DataModel-»
+«FILE moduleFileName()-»
+//
+//  «moduleFileName()»
+//  [TODO: projectName]
+//
+//  Created by [TODO: authorname] on [TODO: generatedDate].
+//  [TODO: copyright string]
+//
+
+#import "«headerFileName()»"
+
+@implementation «datamanagerClassName()»
+
+«EXPAND managedObjectModel FOR this-»
+
+@end
+«ENDFILE»
+«ENDDEFINE»
+
+«DEFINE managedObjectModel FOR DataModel-»
++(NSManagedObjectModel *) managedObjectModel {
+	static NSManagedObjectModel *mom = nil;
+	if (mom != nil) {
+		return mom;
+	}
+	mom = [[NSManagedObjectModel alloc] init];
+	
+	«EXPAND entityDescriptions FOR this-»
+    
+	return mom;
+}
+«ENDDEFINE»
+
+«DEFINE entityDescriptions FOR DataModel-»
+    NSMutableArray *entities = [[NSMutableArray alloc] init];
+    
+    «EXPAND entityDescription FOREACH this.entities()-»
+    
+	[mom setEntities:entities];
+    [entities release];
+«ENDDEFINE»
+
+«DEFINE entityDescription FOR Entity-»
+	// Entity «this.entityName()»
+	NSEntityDescription *«entityDescriptionName()» = [[NSEntityDescription alloc] init];
+	[«entityDescriptionName()» setName:@"«this.entityName()»"];
+	[«entityDescriptionName()» setManagedObjectClassName:@"«managedClassName()»"];
+    [entities addObject:«entityDescriptionName()»];
+    
+    «EXPAND attributeDescriptions FOR this-»
+«ENDDEFINE»
+
+«DEFINE attributeDescriptions FOR Entity-»
+	NSMutableArray *«entityAttributeDescriptionCollectionName()» = [[NSMutableArray alloc] init];
+	«EXPAND attributeDescription FOREACH this.attributes»
+	[«entityDescriptionName()» setProperties:«entityAttributeDescriptionCollectionName()»];
+	[«entityAttributeDescriptionCollectionName()» release];
+«ENDDEFINE»
+
+«DEFINE attributeDescription FOR Attribute»
+	// Attribute «this.entity().entityName()»::«this.attributeName()»
+	NSAttributeDescription *«attributeDescriptionName()» = [[NSAttributeDescription alloc] init];
+	[«attributeDescriptionName()» setName:@"«attributeName()»"];
+	[«attributeDescriptionName()» setAttributeType:«this.attributeType()»];
+	[«attributeDescriptionName()» setOptional:NO];
+	[«this.entityAttributeDescriptionCollectionName()» addObject:«attributeDescriptionName()»];
+«ENDDEFINE»
+
+«REM»
+	// MORE STUFF:
+	NSAttributeDescription *idAttribute = [[NSAttributeDescription alloc] init];
+	[idAttribute setName:@"processID"];
+	[idAttribute setAttributeType:NSInteger32AttributeType];
+	[idAttribute setOptional:NO];
+	[idAttribute setDefaultValue:[NSNumber numberWithInteger:-1]];
+	
+	NSPredicate *validationPredicate = [NSPredicate predicateWithFormat:@"SELF >0"];
+	NSString *validationWarning = @"Process ID < 1";
+	[idAttribute setValidationPredicates:[NSArray arrayWithObject:validationPredicate] 
+				  withValidationWarnings:[NSArray arrayWithObject:validationWarning]];
+«ENDREM»

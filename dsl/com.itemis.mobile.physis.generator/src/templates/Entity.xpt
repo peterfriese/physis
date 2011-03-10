@@ -1,8 +1,0 @@
-«IMPORT com::itemis::mobile::physis::physis»
-
-«EXTENSION templates::Extensions»
-
-«DEFINE main FOR Entity-»
-«EXPAND Entity_h::headerFile FOR this»
-«EXPAND Entity_m::moduleFile FOR this»
-«ENDDEFINE»
