@@ -1,8 +1,0 @@
-«IMPORT com::itemis::mobile::physis::physis»
-
-«EXTENSION templates::Extensions»
-
-«DEFINE main FOR DataModel-»
-«EXPAND Entity::main FOREACH this.entities()»
-«EXPAND DataManager::main FOR this»
-«ENDDEFINE»

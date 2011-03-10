@@ -139,6 +139,12 @@
 
 
 
+   <extension
+         point="org.eclipse.xtext.builder.participant">
+      <participant
+            class="com.itemis.mobile.physis.ui.PhysisExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant">
+      </participant>
+   </extension>
 
 	<!-- Quick Outline -->
 	<extension
@@ -179,6 +185,14 @@
       <markerResolutionGenerator
             class="com.itemis.mobile.physis.ui.PhysisExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator">
       </markerResolutionGenerator>
+   </extension>
+
+
+   <extension
+         point="org.eclipse.xtext.builder.participant">
+      <participant
+            class="com.itemis.mobile.physis.ui.PhysisExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant">
+      </participant>
    </extension>
 
 </plugin>

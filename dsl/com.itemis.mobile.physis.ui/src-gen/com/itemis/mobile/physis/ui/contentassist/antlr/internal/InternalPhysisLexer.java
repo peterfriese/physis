@@ -14,160 +14,182 @@ import java.util.ArrayList;
 public class InternalPhysisLexer extends Lexer {
     public static final int RULE_ID=4;
     public static final int RULE_STRING=6;
+    public static final int T__16=16;
+    public static final int T__15=15;
+    public static final int T__17=17;
+    public static final int T__12=12;
+    public static final int T__11=11;
+    public static final int T__14=14;
+    public static final int T__13=13;
     public static final int RULE_ANY_OTHER=10;
     public static final int RULE_INT=5;
-    public static final int T11=11;
-    public static final int T12=12;
-    public static final int T13=13;
-    public static final int T14=14;
-    public static final int T15=15;
     public static final int RULE_WS=9;
-    public static final int Tokens=18;
-    public static final int T16=16;
     public static final int RULE_SL_COMMENT=8;
     public static final int EOF=-1;
-    public static final int T17=17;
     public static final int RULE_ML_COMMENT=7;
+
+    // delegates
+    // delegators
+
     public InternalPhysisLexer() {;} 
     public InternalPhysisLexer(CharStream input) {
-        super(input);
+        this(input, new RecognizerSharedState());
+    }
+    public InternalPhysisLexer(CharStream input, RecognizerSharedState state) {
+        super(input,state);
+
     }
     public String getGrammarFileName() { return "../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g"; }
 
-    // $ANTLR start T11
-    public final void mT11() throws RecognitionException {
+    // $ANTLR start "T__11"
+    public final void mT__11() throws RecognitionException {
         try {
-            int _type = T11;
-            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:10:5: ( 'datamodel' )
-            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:10:7: 'datamodel'
+            int _type = T__11;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:11:7: ( 'datamodel' )
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:11:9: 'datamodel'
             {
             match("datamodel"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T11
+    // $ANTLR end "T__11"
 
-    // $ANTLR start T12
-    public final void mT12() throws RecognitionException {
+    // $ANTLR start "T__12"
+    public final void mT__12() throws RecognitionException {
         try {
-            int _type = T12;
-            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:11:5: ( '{' )
-            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:11:7: '{'
+            int _type = T__12;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:12:7: ( '{' )
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:12:9: '{'
             {
             match('{'); 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T12
+    // $ANTLR end "T__12"
 
-    // $ANTLR start T13
-    public final void mT13() throws RecognitionException {
+    // $ANTLR start "T__13"
+    public final void mT__13() throws RecognitionException {
         try {
-            int _type = T13;
-            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:12:5: ( '}' )
-            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:12:7: '}'
+            int _type = T__13;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:13:7: ( '}' )
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:13:9: '}'
             {
             match('}'); 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T13
+    // $ANTLR end "T__13"
 
-    // $ANTLR start T14
-    public final void mT14() throws RecognitionException {
+    // $ANTLR start "T__14"
+    public final void mT__14() throws RecognitionException {
         try {
-            int _type = T14;
-            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:13:5: ( 'type' )
-            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:13:7: 'type'
+            int _type = T__14;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:14:7: ( 'type' )
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:14:9: 'type'
             {
             match("type"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T14
+    // $ANTLR end "T__14"
 
-    // $ANTLR start T15
-    public final void mT15() throws RecognitionException {
+    // $ANTLR start "T__15"
+    public final void mT__15() throws RecognitionException {
         try {
-            int _type = T15;
-            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:14:5: ( 'entity' )
-            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:14:7: 'entity'
+            int _type = T__15;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:15:7: ( 'entity' )
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:15:9: 'entity'
             {
             match("entity"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T15
+    // $ANTLR end "T__15"
 
-    // $ANTLR start T16
-    public final void mT16() throws RecognitionException {
+    // $ANTLR start "T__16"
+    public final void mT__16() throws RecognitionException {
         try {
-            int _type = T16;
-            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:15:5: ( ':' )
-            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:15:7: ':'
+            int _type = T__16;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:16:7: ( ':' )
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:16:9: ':'
             {
             match(':'); 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T16
+    // $ANTLR end "T__16"
 
-    // $ANTLR start T17
-    public final void mT17() throws RecognitionException {
+    // $ANTLR start "T__17"
+    public final void mT__17() throws RecognitionException {
         try {
-            int _type = T17;
-            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:16:5: ( '[]' )
-            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:16:7: '[]'
+            int _type = T__17;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:17:7: ( '[]' )
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:17:9: '[]'
             {
             match("[]"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T17
+    // $ANTLR end "T__17"
 
-    // $ANTLR start RULE_ID
+    // $ANTLR start "RULE_ID"
     public final void mRULE_ID() throws RecognitionException {
         try {
             int _type = RULE_ID;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
             // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:910:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
             // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:910:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
@@ -194,10 +216,9 @@ public class InternalPhysisLexer extends Lexer {
 
             }
             else {
-                MismatchedSetException mse =
-                    new MismatchedSetException(null,input);
-                recover(mse);    throw mse;
-            }
+                MismatchedSetException mse = new MismatchedSetException(null,input);
+                recover(mse);
+                throw mse;}
 
             // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:910:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
@@ -219,10 +240,9 @@ public class InternalPhysisLexer extends Lexer {
 
             	    }
             	    else {
-            	        MismatchedSetException mse =
-            	            new MismatchedSetException(null,input);
-            	        recover(mse);    throw mse;
-            	    }
+            	        MismatchedSetException mse = new MismatchedSetException(null,input);
+            	        recover(mse);
+            	        throw mse;}
 
 
             	    }
@@ -236,17 +256,19 @@ public class InternalPhysisLexer extends Lexer {
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end RULE_ID
+    // $ANTLR end "RULE_ID"
 
-    // $ANTLR start RULE_INT
+    // $ANTLR start "RULE_INT"
     public final void mRULE_INT() throws RecognitionException {
         try {
             int _type = RULE_INT;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
             // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:912:10: ( ( '0' .. '9' )+ )
             // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:912:12: ( '0' .. '9' )+
             {
@@ -283,21 +305,23 @@ public class InternalPhysisLexer extends Lexer {
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end RULE_INT
+    // $ANTLR end "RULE_INT"
 
-    // $ANTLR start RULE_STRING
+    // $ANTLR start "RULE_STRING"
     public final void mRULE_STRING() throws RecognitionException {
         try {
             int _type = RULE_STRING;
-            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:914:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:914:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:914:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:914:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:914:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:914:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -309,16 +333,16 @@ public class InternalPhysisLexer extends Lexer {
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("914:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )", 6, 0, input);
+                    new NoViableAltException("", 6, 0, input);
 
                 throw nvae;
             }
             switch (alt6) {
                 case 1 :
-                    // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:914:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:914:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:914:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:914:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -327,41 +351,39 @@ public class InternalPhysisLexer extends Lexer {
                         if ( (LA4_0=='\\') ) {
                             alt4=1;
                         }
-                        else if ( ((LA4_0>='\u0000' && LA4_0<='!')||(LA4_0>='#' && LA4_0<='[')||(LA4_0>=']' && LA4_0<='\uFFFE')) ) {
+                        else if ( ((LA4_0>='\u0000' && LA4_0<='!')||(LA4_0>='#' && LA4_0<='[')||(LA4_0>=']' && LA4_0<='\uFFFF')) ) {
                             alt4=2;
                         }
 
 
                         switch (alt4) {
                     	case 1 :
-                    	    // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:914:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' )
+                    	    // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:914:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
-                    	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||input.LA(1)=='t' ) {
+                    	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
                     	        input.consume();
 
                     	    }
                     	    else {
-                    	        MismatchedSetException mse =
-                    	            new MismatchedSetException(null,input);
-                    	        recover(mse);    throw mse;
-                    	    }
+                    	        MismatchedSetException mse = new MismatchedSetException(null,input);
+                    	        recover(mse);
+                    	        throw mse;}
 
 
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:914:62: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:914:66: ~ ( ( '\\\\' | '\"' ) )
                     	    {
-                    	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFE') ) {
+                    	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
 
                     	    }
                     	    else {
-                    	        MismatchedSetException mse =
-                    	            new MismatchedSetException(null,input);
-                    	        recover(mse);    throw mse;
-                    	    }
+                    	        MismatchedSetException mse = new MismatchedSetException(null,input);
+                    	        recover(mse);
+                    	        throw mse;}
 
 
                     	    }
@@ -377,10 +399,10 @@ public class InternalPhysisLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:914:82: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:914:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:914:87: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:914:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -389,41 +411,39 @@ public class InternalPhysisLexer extends Lexer {
                         if ( (LA5_0=='\\') ) {
                             alt5=1;
                         }
-                        else if ( ((LA5_0>='\u0000' && LA5_0<='&')||(LA5_0>='(' && LA5_0<='[')||(LA5_0>=']' && LA5_0<='\uFFFE')) ) {
+                        else if ( ((LA5_0>='\u0000' && LA5_0<='&')||(LA5_0>='(' && LA5_0<='[')||(LA5_0>=']' && LA5_0<='\uFFFF')) ) {
                             alt5=2;
                         }
 
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:914:88: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' )
+                    	    // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:914:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
-                    	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||input.LA(1)=='t' ) {
+                    	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
                     	        input.consume();
 
                     	    }
                     	    else {
-                    	        MismatchedSetException mse =
-                    	            new MismatchedSetException(null,input);
-                    	        recover(mse);    throw mse;
-                    	    }
+                    	        MismatchedSetException mse = new MismatchedSetException(null,input);
+                    	        recover(mse);
+                    	        throw mse;}
 
 
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:914:129: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:914:137: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
-                    	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFE') ) {
+                    	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
 
                     	    }
                     	    else {
-                    	        MismatchedSetException mse =
-                    	            new MismatchedSetException(null,input);
-                    	        recover(mse);    throw mse;
-                    	    }
+                    	        MismatchedSetException mse = new MismatchedSetException(null,input);
+                    	        recover(mse);
+                    	        throw mse;}
 
 
                     	    }
@@ -444,17 +464,19 @@ public class InternalPhysisLexer extends Lexer {
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end RULE_STRING
+    // $ANTLR end "RULE_STRING"
 
-    // $ANTLR start RULE_ML_COMMENT
+    // $ANTLR start "RULE_ML_COMMENT"
     public final void mRULE_ML_COMMENT() throws RecognitionException {
         try {
             int _type = RULE_ML_COMMENT;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
             // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:916:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
             // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:916:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
@@ -472,13 +494,13 @@ public class InternalPhysisLexer extends Lexer {
                     if ( (LA7_1=='/') ) {
                         alt7=2;
                     }
-                    else if ( ((LA7_1>='\u0000' && LA7_1<='.')||(LA7_1>='0' && LA7_1<='\uFFFE')) ) {
+                    else if ( ((LA7_1>='\u0000' && LA7_1<='.')||(LA7_1>='0' && LA7_1<='\uFFFF')) ) {
                         alt7=1;
                     }
 
 
                 }
-                else if ( ((LA7_0>='\u0000' && LA7_0<=')')||(LA7_0>='+' && LA7_0<='\uFFFE')) ) {
+                else if ( ((LA7_0>='\u0000' && LA7_0<=')')||(LA7_0>='+' && LA7_0<='\uFFFF')) ) {
                     alt7=1;
                 }
 
@@ -502,17 +524,19 @@ public class InternalPhysisLexer extends Lexer {
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end RULE_ML_COMMENT
+    // $ANTLR end "RULE_ML_COMMENT"
 
-    // $ANTLR start RULE_SL_COMMENT
+    // $ANTLR start "RULE_SL_COMMENT"
     public final void mRULE_SL_COMMENT() throws RecognitionException {
         try {
             int _type = RULE_SL_COMMENT;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
             // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:918:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
             // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:918:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
@@ -524,7 +548,7 @@ public class InternalPhysisLexer extends Lexer {
                 int alt8=2;
                 int LA8_0 = input.LA(1);
 
-                if ( ((LA8_0>='\u0000' && LA8_0<='\t')||(LA8_0>='\u000B' && LA8_0<='\f')||(LA8_0>='\u000E' && LA8_0<='\uFFFE')) ) {
+                if ( ((LA8_0>='\u0000' && LA8_0<='\t')||(LA8_0>='\u000B' && LA8_0<='\f')||(LA8_0>='\u000E' && LA8_0<='\uFFFF')) ) {
                     alt8=1;
                 }
 
@@ -533,15 +557,14 @@ public class InternalPhysisLexer extends Lexer {
             	case 1 :
             	    // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:918:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
-            	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFE') ) {
+            	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
 
             	    }
             	    else {
-            	        MismatchedSetException mse =
-            	            new MismatchedSetException(null,input);
-            	        recover(mse);    throw mse;
-            	    }
+            	        MismatchedSetException mse = new MismatchedSetException(null,input);
+            	        recover(mse);
+            	        throw mse;}
 
 
             	    }
@@ -591,17 +614,19 @@ public class InternalPhysisLexer extends Lexer {
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end RULE_SL_COMMENT
+    // $ANTLR end "RULE_SL_COMMENT"
 
-    // $ANTLR start RULE_WS
+    // $ANTLR start "RULE_WS"
     public final void mRULE_WS() throws RecognitionException {
         try {
             int _type = RULE_WS;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
             // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:920:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
             // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:920:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
@@ -626,10 +651,9 @@ public class InternalPhysisLexer extends Lexer {
 
             	    }
             	    else {
-            	        MismatchedSetException mse =
-            	            new MismatchedSetException(null,input);
-            	        recover(mse);    throw mse;
-            	    }
+            	        MismatchedSetException mse = new MismatchedSetException(null,input);
+            	        recover(mse);
+            	        throw mse;}
 
 
             	    }
@@ -647,17 +671,19 @@ public class InternalPhysisLexer extends Lexer {
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end RULE_WS
+    // $ANTLR end "RULE_WS"
 
-    // $ANTLR start RULE_ANY_OTHER
+    // $ANTLR start "RULE_ANY_OTHER"
     public final void mRULE_ANY_OTHER() throws RecognitionException {
         try {
             int _type = RULE_ANY_OTHER;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
             // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:922:16: ( . )
             // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:922:18: .
             {
@@ -665,314 +691,112 @@ public class InternalPhysisLexer extends Lexer {
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end RULE_ANY_OTHER
+    // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:1:8: ( T11 | T12 | T13 | T14 | T15 | T16 | T17 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
         int alt12=14;
-        int LA12_0 = input.LA(1);
-
-        if ( (LA12_0=='d') ) {
-            int LA12_1 = input.LA(2);
-
-            if ( (LA12_1=='a') ) {
-                int LA12_16 = input.LA(3);
-
-                if ( (LA12_16=='t') ) {
-                    int LA12_29 = input.LA(4);
-
-                    if ( (LA12_29=='a') ) {
-                        int LA12_32 = input.LA(5);
-
-                        if ( (LA12_32=='m') ) {
-                            int LA12_35 = input.LA(6);
-
-                            if ( (LA12_35=='o') ) {
-                                int LA12_38 = input.LA(7);
-
-                                if ( (LA12_38=='d') ) {
-                                    int LA12_40 = input.LA(8);
-
-                                    if ( (LA12_40=='e') ) {
-                                        int LA12_42 = input.LA(9);
-
-                                        if ( (LA12_42=='l') ) {
-                                            int LA12_43 = input.LA(10);
-
-                                            if ( ((LA12_43>='0' && LA12_43<='9')||(LA12_43>='A' && LA12_43<='Z')||LA12_43=='_'||(LA12_43>='a' && LA12_43<='z')) ) {
-                                                alt12=8;
-                                            }
-                                            else {
-                                                alt12=1;}
-                                        }
-                                        else {
-                                            alt12=8;}
-                                    }
-                                    else {
-                                        alt12=8;}
-                                }
-                                else {
-                                    alt12=8;}
-                            }
-                            else {
-                                alt12=8;}
-                        }
-                        else {
-                            alt12=8;}
-                    }
-                    else {
-                        alt12=8;}
-                }
-                else {
-                    alt12=8;}
-            }
-            else {
-                alt12=8;}
-        }
-        else if ( (LA12_0=='{') ) {
-            alt12=2;
-        }
-        else if ( (LA12_0=='}') ) {
-            alt12=3;
-        }
-        else if ( (LA12_0=='t') ) {
-            int LA12_4 = input.LA(2);
-
-            if ( (LA12_4=='y') ) {
-                int LA12_20 = input.LA(3);
-
-                if ( (LA12_20=='p') ) {
-                    int LA12_30 = input.LA(4);
-
-                    if ( (LA12_30=='e') ) {
-                        int LA12_33 = input.LA(5);
-
-                        if ( ((LA12_33>='0' && LA12_33<='9')||(LA12_33>='A' && LA12_33<='Z')||LA12_33=='_'||(LA12_33>='a' && LA12_33<='z')) ) {
-                            alt12=8;
-                        }
-                        else {
-                            alt12=4;}
-                    }
-                    else {
-                        alt12=8;}
-                }
-                else {
-                    alt12=8;}
-            }
-            else {
-                alt12=8;}
-        }
-        else if ( (LA12_0=='e') ) {
-            int LA12_5 = input.LA(2);
-
-            if ( (LA12_5=='n') ) {
-                int LA12_21 = input.LA(3);
-
-                if ( (LA12_21=='t') ) {
-                    int LA12_31 = input.LA(4);
-
-                    if ( (LA12_31=='i') ) {
-                        int LA12_34 = input.LA(5);
-
-                        if ( (LA12_34=='t') ) {
-                            int LA12_37 = input.LA(6);
-
-                            if ( (LA12_37=='y') ) {
-                                int LA12_39 = input.LA(7);
-
-                                if ( ((LA12_39>='0' && LA12_39<='9')||(LA12_39>='A' && LA12_39<='Z')||LA12_39=='_'||(LA12_39>='a' && LA12_39<='z')) ) {
-                                    alt12=8;
-                                }
-                                else {
-                                    alt12=5;}
-                            }
-                            else {
-                                alt12=8;}
-                        }
-                        else {
-                            alt12=8;}
-                    }
-                    else {
-                        alt12=8;}
-                }
-                else {
-                    alt12=8;}
-            }
-            else {
-                alt12=8;}
-        }
-        else if ( (LA12_0==':') ) {
-            alt12=6;
-        }
-        else if ( (LA12_0=='[') ) {
-            int LA12_7 = input.LA(2);
-
-            if ( (LA12_7==']') ) {
-                alt12=7;
-            }
-            else {
-                alt12=14;}
-        }
-        else if ( (LA12_0=='^') ) {
-            int LA12_8 = input.LA(2);
-
-            if ( ((LA12_8>='A' && LA12_8<='Z')||LA12_8=='_'||(LA12_8>='a' && LA12_8<='z')) ) {
-                alt12=8;
-            }
-            else {
-                alt12=14;}
-        }
-        else if ( ((LA12_0>='A' && LA12_0<='Z')||LA12_0=='_'||(LA12_0>='a' && LA12_0<='c')||(LA12_0>='f' && LA12_0<='s')||(LA12_0>='u' && LA12_0<='z')) ) {
-            alt12=8;
-        }
-        else if ( ((LA12_0>='0' && LA12_0<='9')) ) {
-            alt12=9;
-        }
-        else if ( (LA12_0=='\"') ) {
-            int LA12_11 = input.LA(2);
-
-            if ( ((LA12_11>='\u0000' && LA12_11<='\uFFFE')) ) {
-                alt12=10;
-            }
-            else {
-                alt12=14;}
-        }
-        else if ( (LA12_0=='\'') ) {
-            int LA12_12 = input.LA(2);
-
-            if ( ((LA12_12>='\u0000' && LA12_12<='\uFFFE')) ) {
-                alt12=10;
-            }
-            else {
-                alt12=14;}
-        }
-        else if ( (LA12_0=='/') ) {
-            switch ( input.LA(2) ) {
-            case '*':
-                {
-                alt12=11;
-                }
-                break;
-            case '/':
-                {
-                alt12=12;
-                }
-                break;
-            default:
-                alt12=14;}
-
-        }
-        else if ( ((LA12_0>='\t' && LA12_0<='\n')||LA12_0=='\r'||LA12_0==' ') ) {
-            alt12=13;
-        }
-        else if ( ((LA12_0>='\u0000' && LA12_0<='\b')||(LA12_0>='\u000B' && LA12_0<='\f')||(LA12_0>='\u000E' && LA12_0<='\u001F')||LA12_0=='!'||(LA12_0>='#' && LA12_0<='&')||(LA12_0>='(' && LA12_0<='.')||(LA12_0>=';' && LA12_0<='@')||(LA12_0>='\\' && LA12_0<=']')||LA12_0=='`'||LA12_0=='|'||(LA12_0>='~' && LA12_0<='\uFFFE')) ) {
-            alt12=14;
-        }
-        else {
-            NoViableAltException nvae =
-                new NoViableAltException("1:1: Tokens : ( T11 | T12 | T13 | T14 | T15 | T16 | T17 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );", 12, 0, input);
-
-            throw nvae;
-        }
+        alt12 = dfa12.predict(input);
         switch (alt12) {
             case 1 :
-                // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:1:10: T11
+                // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:1:10: T__11
                 {
-                mT11(); 
+                mT__11(); 
 
                 }
                 break;
             case 2 :
-                // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:1:14: T12
+                // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:1:16: T__12
                 {
-                mT12(); 
+                mT__12(); 
 
                 }
                 break;
             case 3 :
-                // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:1:18: T13
+                // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:1:22: T__13
                 {
-                mT13(); 
+                mT__13(); 
 
                 }
                 break;
             case 4 :
-                // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:1:22: T14
+                // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:1:28: T__14
                 {
-                mT14(); 
+                mT__14(); 
 
                 }
                 break;
             case 5 :
-                // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:1:26: T15
+                // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:1:34: T__15
                 {
-                mT15(); 
+                mT__15(); 
 
                 }
                 break;
             case 6 :
-                // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:1:30: T16
+                // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:1:40: T__16
                 {
-                mT16(); 
+                mT__16(); 
 
                 }
                 break;
             case 7 :
-                // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:1:34: T17
+                // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:1:46: T__17
                 {
-                mT17(); 
+                mT__17(); 
 
                 }
                 break;
             case 8 :
-                // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:1:38: RULE_ID
+                // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:1:52: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
             case 9 :
-                // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:1:46: RULE_INT
+                // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:1:60: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
             case 10 :
-                // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:1:55: RULE_STRING
+                // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:1:69: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
             case 11 :
-                // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:1:67: RULE_ML_COMMENT
+                // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:1:81: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
             case 12 :
-                // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:1:83: RULE_SL_COMMENT
+                // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:1:97: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
             case 13 :
-                // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:1:99: RULE_WS
+                // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:1:113: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
             case 14 :
-                // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:1:107: RULE_ANY_OTHER
+                // ../com.itemis.mobile.physis.ui/src-gen/com/itemis/mobile/physis/ui/contentassist/antlr/internal/InternalPhysis.g:1:121: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -984,6 +808,178 @@ public class InternalPhysisLexer extends Lexer {
     }
 
 
+    protected DFA12 dfa12 = new DFA12(this);
+    static final String DFA12_eotS =
+        "\1\uffff\1\21\2\uffff\2\21\1\uffff\2\17\2\uffff\3\17\2\uffff\1\21"+
+        "\3\uffff\2\21\7\uffff\4\21\1\44\2\21\1\uffff\2\21\1\51\1\21\1\uffff"+
+        "\1\21\1\54\1\uffff";
+    static final String DFA12_eofS =
+        "\55\uffff";
+    static final String DFA12_minS =
+        "\1\0\1\141\2\uffff\1\171\1\156\1\uffff\1\135\1\101\2\uffff\2\0\1"+
+        "\52\2\uffff\1\164\3\uffff\1\160\1\164\7\uffff\1\141\1\145\1\151"+
+        "\1\155\1\60\1\164\1\157\1\uffff\1\171\1\144\1\60\1\145\1\uffff\1"+
+        "\154\1\60\1\uffff";
+    static final String DFA12_maxS =
+        "\1\uffff\1\141\2\uffff\1\171\1\156\1\uffff\1\135\1\172\2\uffff\2"+
+        "\uffff\1\57\2\uffff\1\164\3\uffff\1\160\1\164\7\uffff\1\141\1\145"+
+        "\1\151\1\155\1\172\1\164\1\157\1\uffff\1\171\1\144\1\172\1\145\1"+
+        "\uffff\1\154\1\172\1\uffff";
+    static final String DFA12_acceptS =
+        "\2\uffff\1\2\1\3\2\uffff\1\6\2\uffff\1\10\1\11\3\uffff\1\15\1\16"+
+        "\1\uffff\1\10\1\2\1\3\2\uffff\1\6\1\7\1\11\1\12\1\13\1\14\1\15\7"+
+        "\uffff\1\4\4\uffff\1\5\2\uffff\1\1";
+    static final String DFA12_specialS =
+        "\1\0\12\uffff\1\1\1\2\40\uffff}>";
+    static final String[] DFA12_transitionS = {
+            "\11\17\2\16\2\17\1\16\22\17\1\16\1\17\1\13\4\17\1\14\7\17\1"+
+            "\15\12\12\1\6\6\17\32\11\1\7\2\17\1\10\1\11\1\17\3\11\1\1\1"+
+            "\5\16\11\1\4\6\11\1\2\1\17\1\3\uff82\17",
+            "\1\20",
+            "",
+            "",
+            "\1\24",
+            "\1\25",
+            "",
+            "\1\27",
+            "\32\21\4\uffff\1\21\1\uffff\32\21",
+            "",
+            "",
+            "\0\31",
+            "\0\31",
+            "\1\32\4\uffff\1\33",
+            "",
+            "",
+            "\1\35",
+            "",
+            "",
+            "",
+            "\1\36",
+            "\1\37",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\1\40",
+            "\1\41",
+            "\1\42",
+            "\1\43",
+            "\12\21\7\uffff\32\21\4\uffff\1\21\1\uffff\32\21",
+            "\1\45",
+            "\1\46",
+            "",
+            "\1\47",
+            "\1\50",
+            "\12\21\7\uffff\32\21\4\uffff\1\21\1\uffff\32\21",
+            "\1\52",
+            "",
+            "\1\53",
+            "\12\21\7\uffff\32\21\4\uffff\1\21\1\uffff\32\21",
+            ""
+    };
+
+    static final short[] DFA12_eot = DFA.unpackEncodedString(DFA12_eotS);
+    static final short[] DFA12_eof = DFA.unpackEncodedString(DFA12_eofS);
+    static final char[] DFA12_min = DFA.unpackEncodedStringToUnsignedChars(DFA12_minS);
+    static final char[] DFA12_max = DFA.unpackEncodedStringToUnsignedChars(DFA12_maxS);
+    static final short[] DFA12_accept = DFA.unpackEncodedString(DFA12_acceptS);
+    static final short[] DFA12_special = DFA.unpackEncodedString(DFA12_specialS);
+    static final short[][] DFA12_transition;
+
+    static {
+        int numStates = DFA12_transitionS.length;
+        DFA12_transition = new short[numStates][];
+        for (int i=0; i<numStates; i++) {
+            DFA12_transition[i] = DFA.unpackEncodedString(DFA12_transitionS[i]);
+        }
+    }
+
+    class DFA12 extends DFA {
+
+        public DFA12(BaseRecognizer recognizer) {
+            this.recognizer = recognizer;
+            this.decisionNumber = 12;
+            this.eot = DFA12_eot;
+            this.eof = DFA12_eof;
+            this.min = DFA12_min;
+            this.max = DFA12_max;
+            this.accept = DFA12_accept;
+            this.special = DFA12_special;
+            this.transition = DFA12_transition;
+        }
+        public String getDescription() {
+            return "1:1: Tokens : ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
+        }
+        public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
+            IntStream input = _input;
+        	int _s = s;
+            switch ( s ) {
+                    case 0 : 
+                        int LA12_0 = input.LA(1);
+
+                        s = -1;
+                        if ( (LA12_0=='d') ) {s = 1;}
+
+                        else if ( (LA12_0=='{') ) {s = 2;}
+
+                        else if ( (LA12_0=='}') ) {s = 3;}
+
+                        else if ( (LA12_0=='t') ) {s = 4;}
+
+                        else if ( (LA12_0=='e') ) {s = 5;}
+
+                        else if ( (LA12_0==':') ) {s = 6;}
+
+                        else if ( (LA12_0=='[') ) {s = 7;}
+
+                        else if ( (LA12_0=='^') ) {s = 8;}
+
+                        else if ( ((LA12_0>='A' && LA12_0<='Z')||LA12_0=='_'||(LA12_0>='a' && LA12_0<='c')||(LA12_0>='f' && LA12_0<='s')||(LA12_0>='u' && LA12_0<='z')) ) {s = 9;}
+
+                        else if ( ((LA12_0>='0' && LA12_0<='9')) ) {s = 10;}
+
+                        else if ( (LA12_0=='\"') ) {s = 11;}
+
+                        else if ( (LA12_0=='\'') ) {s = 12;}
+
+                        else if ( (LA12_0=='/') ) {s = 13;}
+
+                        else if ( ((LA12_0>='\t' && LA12_0<='\n')||LA12_0=='\r'||LA12_0==' ') ) {s = 14;}
+
+                        else if ( ((LA12_0>='\u0000' && LA12_0<='\b')||(LA12_0>='\u000B' && LA12_0<='\f')||(LA12_0>='\u000E' && LA12_0<='\u001F')||LA12_0=='!'||(LA12_0>='#' && LA12_0<='&')||(LA12_0>='(' && LA12_0<='.')||(LA12_0>=';' && LA12_0<='@')||(LA12_0>='\\' && LA12_0<=']')||LA12_0=='`'||LA12_0=='|'||(LA12_0>='~' && LA12_0<='\uFFFF')) ) {s = 15;}
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 1 : 
+                        int LA12_11 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA12_11>='\u0000' && LA12_11<='\uFFFF')) ) {s = 25;}
+
+                        else s = 15;
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 2 : 
+                        int LA12_12 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA12_12>='\u0000' && LA12_12<='\uFFFF')) ) {s = 25;}
+
+                        else s = 15;
+
+                        if ( s>=0 ) return s;
+                        break;
+            }
+            NoViableAltException nvae =
+                new NoViableAltException(getDescription(), 12, _s, input);
+            error(nvae);
+            throw nvae;
+        }
+    }
  
 
 }

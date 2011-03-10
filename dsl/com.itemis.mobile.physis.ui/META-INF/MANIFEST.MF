@@ -12,8 +12,11 @@ Require-Bundle: com.itemis.mobile.physis;visibility:=reexport,
  org.eclipse.xtext.ui.shared,
  org.eclipse.ui,
  org.eclipse.xtext.builder,
- org.antlr.runtime
-Import-Package: org.apache.log4j
+ org.antlr.runtime,
+ org.eclipse.xtext.common.types.ui
+Import-Package: org.apache.log4j,
+ org.apache.commons.logging
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
-Export-Package: com.itemis.mobile.physis.ui.contentassist.antlr
+Export-Package: com.itemis.mobile.physis.ui.contentassist.antlr,
+ com.itemis.mobile.physis.ui.internal
 Bundle-Activator: com.itemis.mobile.physis.ui.internal.PhysisActivator

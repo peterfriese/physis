@@ -11,6 +11,7 @@ var runtimeProject = "../${projectName}"
 
 Workflow {
     bean = StandaloneSetup {
+	    scanClassPath = true
 		platformUri = "${runtimeProject}/.."
 	}
 
@@ -25,6 +26,7 @@ Workflow {
 	component = Generator {
 		pathRtProject = runtimeProject
 		pathUiProject = "${runtimeProject}.ui"
+		pathTestProject = "${runtimeProject}.test"
 		projectNameRt = projectName
 		projectNameUi = "${projectName}.ui"
 		language = {
@@ -53,7 +55,7 @@ Workflow {
 			//		backtrack = true
 			//	}
 			}
-
+			
 			// java-based API for validation 
 			fragment = validation.JavaValidatorFragment {
 				composedCheck = "org.eclipse.xtext.validation.ImportUriValidator"
@@ -70,6 +72,12 @@ Workflow {
 			fragment = exporting.QualifiedNamesFragment {}
 			fragment = builder.BuilderIntegrationFragment {}
 
+			// generator API
+			fragment = generator.GeneratorFragment {
+				generateMwe = true
+				generateJavaMain = true
+			}
+			
 			// formatter API 
 			fragment = formatting.FormatterFragment {}
 
@@ -77,8 +85,7 @@ Workflow {
 			fragment = labeling.LabelProviderFragment {}
 
 			// outline API 
-			fragment = outline.TransformerFragment {}
-			fragment = outline.OutlineNodeAdapterFactoryFragment {}
+			fragment = outline.OutlineTreeProviderFragment {}
 			fragment = outline.QuickOutlineFragment {}
 
 			// quickfix API 
@@ -90,11 +97,25 @@ Workflow {
 			// generates a more lightweight Antlr parser and lexer tailored for content assist  
 			fragment = parser.antlr.XtextAntlrUiGeneratorFragment {}
 
+			// generates junit test support classes into Generator#pathTestProject
+			fragment = junit.Junit4Fragment {}
+
 			// project wizard (optional) 
 			// fragment = projectWizard.SimpleProjectWizardFragment {
 			// 		generatorProjectName = "${projectName}.generator" 
 			//		modelFileExtension = file.extensions
 			// }
+			
+			// generates the needed binding only if the grammar inherits from Xbase
+			fragment = types.TypesGeneratorFragment {}
+			fragment = xbase.XbaseGeneratorFragment {}
+			
+			// Code generator
+			fragment = generator.GeneratorFragment {
+				generateJavaMain = true
+				generateMwe = true
+				generatorStub = true				
+			}			
 		}
 	}
 }
