@@ -1,8 +1,8 @@
 package com.itemis.mobile.physis.generator;
 
-import com.itemis.mobile.physis.generator.DataManagerGenerator;
-import com.itemis.mobile.physis.generator.EntityGenerator;
-import com.itemis.mobile.physis.generator.GeneratorExtensions;
+import com.itemis.mobile.physis.generator.iOS.DataManagerGenerator;
+import com.itemis.mobile.physis.generator.iOS.EntityGenerator;
+import com.itemis.mobile.physis.generator.iOS.GeneratorExtensions;
 import com.itemis.mobile.physis.physis.DataModel;
 import com.itemis.mobile.physis.physis.Entity;
 import org.eclipse.emf.ecore.EObject;

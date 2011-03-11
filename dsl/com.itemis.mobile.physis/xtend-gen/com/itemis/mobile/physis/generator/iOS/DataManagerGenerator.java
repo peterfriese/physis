@@ -1,8 +1,8 @@
-package com.itemis.mobile.physis.generator;
+package com.itemis.mobile.physis.generator.iOS;
 
 import com.itemis.mobile.physis.PhysisMetamodelExtensions;
-import com.itemis.mobile.physis.generator.AbstractBaseGenerator;
-import com.itemis.mobile.physis.generator.GeneratorExtensions;
+import com.itemis.mobile.physis.generator.iOS.AbstractIOSBaseGenerator;
+import com.itemis.mobile.physis.generator.iOS.GeneratorExtensions;
 import com.itemis.mobile.physis.physis.Attribute;
 import com.itemis.mobile.physis.physis.DataModel;
 import com.itemis.mobile.physis.physis.Entity;
@@ -14,7 +14,7 @@ import org.eclipse.xtext.xbase.lib.StringExtensions;
 import org.eclipse.xtext.xtend2.lib.StringConcatenation;
 
 @SuppressWarnings("all")
-public class DataManagerGenerator extends AbstractBaseGenerator {
+public class DataManagerGenerator extends AbstractIOSBaseGenerator {
   private final DataManagerGenerator _this = this;
   @com.google.inject.Inject private GeneratorExtensions generatorExtensions;
   @com.google.inject.Inject private PhysisMetamodelExtensions physisMetamodelExtensions;

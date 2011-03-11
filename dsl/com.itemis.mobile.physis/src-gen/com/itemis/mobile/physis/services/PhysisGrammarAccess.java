@@ -93,18 +93,56 @@ public class PhysisGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getEntityParserRuleCall_1() { return cEntityParserRuleCall_1; }
 	}
 
+	public class MappingClauseElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "MappingClause");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cIsKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cMappedTypeAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cMappedTypeIDTerminalRuleCall_1_0 = (RuleCall)cMappedTypeAssignment_1.eContents().get(0);
+		private final Keyword cOnPlatformKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cPlatformAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cPlatformPlatformEnumRuleCall_3_0 = (RuleCall)cPlatformAssignment_3.eContents().get(0);
+		
+		//MappingClause:
+		//	"is" mappedType=ID "on platform" platform=Platform;
+		public ParserRule getRule() { return rule; }
+
+		//"is" mappedType=ID "on platform" platform=Platform
+		public Group getGroup() { return cGroup; }
+
+		//"is"
+		public Keyword getIsKeyword_0() { return cIsKeyword_0; }
+
+		//mappedType=ID
+		public Assignment getMappedTypeAssignment_1() { return cMappedTypeAssignment_1; }
+
+		//ID
+		public RuleCall getMappedTypeIDTerminalRuleCall_1_0() { return cMappedTypeIDTerminalRuleCall_1_0; }
+
+		//"on platform"
+		public Keyword getOnPlatformKeyword_2() { return cOnPlatformKeyword_2; }
+
+		//platform=Platform
+		public Assignment getPlatformAssignment_3() { return cPlatformAssignment_3; }
+
+		//Platform
+		public RuleCall getPlatformPlatformEnumRuleCall_3_0() { return cPlatformPlatformEnumRuleCall_3_0; }
+	}
+
 	public class SimpleTypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "SimpleType");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cTypeKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Assignment cMappingsAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cMappingsMappingClauseParserRuleCall_2_0 = (RuleCall)cMappingsAssignment_2.eContents().get(0);
 		
 		//SimpleType:
-		//	"type" name=ID;
+		//	"type" name=ID mappings+=MappingClause*;
 		public ParserRule getRule() { return rule; }
 
-		//"type" name=ID
+		//"type" name=ID mappings+=MappingClause*
 		public Group getGroup() { return cGroup; }
 
 		//"type"
@@ -115,6 +153,12 @@ public class PhysisGrammarAccess extends AbstractGrammarElementFinder {
 
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+
+		//mappings+=MappingClause*
+		public Assignment getMappingsAssignment_2() { return cMappingsAssignment_2; }
+
+		//MappingClause
+		public RuleCall getMappingsMappingClauseParserRuleCall_2_0() { return cMappingsMappingClauseParserRuleCall_2_0; }
 	}
 
 	public class EntityElements extends AbstractParserRuleElementFinder {
@@ -202,9 +246,39 @@ public class PhysisGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	
+	public class PlatformElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "Platform");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cIOSEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cIOSIOSKeyword_0_0 = (Keyword)cIOSEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cAndroidEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cAndroidAndroidKeyword_1_0 = (Keyword)cAndroidEnumLiteralDeclaration_1.eContents().get(0);
+		
+		//enum Platform:
+		//	iOS | Android;
+		public EnumRule getRule() { return rule; }
+
+		//iOS | Android
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//iOS
+		public EnumLiteralDeclaration getIOSEnumLiteralDeclaration_0() { return cIOSEnumLiteralDeclaration_0; }
+
+		//"iOS"
+		public Keyword getIOSIOSKeyword_0_0() { return cIOSIOSKeyword_0_0; }
+
+		//Android
+		public EnumLiteralDeclaration getAndroidEnumLiteralDeclaration_1() { return cAndroidEnumLiteralDeclaration_1; }
+
+		//"Android"
+		public Keyword getAndroidAndroidKeyword_1_0() { return cAndroidAndroidKeyword_1_0; }
+	}
+	
 	private ModelElements pModel;
+	private PlatformElements unknownRulePlatform;
 	private DataModelElements pDataModel;
 	private TypeElements pType;
+	private MappingClauseElements pMappingClause;
 	private SimpleTypeElements pSimpleType;
 	private EntityElements pEntity;
 	private AttributeElements pAttribute;
@@ -240,6 +314,16 @@ public class PhysisGrammarAccess extends AbstractGrammarElementFinder {
 		return getModelAccess().getRule();
 	}
 
+	//enum Platform:
+	//	iOS | Android;
+	public PlatformElements getPlatformAccess() {
+		return (unknownRulePlatform != null) ? unknownRulePlatform : (unknownRulePlatform = new PlatformElements());
+	}
+	
+	public EnumRule getPlatformRule() {
+		return getPlatformAccess().getRule();
+	}
+
 	//DataModel:
 	//	"datamodel" name=ID "{" types+=Type* "}";
 	public DataModelElements getDataModelAccess() {
@@ -260,8 +344,18 @@ public class PhysisGrammarAccess extends AbstractGrammarElementFinder {
 		return getTypeAccess().getRule();
 	}
 
+	//MappingClause:
+	//	"is" mappedType=ID "on platform" platform=Platform;
+	public MappingClauseElements getMappingClauseAccess() {
+		return (pMappingClause != null) ? pMappingClause : (pMappingClause = new MappingClauseElements());
+	}
+	
+	public ParserRule getMappingClauseRule() {
+		return getMappingClauseAccess().getRule();
+	}
+
 	//SimpleType:
-	//	"type" name=ID;
+	//	"type" name=ID mappings+=MappingClause*;
 	public SimpleTypeElements getSimpleTypeAccess() {
 		return (pSimpleType != null) ? pSimpleType : (pSimpleType = new SimpleTypeElements());
 	}

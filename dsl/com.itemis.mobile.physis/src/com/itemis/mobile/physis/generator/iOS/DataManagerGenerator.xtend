@@ -1,4 +1,4 @@
-package com.itemis.mobile.physis.generator
+package com.itemis.mobile.physis.generator.iOS
 
 import com.itemis.mobile.physis.physis.DataModel
 import org.eclipse.xtext.generator.IFileSystemAccess
@@ -8,7 +8,7 @@ import com.itemis.mobile.physis.physis.Type
 import com.itemis.mobile.physis.physis.Attribute
 import com.itemis.mobile.physis.PhysisMetamodelExtensions
 
-class DataManagerGenerator extends com.itemis.mobile.physis.generator.AbstractBaseGenerator {
+class DataManagerGenerator extends com.itemis.mobile.physis.generator.iOS.AbstractIOSBaseGenerator {
 	
 	@Inject extension GeneratorExtensions
 	@Inject extension PhysisMetamodelExtensions

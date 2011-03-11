@@ -1,4 +1,4 @@
-package com.itemis.mobile.physis.generator;
+package com.itemis.mobile.physis.generator.iOS;
 
 import com.itemis.mobile.physis.PhysisMetamodelExtensions;
 import com.itemis.mobile.physis.physis.Attribute;

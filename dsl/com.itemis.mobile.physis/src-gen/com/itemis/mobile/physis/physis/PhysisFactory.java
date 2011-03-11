@@ -53,6 +53,15 @@ public interface PhysisFactory extends EFactory
   Type createType();
 
   /**
+   * Returns a new object of class '<em>Mapping Clause</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Mapping Clause</em>'.
+   * @generated
+   */
+  MappingClause createMappingClause();
+
+  /**
    * Returns a new object of class '<em>Simple Type</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

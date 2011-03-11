@@ -38,14 +38,19 @@ public class PhysisParser extends AbstractContentAssistParser {
 				private static final long serialVersionUID = 1L;
 				{
 					put(grammarAccess.getTypeAccess().getAlternatives(), "rule__Type__Alternatives");
+					put(grammarAccess.getPlatformAccess().getAlternatives(), "rule__Platform__Alternatives");
 					put(grammarAccess.getDataModelAccess().getGroup(), "rule__DataModel__Group__0");
+					put(grammarAccess.getMappingClauseAccess().getGroup(), "rule__MappingClause__Group__0");
 					put(grammarAccess.getSimpleTypeAccess().getGroup(), "rule__SimpleType__Group__0");
 					put(grammarAccess.getEntityAccess().getGroup(), "rule__Entity__Group__0");
 					put(grammarAccess.getAttributeAccess().getGroup(), "rule__Attribute__Group__0");
 					put(grammarAccess.getModelAccess().getDatamodelsAssignment(), "rule__Model__DatamodelsAssignment");
 					put(grammarAccess.getDataModelAccess().getNameAssignment_1(), "rule__DataModel__NameAssignment_1");
 					put(grammarAccess.getDataModelAccess().getTypesAssignment_3(), "rule__DataModel__TypesAssignment_3");
+					put(grammarAccess.getMappingClauseAccess().getMappedTypeAssignment_1(), "rule__MappingClause__MappedTypeAssignment_1");
+					put(grammarAccess.getMappingClauseAccess().getPlatformAssignment_3(), "rule__MappingClause__PlatformAssignment_3");
 					put(grammarAccess.getSimpleTypeAccess().getNameAssignment_1(), "rule__SimpleType__NameAssignment_1");
+					put(grammarAccess.getSimpleTypeAccess().getMappingsAssignment_2(), "rule__SimpleType__MappingsAssignment_2");
 					put(grammarAccess.getEntityAccess().getNameAssignment_1(), "rule__Entity__NameAssignment_1");
 					put(grammarAccess.getEntityAccess().getAttributesAssignment_3(), "rule__Entity__AttributesAssignment_3");
 					put(grammarAccess.getAttributeAccess().getNameAssignment_0(), "rule__Attribute__NameAssignment_0");

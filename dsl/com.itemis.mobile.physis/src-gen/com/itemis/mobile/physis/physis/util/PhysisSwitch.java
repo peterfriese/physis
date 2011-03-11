@@ -96,6 +96,13 @@ public class PhysisSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case PhysisPackage.MAPPING_CLAUSE:
+      {
+        MappingClause mappingClause = (MappingClause)theEObject;
+        T result = caseMappingClause(mappingClause);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case PhysisPackage.SIMPLE_TYPE:
       {
         SimpleType simpleType = (SimpleType)theEObject;
@@ -167,6 +174,22 @@ public class PhysisSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseType(Type object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Mapping Clause</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Mapping Clause</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMappingClause(MappingClause object)
   {
     return null;
   }

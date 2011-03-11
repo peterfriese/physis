@@ -7,6 +7,7 @@ package com.itemis.mobile.physis.physis;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -153,6 +154,43 @@ public interface PhysisPackage extends EPackage
   int TYPE_FEATURE_COUNT = 1;
 
   /**
+   * The meta object id for the '{@link com.itemis.mobile.physis.physis.impl.MappingClauseImpl <em>Mapping Clause</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.itemis.mobile.physis.physis.impl.MappingClauseImpl
+   * @see com.itemis.mobile.physis.physis.impl.PhysisPackageImpl#getMappingClause()
+   * @generated
+   */
+  int MAPPING_CLAUSE = 3;
+
+  /**
+   * The feature id for the '<em><b>Mapped Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MAPPING_CLAUSE__MAPPED_TYPE = 0;
+
+  /**
+   * The feature id for the '<em><b>Platform</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MAPPING_CLAUSE__PLATFORM = 1;
+
+  /**
+   * The number of structural features of the '<em>Mapping Clause</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MAPPING_CLAUSE_FEATURE_COUNT = 2;
+
+  /**
    * The meta object id for the '{@link com.itemis.mobile.physis.physis.impl.SimpleTypeImpl <em>Simple Type</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -160,7 +198,7 @@ public interface PhysisPackage extends EPackage
    * @see com.itemis.mobile.physis.physis.impl.PhysisPackageImpl#getSimpleType()
    * @generated
    */
-  int SIMPLE_TYPE = 3;
+  int SIMPLE_TYPE = 4;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -172,13 +210,22 @@ public interface PhysisPackage extends EPackage
   int SIMPLE_TYPE__NAME = TYPE__NAME;
 
   /**
+   * The feature id for the '<em><b>Mappings</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIMPLE_TYPE__MAPPINGS = TYPE_FEATURE_COUNT + 0;
+
+  /**
    * The number of structural features of the '<em>Simple Type</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SIMPLE_TYPE_FEATURE_COUNT = TYPE_FEATURE_COUNT + 0;
+  int SIMPLE_TYPE_FEATURE_COUNT = TYPE_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link com.itemis.mobile.physis.physis.impl.EntityImpl <em>Entity</em>}' class.
@@ -188,7 +235,7 @@ public interface PhysisPackage extends EPackage
    * @see com.itemis.mobile.physis.physis.impl.PhysisPackageImpl#getEntity()
    * @generated
    */
-  int ENTITY = 4;
+  int ENTITY = 5;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -225,7 +272,7 @@ public interface PhysisPackage extends EPackage
    * @see com.itemis.mobile.physis.physis.impl.PhysisPackageImpl#getAttribute()
    * @generated
    */
-  int ATTRIBUTE = 5;
+  int ATTRIBUTE = 6;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -262,6 +309,16 @@ public interface PhysisPackage extends EPackage
    * @ordered
    */
   int ATTRIBUTE_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link com.itemis.mobile.physis.physis.Platform <em>Platform</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.itemis.mobile.physis.physis.Platform
+   * @see com.itemis.mobile.physis.physis.impl.PhysisPackageImpl#getPlatform()
+   * @generated
+   */
+  int PLATFORM = 7;
 
 
   /**
@@ -339,6 +396,38 @@ public interface PhysisPackage extends EPackage
   EAttribute getType_Name();
 
   /**
+   * Returns the meta object for class '{@link com.itemis.mobile.physis.physis.MappingClause <em>Mapping Clause</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Mapping Clause</em>'.
+   * @see com.itemis.mobile.physis.physis.MappingClause
+   * @generated
+   */
+  EClass getMappingClause();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.itemis.mobile.physis.physis.MappingClause#getMappedType <em>Mapped Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Mapped Type</em>'.
+   * @see com.itemis.mobile.physis.physis.MappingClause#getMappedType()
+   * @see #getMappingClause()
+   * @generated
+   */
+  EAttribute getMappingClause_MappedType();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.itemis.mobile.physis.physis.MappingClause#getPlatform <em>Platform</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Platform</em>'.
+   * @see com.itemis.mobile.physis.physis.MappingClause#getPlatform()
+   * @see #getMappingClause()
+   * @generated
+   */
+  EAttribute getMappingClause_Platform();
+
+  /**
    * Returns the meta object for class '{@link com.itemis.mobile.physis.physis.SimpleType <em>Simple Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -347,6 +436,17 @@ public interface PhysisPackage extends EPackage
    * @generated
    */
   EClass getSimpleType();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.itemis.mobile.physis.physis.SimpleType#getMappings <em>Mappings</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Mappings</em>'.
+   * @see com.itemis.mobile.physis.physis.SimpleType#getMappings()
+   * @see #getSimpleType()
+   * @generated
+   */
+  EReference getSimpleType_Mappings();
 
   /**
    * Returns the meta object for class '{@link com.itemis.mobile.physis.physis.Entity <em>Entity</em>}'.
@@ -411,6 +511,16 @@ public interface PhysisPackage extends EPackage
    * @generated
    */
   EAttribute getAttribute_Multiplicity();
+
+  /**
+   * Returns the meta object for enum '{@link com.itemis.mobile.physis.physis.Platform <em>Platform</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Platform</em>'.
+   * @see com.itemis.mobile.physis.physis.Platform
+   * @generated
+   */
+  EEnum getPlatform();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -498,6 +608,32 @@ public interface PhysisPackage extends EPackage
     EAttribute TYPE__NAME = eINSTANCE.getType_Name();
 
     /**
+     * The meta object literal for the '{@link com.itemis.mobile.physis.physis.impl.MappingClauseImpl <em>Mapping Clause</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.itemis.mobile.physis.physis.impl.MappingClauseImpl
+     * @see com.itemis.mobile.physis.physis.impl.PhysisPackageImpl#getMappingClause()
+     * @generated
+     */
+    EClass MAPPING_CLAUSE = eINSTANCE.getMappingClause();
+
+    /**
+     * The meta object literal for the '<em><b>Mapped Type</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MAPPING_CLAUSE__MAPPED_TYPE = eINSTANCE.getMappingClause_MappedType();
+
+    /**
+     * The meta object literal for the '<em><b>Platform</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MAPPING_CLAUSE__PLATFORM = eINSTANCE.getMappingClause_Platform();
+
+    /**
      * The meta object literal for the '{@link com.itemis.mobile.physis.physis.impl.SimpleTypeImpl <em>Simple Type</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -506,6 +642,14 @@ public interface PhysisPackage extends EPackage
      * @generated
      */
     EClass SIMPLE_TYPE = eINSTANCE.getSimpleType();
+
+    /**
+     * The meta object literal for the '<em><b>Mappings</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SIMPLE_TYPE__MAPPINGS = eINSTANCE.getSimpleType_Mappings();
 
     /**
      * The meta object literal for the '{@link com.itemis.mobile.physis.physis.impl.EntityImpl <em>Entity</em>}' class.
@@ -558,6 +702,16 @@ public interface PhysisPackage extends EPackage
      * @generated
      */
     EAttribute ATTRIBUTE__MULTIPLICITY = eINSTANCE.getAttribute_Multiplicity();
+
+    /**
+     * The meta object literal for the '{@link com.itemis.mobile.physis.physis.Platform <em>Platform</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.itemis.mobile.physis.physis.Platform
+     * @see com.itemis.mobile.physis.physis.impl.PhysisPackageImpl#getPlatform()
+     * @generated
+     */
+    EEnum PLATFORM = eINSTANCE.getPlatform();
 
   }
 

@@ -1,7 +1,7 @@
-package com.itemis.mobile.physis.generator;
+package com.itemis.mobile.physis.generator.iOS;
 
-import com.itemis.mobile.physis.generator.AbstractBaseGenerator;
-import com.itemis.mobile.physis.generator.GeneratorExtensions;
+import com.itemis.mobile.physis.generator.iOS.AbstractIOSBaseGenerator;
+import com.itemis.mobile.physis.generator.iOS.GeneratorExtensions;
 import com.itemis.mobile.physis.physis.Attribute;
 import com.itemis.mobile.physis.physis.Entity;
 import org.eclipse.emf.common.util.EList;
@@ -10,7 +10,7 @@ import org.eclipse.xtext.generator.IFileSystemAccess;
 import org.eclipse.xtext.xtend2.lib.StringConcatenation;
 
 @SuppressWarnings("all")
-public class EntityGenerator extends AbstractBaseGenerator {
+public class EntityGenerator extends AbstractIOSBaseGenerator {
   private final EntityGenerator _this = this;
   @com.google.inject.Inject private GeneratorExtensions generatorExtensions;
   

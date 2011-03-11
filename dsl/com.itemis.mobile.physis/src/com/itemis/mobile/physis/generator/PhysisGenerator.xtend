@@ -11,13 +11,16 @@ import static extension org.eclipse.xtext.xtend2.lib.ResourceExtensions.*
 import com.itemis.mobile.physis.physis.Entity
 import com.itemis.mobile.physis.physis.Attribute
 import com.itemis.mobile.physis.physis.DataModel
+import com.itemis.mobile.physis.generator.iOS.GeneratorExtensions
+import com.itemis.mobile.physis.generator.iOS.DataManagerGenerator
+import com.itemis.mobile.physis.generator.iOS.EntityGenerator
 
 class PhysisGenerator implements IGenerator {
 	
 	@Inject extension GeneratorExtensions
 
-	@Inject extension com.itemis.mobile.physis.generator.DataManagerGenerator
-	@Inject extension com.itemis.mobile.physis.generator.EntityGenerator	
+	@Inject extension DataManagerGenerator
+	@Inject extension EntityGenerator	
 	
 	override void doGenerate(Resource resource, IFileSystemAccess fsa) {
 		for(element : resource.allContentsIterable) {

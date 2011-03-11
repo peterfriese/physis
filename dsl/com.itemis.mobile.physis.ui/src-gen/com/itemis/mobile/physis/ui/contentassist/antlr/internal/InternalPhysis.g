@@ -141,6 +141,34 @@ finally {
 
 
 
+// Entry rule entryRuleMappingClause
+entryRuleMappingClause 
+:
+{ before(grammarAccess.getMappingClauseRule()); }
+	 ruleMappingClause
+{ after(grammarAccess.getMappingClauseRule()); } 
+	 EOF 
+;
+
+// Rule MappingClause
+ruleMappingClause
+    @init {
+		int stackSize = keepStackSize();
+    }
+	:
+(
+{ before(grammarAccess.getMappingClauseAccess().getGroup()); }
+(rule__MappingClause__Group__0)
+{ after(grammarAccess.getMappingClauseAccess().getGroup()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
 // Entry rule entryRuleSimpleType
 entryRuleSimpleType 
 :
@@ -226,6 +254,25 @@ finally {
 
 
 
+// Rule Platform
+rulePlatform
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getPlatformAccess().getAlternatives()); }
+(rule__Platform__Alternatives)
+{ after(grammarAccess.getPlatformAccess().getAlternatives()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
 rule__Type__Alternatives
     @init {
 		int stackSize = keepStackSize();
@@ -241,6 +288,30 @@ rule__Type__Alternatives
 { before(grammarAccess.getTypeAccess().getEntityParserRuleCall_1()); }
 	ruleEntity
 { after(grammarAccess.getTypeAccess().getEntityParserRuleCall_1()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Platform__Alternatives
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getPlatformAccess().getIOSEnumLiteralDeclaration_0()); }
+(	'iOS' 
+)
+{ after(grammarAccess.getPlatformAccess().getIOSEnumLiteralDeclaration_0()); }
+)
+
+    |(
+{ before(grammarAccess.getPlatformAccess().getAndroidEnumLiteralDeclaration_1()); }
+(	'Android' 
+)
+{ after(grammarAccess.getPlatformAccess().getAndroidEnumLiteralDeclaration_1()); }
 )
 
 ;
@@ -410,6 +481,133 @@ finally {
 
 
 
+rule__MappingClause__Group__0
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__MappingClause__Group__0__Impl
+	rule__MappingClause__Group__1
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__MappingClause__Group__0__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getMappingClauseAccess().getIsKeyword_0()); }
+
+	'is' 
+
+{ after(grammarAccess.getMappingClauseAccess().getIsKeyword_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__MappingClause__Group__1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__MappingClause__Group__1__Impl
+	rule__MappingClause__Group__2
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__MappingClause__Group__1__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getMappingClauseAccess().getMappedTypeAssignment_1()); }
+(rule__MappingClause__MappedTypeAssignment_1)
+{ after(grammarAccess.getMappingClauseAccess().getMappedTypeAssignment_1()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__MappingClause__Group__2
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__MappingClause__Group__2__Impl
+	rule__MappingClause__Group__3
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__MappingClause__Group__2__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getMappingClauseAccess().getOnPlatformKeyword_2()); }
+
+	'on platform' 
+
+{ after(grammarAccess.getMappingClauseAccess().getOnPlatformKeyword_2()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__MappingClause__Group__3
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__MappingClause__Group__3__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__MappingClause__Group__3__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getMappingClauseAccess().getPlatformAssignment_3()); }
+(rule__MappingClause__PlatformAssignment_3)
+{ after(grammarAccess.getMappingClauseAccess().getPlatformAssignment_3()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
+
+
+
+
+
+
+
 rule__SimpleType__Group__0
     @init {
 		int stackSize = keepStackSize();
@@ -447,6 +645,7 @@ rule__SimpleType__Group__1
     }
 :
 	rule__SimpleType__Group__1__Impl
+	rule__SimpleType__Group__2
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -467,6 +666,36 @@ rule__SimpleType__Group__1__Impl
 finally {
 	restoreStackSize(stackSize);
 }
+
+
+rule__SimpleType__Group__2
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__SimpleType__Group__2__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SimpleType__Group__2__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getSimpleTypeAccess().getMappingsAssignment_2()); }
+(rule__SimpleType__MappingsAssignment_2)*
+{ after(grammarAccess.getSimpleTypeAccess().getMappingsAssignment_2()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
 
 
 
@@ -804,6 +1033,36 @@ finally {
 	restoreStackSize(stackSize);
 }
 
+rule__MappingClause__MappedTypeAssignment_1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getMappingClauseAccess().getMappedTypeIDTerminalRuleCall_1_0()); }
+	RULE_ID{ after(grammarAccess.getMappingClauseAccess().getMappedTypeIDTerminalRuleCall_1_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__MappingClause__PlatformAssignment_3
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getMappingClauseAccess().getPlatformPlatformEnumRuleCall_3_0()); }
+	rulePlatform{ after(grammarAccess.getMappingClauseAccess().getPlatformPlatformEnumRuleCall_3_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
 rule__SimpleType__NameAssignment_1
     @init {
 		int stackSize = keepStackSize();
@@ -812,6 +1071,21 @@ rule__SimpleType__NameAssignment_1
 (
 { before(grammarAccess.getSimpleTypeAccess().getNameIDTerminalRuleCall_1_0()); }
 	RULE_ID{ after(grammarAccess.getSimpleTypeAccess().getNameIDTerminalRuleCall_1_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SimpleType__MappingsAssignment_2
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getSimpleTypeAccess().getMappingsMappingClauseParserRuleCall_2_0()); }
+	ruleMappingClause{ after(grammarAccess.getSimpleTypeAccess().getMappingsMappingClauseParserRuleCall_2_0()); }
 )
 
 ;

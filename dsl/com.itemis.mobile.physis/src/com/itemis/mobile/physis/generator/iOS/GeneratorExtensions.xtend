@@ -1,4 +1,4 @@
-package com.itemis.mobile.physis.generator
+package com.itemis.mobile.physis.generator.iOS
 
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.IGenerator

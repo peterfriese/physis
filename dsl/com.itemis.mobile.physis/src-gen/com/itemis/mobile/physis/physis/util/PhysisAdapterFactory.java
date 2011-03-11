@@ -93,6 +93,11 @@ public class PhysisAdapterFactory extends AdapterFactoryImpl
         return createTypeAdapter();
       }
       @Override
+      public Adapter caseMappingClause(MappingClause object)
+      {
+        return createMappingClauseAdapter();
+      }
+      @Override
       public Adapter caseSimpleType(SimpleType object)
       {
         return createSimpleTypeAdapter();
@@ -170,6 +175,21 @@ public class PhysisAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.itemis.mobile.physis.physis.MappingClause <em>Mapping Clause</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.itemis.mobile.physis.physis.MappingClause
+   * @generated
+   */
+  public Adapter createMappingClauseAdapter()
   {
     return null;
   }

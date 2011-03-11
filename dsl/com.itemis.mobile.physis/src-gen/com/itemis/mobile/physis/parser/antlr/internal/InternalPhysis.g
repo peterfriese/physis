@@ -24,6 +24,7 @@ import org.eclipse.xtext.parser.*;
 import org.eclipse.xtext.parser.impl.*;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.xtext.parser.antlr.AbstractInternalAntlrParser;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream.HiddenTokens;
@@ -211,6 +212,71 @@ ruleType returns [EObject current=null]
 
 
 
+// Entry rule entryRuleMappingClause
+entryRuleMappingClause returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getMappingClauseRule()); }
+	 iv_ruleMappingClause=ruleMappingClause 
+	 { $current=$iv_ruleMappingClause.current; } 
+	 EOF 
+;
+
+// Rule MappingClause
+ruleMappingClause returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(	otherlv_0='is' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getMappingClauseAccess().getIsKeyword_0());
+    }
+(
+(
+		lv_mappedType_1_0=RULE_ID
+		{
+			newLeafNode(lv_mappedType_1_0, grammarAccess.getMappingClauseAccess().getMappedTypeIDTerminalRuleCall_1_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getMappingClauseRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"mappedType",
+        		lv_mappedType_1_0, 
+        		"ID");
+	    }
+
+)
+)	otherlv_2='on platform' 
+    {
+    	newLeafNode(otherlv_2, grammarAccess.getMappingClauseAccess().getOnPlatformKeyword_2());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getMappingClauseAccess().getPlatformPlatformEnumRuleCall_3_0()); 
+	    }
+		lv_platform_3_0=rulePlatform		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getMappingClauseRule());
+	        }
+       		set(
+       			$current, 
+       			"platform",
+        		lv_platform_3_0, 
+        		"Platform");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))
+;
+
+
+
+
+
 // Entry rule entryRuleSimpleType
 entryRuleSimpleType returns [EObject current=null] 
 	:
@@ -247,7 +313,25 @@ ruleSimpleType returns [EObject current=null]
 	    }
 
 )
-))
+)(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getSimpleTypeAccess().getMappingsMappingClauseParserRuleCall_2_0()); 
+	    }
+		lv_mappings_2_0=ruleMappingClause		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getSimpleTypeRule());
+	        }
+       		add(
+       			$current, 
+       			"mappings",
+        		lv_mappings_2_0, 
+        		"MappingClause");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)*)
 ;
 
 
@@ -391,6 +475,25 @@ ruleAttribute returns [EObject current=null]
 ;
 
 
+
+
+
+// Rule Platform
+rulePlatform returns [Enumerator current=null] 
+    @init { enterRule(); }
+    @after { leaveRule(); }:
+((	enumLiteral_0='iOS' 
+	{
+        $current = grammarAccess.getPlatformAccess().getIOSEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_0, grammarAccess.getPlatformAccess().getIOSEnumLiteralDeclaration_0()); 
+    }
+)
+    |(	enumLiteral_1='Android' 
+	{
+        $current = grammarAccess.getPlatformAccess().getAndroidEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_1, grammarAccess.getPlatformAccess().getAndroidEnumLiteralDeclaration_1()); 
+    }
+));
 
 
 

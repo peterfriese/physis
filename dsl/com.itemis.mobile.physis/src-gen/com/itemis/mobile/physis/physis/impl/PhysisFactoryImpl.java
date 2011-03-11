@@ -8,6 +8,7 @@ package com.itemis.mobile.physis.physis.impl;
 import com.itemis.mobile.physis.physis.*;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -70,11 +71,46 @@ public class PhysisFactoryImpl extends EFactoryImpl implements PhysisFactory
       case PhysisPackage.MODEL: return createModel();
       case PhysisPackage.DATA_MODEL: return createDataModel();
       case PhysisPackage.TYPE: return createType();
+      case PhysisPackage.MAPPING_CLAUSE: return createMappingClause();
       case PhysisPackage.SIMPLE_TYPE: return createSimpleType();
       case PhysisPackage.ENTITY: return createEntity();
       case PhysisPackage.ATTRIBUTE: return createAttribute();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+    }
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Object createFromString(EDataType eDataType, String initialValue)
+  {
+    switch (eDataType.getClassifierID())
+    {
+      case PhysisPackage.PLATFORM:
+        return createPlatformFromString(eDataType, initialValue);
+      default:
+        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+    }
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String convertToString(EDataType eDataType, Object instanceValue)
+  {
+    switch (eDataType.getClassifierID())
+    {
+      case PhysisPackage.PLATFORM:
+        return convertPlatformToString(eDataType, instanceValue);
+      default:
+        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
   }
 
@@ -116,6 +152,17 @@ public class PhysisFactoryImpl extends EFactoryImpl implements PhysisFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public MappingClause createMappingClause()
+  {
+    MappingClauseImpl mappingClause = new MappingClauseImpl();
+    return mappingClause;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public SimpleType createSimpleType()
   {
     SimpleTypeImpl simpleType = new SimpleTypeImpl();
@@ -142,6 +189,28 @@ public class PhysisFactoryImpl extends EFactoryImpl implements PhysisFactory
   {
     AttributeImpl attribute = new AttributeImpl();
     return attribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Platform createPlatformFromString(EDataType eDataType, String initialValue)
+  {
+    Platform result = Platform.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertPlatformToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
   }
 
   /**

@@ -1,10 +1,10 @@
-package com.itemis.mobile.physis.generator
+package com.itemis.mobile.physis.generator.iOS
 
 import org.eclipse.xtext.generator.IFileSystemAccess
 import com.itemis.mobile.physis.physis.Entity
 import org.eclipse.emf.ecore.EObject
 
-class EntityGenerator extends com.itemis.mobile.physis.generator.AbstractBaseGenerator {
+class EntityGenerator extends com.itemis.mobile.physis.generator.iOS.AbstractIOSBaseGenerator {
 	
 	@Inject extension GeneratorExtensions
 	

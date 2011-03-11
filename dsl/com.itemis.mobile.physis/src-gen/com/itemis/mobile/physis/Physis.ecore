@@ -8,6 +8,10 @@
         eType="ecore:EClass platform:/resource/com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/Physis.ecore#//DataModel"
         containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Platform">
+    <eLiterals name="iOS" literal="iOS"/>
+    <eLiterals name="Android" value="1" literal="Android"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DataModel">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="types" upperBound="-1"
@@ -17,7 +21,15 @@
   <eClassifiers xsi:type="ecore:EClass" name="Type">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SimpleType" eSuperTypes="platform:/resource/com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/Physis.ecore#//Type"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MappingClause">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mappedType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="platform" eType="ecore:EEnum platform:/resource/com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/Physis.ecore#//Platform"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SimpleType" eSuperTypes="platform:/resource/com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/Physis.ecore#//Type">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mappings" upperBound="-1"
+        eType="ecore:EClass platform:/resource/com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/Physis.ecore#//MappingClause"
+        containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Entity" eSuperTypes="platform:/resource/com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/Physis.ecore#//Type">
     <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
         eType="ecore:EClass platform:/resource/com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/Physis.ecore#//Attribute"

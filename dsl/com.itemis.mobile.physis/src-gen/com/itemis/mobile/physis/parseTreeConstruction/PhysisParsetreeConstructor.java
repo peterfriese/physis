@@ -34,9 +34,10 @@ protected class ThisRootNode extends RootToken {
 			case 0: return new Model_DatamodelsAssignment(this, this, 0, inst);
 			case 1: return new DataModel_Group(this, this, 1, inst);
 			case 2: return new Type_Alternatives(this, this, 2, inst);
-			case 3: return new SimpleType_Group(this, this, 3, inst);
-			case 4: return new Entity_Group(this, this, 4, inst);
-			case 5: return new Attribute_Group(this, this, 5, inst);
+			case 3: return new MappingClause_Group(this, this, 3, inst);
+			case 4: return new SimpleType_Group(this, this, 4, inst);
+			case 5: return new Entity_Group(this, this, 5, inst);
+			case 6: return new Attribute_Group(this, this, 6, inst);
 			default: return null;
 		}	
 	}	
@@ -400,14 +401,165 @@ protected class Type_EntityParserRuleCall_1 extends RuleCallToken {
 /************ end Rule Type ****************/
 
 
-/************ begin Rule SimpleType ****************
+/************ begin Rule MappingClause ****************
  *
- * SimpleType:
- * 	"type" name=ID;
+ * MappingClause:
+ * 	"is" mappedType=ID "on platform" platform=Platform;
  *
  **/
 
-// "type" name=ID
+// "is" mappedType=ID "on platform" platform=Platform
+protected class MappingClause_Group extends GroupToken {
+	
+	public MappingClause_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Group getGrammarElement() {
+		return grammarAccess.getMappingClauseAccess().getGroup();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new MappingClause_PlatformAssignment_3(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override
+	public IEObjectConsumer tryConsume() {
+		if(getEObject().eClass() != grammarAccess.getMappingClauseRule().getType().getClassifier())
+			return null;
+		return eObjectConsumer;
+	}
+
+}
+
+// "is"
+protected class MappingClause_IsKeyword_0 extends KeywordToken  {
+	
+	public MappingClause_IsKeyword_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Keyword getGrammarElement() {
+		return grammarAccess.getMappingClauseAccess().getIsKeyword_0();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			default: return lastRuleCallOrigin.createFollowerAfterReturn(this, index, index, inst);
+		}	
+	}
+
+}
+
+// mappedType=ID
+protected class MappingClause_MappedTypeAssignment_1 extends AssignmentToken  {
+	
+	public MappingClause_MappedTypeAssignment_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Assignment getGrammarElement() {
+		return grammarAccess.getMappingClauseAccess().getMappedTypeAssignment_1();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new MappingClause_IsKeyword_0(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override	
+	public IEObjectConsumer tryConsume() {
+		if((value = eObjectConsumer.getConsumable("mappedType",true)) == null) return null;
+		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("mappedType");
+		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getMappingClauseAccess().getMappedTypeIDTerminalRuleCall_1_0(), value, null)) {
+			type = AssignmentType.TERMINAL_RULE_CALL;
+			element = grammarAccess.getMappingClauseAccess().getMappedTypeIDTerminalRuleCall_1_0();
+			return obj;
+		}
+		return null;
+	}
+
+}
+
+// "on platform"
+protected class MappingClause_OnPlatformKeyword_2 extends KeywordToken  {
+	
+	public MappingClause_OnPlatformKeyword_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Keyword getGrammarElement() {
+		return grammarAccess.getMappingClauseAccess().getOnPlatformKeyword_2();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new MappingClause_MappedTypeAssignment_1(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+}
+
+// platform=Platform
+protected class MappingClause_PlatformAssignment_3 extends AssignmentToken  {
+	
+	public MappingClause_PlatformAssignment_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Assignment getGrammarElement() {
+		return grammarAccess.getMappingClauseAccess().getPlatformAssignment_3();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new MappingClause_OnPlatformKeyword_2(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override	
+	public IEObjectConsumer tryConsume() {
+		if((value = eObjectConsumer.getConsumable("platform",true)) == null) return null;
+		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("platform");
+		if(enumLitSerializer.isValid(obj.getEObject(), grammarAccess.getMappingClauseAccess().getPlatformPlatformEnumRuleCall_3_0(), value, null)) { 
+			type = AssignmentType.ENUM_RULE_CALL;
+			element = grammarAccess.getMappingClauseAccess().getPlatformPlatformEnumRuleCall_3_0();
+			return obj;
+		}
+		return null;
+	}
+
+}
+
+
+/************ end Rule MappingClause ****************/
+
+
+/************ begin Rule SimpleType ****************
+ *
+ * SimpleType:
+ * 	"type" name=ID mappings+=MappingClause*;
+ *
+ **/
+
+// "type" name=ID mappings+=MappingClause*
 protected class SimpleType_Group extends GroupToken {
 	
 	public SimpleType_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -422,7 +574,8 @@ protected class SimpleType_Group extends GroupToken {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new SimpleType_NameAssignment_1(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new SimpleType_MappingsAssignment_2(lastRuleCallOrigin, this, 0, inst);
+			case 1: return new SimpleType_NameAssignment_1(lastRuleCallOrigin, this, 1, inst);
 			default: return null;
 		}	
 	}
@@ -489,6 +642,53 @@ protected class SimpleType_NameAssignment_1 extends AssignmentToken  {
 		return null;
 	}
 
+}
+
+// mappings+=MappingClause*
+protected class SimpleType_MappingsAssignment_2 extends AssignmentToken  {
+	
+	public SimpleType_MappingsAssignment_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Assignment getGrammarElement() {
+		return grammarAccess.getSimpleTypeAccess().getMappingsAssignment_2();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new MappingClause_Group(this, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override	
+	public IEObjectConsumer tryConsume() {
+		if((value = eObjectConsumer.getConsumable("mappings",false)) == null) return null;
+		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("mappings");
+		if(value instanceof EObject) { // org::eclipse::xtext::impl::RuleCallImpl
+			IEObjectConsumer param = createEObjectConsumer((EObject)value);
+			if(param.isInstanceOf(grammarAccess.getMappingClauseRule().getType().getClassifier())) {
+				type = AssignmentType.PARSER_RULE_CALL;
+				element = grammarAccess.getSimpleTypeAccess().getMappingsMappingClauseParserRuleCall_2_0(); 
+				consumed = obj;
+				return param;
+			}
+		}
+		return null;
+	}
+
+    @Override
+	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
+		if(value == inst.getEObject() && !inst.isConsumed()) return null;
+		switch(index) {
+			case 0: return new SimpleType_MappingsAssignment_2(lastRuleCallOrigin, next, actIndex, consumed);
+			case 1: return new SimpleType_NameAssignment_1(lastRuleCallOrigin, next, actIndex, consumed);
+			default: return null;
+		}	
+	}	
 }
 
 

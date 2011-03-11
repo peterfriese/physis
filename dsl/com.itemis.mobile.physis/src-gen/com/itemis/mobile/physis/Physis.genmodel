@@ -9,6 +9,10 @@
     editorPluginID="com.itemis.mobile.physis.editor">
   <genPackages prefix="Physis" basePackage="com.itemis.mobile.physis" disposableProviderFactory="true"
       ecorePackage="platform:/resource/com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/Physis.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="platform:/resource/com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/Physis.ecore#//Platform">
+      <genEnumLiterals ecoreEnumLiteral="platform:/resource/com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/Physis.ecore#//Platform/iOS"/>
+      <genEnumLiterals ecoreEnumLiteral="platform:/resource/com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/Physis.ecore#//Platform/Android"/>
+    </genEnums>
     <genClasses ecoreClass="platform:/resource/com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/Physis.ecore#//Model">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/Physis.ecore#//Model/datamodels"/>
     </genClasses>
@@ -19,7 +23,13 @@
     <genClasses ecoreClass="platform:/resource/com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/Physis.ecore#//Type">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/Physis.ecore#//Type/name"/>
     </genClasses>
-    <genClasses ecoreClass="platform:/resource/com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/Physis.ecore#//SimpleType"/>
+    <genClasses ecoreClass="platform:/resource/com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/Physis.ecore#//MappingClause">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/Physis.ecore#//MappingClause/mappedType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/Physis.ecore#//MappingClause/platform"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/Physis.ecore#//SimpleType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/Physis.ecore#//SimpleType/mappings"/>
+    </genClasses>
     <genClasses ecoreClass="platform:/resource/com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/Physis.ecore#//Entity">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/Physis.ecore#//Entity/attributes"/>
     </genClasses>

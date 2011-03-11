@@ -6,17 +6,22 @@ generate physis "http://www.itemis.com/mobile/physis/Physis"
 Model:
 	(datamodels += DataModel)*;
 	
+enum Platform:
+	iOS | Android;
+	
 DataModel:
 	'datamodel' name=ID '{'
 		(types += Type)*
 	'}';
 		
-	
 Type:
 	SimpleType | Entity;
 	
+MappingClause:
+	'is' mappedType=ID 'on platform' platform=Platform;
+	
 SimpleType:
-	'type' name=ID;
+	'type' name=ID (mappings += MappingClause)*;
 	
 Entity:
 	'entity' name=ID '{'

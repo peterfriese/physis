@@ -8,14 +8,17 @@ package com.itemis.mobile.physis.physis.impl;
 import com.itemis.mobile.physis.physis.Attribute;
 import com.itemis.mobile.physis.physis.DataModel;
 import com.itemis.mobile.physis.physis.Entity;
+import com.itemis.mobile.physis.physis.MappingClause;
 import com.itemis.mobile.physis.physis.Model;
 import com.itemis.mobile.physis.physis.PhysisFactory;
 import com.itemis.mobile.physis.physis.PhysisPackage;
+import com.itemis.mobile.physis.physis.Platform;
 import com.itemis.mobile.physis.physis.SimpleType;
 import com.itemis.mobile.physis.physis.Type;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -55,6 +58,13 @@ public class PhysisPackageImpl extends EPackageImpl implements PhysisPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass mappingClauseEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass simpleTypeEClass = null;
 
   /**
@@ -70,6 +80,13 @@ public class PhysisPackageImpl extends EPackageImpl implements PhysisPackage
    * @generated
    */
   private EClass attributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum platformEEnum = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -209,9 +226,49 @@ public class PhysisPackageImpl extends EPackageImpl implements PhysisPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getMappingClause()
+  {
+    return mappingClauseEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMappingClause_MappedType()
+  {
+    return (EAttribute)mappingClauseEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMappingClause_Platform()
+  {
+    return (EAttribute)mappingClauseEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getSimpleType()
   {
     return simpleTypeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getSimpleType_Mappings()
+  {
+    return (EReference)simpleTypeEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -279,6 +336,16 @@ public class PhysisPackageImpl extends EPackageImpl implements PhysisPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EEnum getPlatform()
+  {
+    return platformEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public PhysisFactory getPhysisFactory()
   {
     return (PhysisFactory)getEFactoryInstance();
@@ -314,7 +381,12 @@ public class PhysisPackageImpl extends EPackageImpl implements PhysisPackage
     typeEClass = createEClass(TYPE);
     createEAttribute(typeEClass, TYPE__NAME);
 
+    mappingClauseEClass = createEClass(MAPPING_CLAUSE);
+    createEAttribute(mappingClauseEClass, MAPPING_CLAUSE__MAPPED_TYPE);
+    createEAttribute(mappingClauseEClass, MAPPING_CLAUSE__PLATFORM);
+
     simpleTypeEClass = createEClass(SIMPLE_TYPE);
+    createEReference(simpleTypeEClass, SIMPLE_TYPE__MAPPINGS);
 
     entityEClass = createEClass(ENTITY);
     createEReference(entityEClass, ENTITY__ATTRIBUTES);
@@ -323,6 +395,9 @@ public class PhysisPackageImpl extends EPackageImpl implements PhysisPackage
     createEAttribute(attributeEClass, ATTRIBUTE__NAME);
     createEReference(attributeEClass, ATTRIBUTE__TYPE);
     createEAttribute(attributeEClass, ATTRIBUTE__MULTIPLICITY);
+
+    // Create enums
+    platformEEnum = createEEnum(PLATFORM);
   }
 
   /**
@@ -368,7 +443,12 @@ public class PhysisPackageImpl extends EPackageImpl implements PhysisPackage
     initEClass(typeEClass, Type.class, "Type", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getType_Name(), ecorePackage.getEString(), "name", null, 0, 1, Type.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(mappingClauseEClass, MappingClause.class, "MappingClause", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getMappingClause_MappedType(), ecorePackage.getEString(), "mappedType", null, 0, 1, MappingClause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getMappingClause_Platform(), this.getPlatform(), "platform", null, 0, 1, MappingClause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(simpleTypeEClass, SimpleType.class, "SimpleType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getSimpleType_Mappings(), this.getMappingClause(), null, "mappings", null, 0, -1, SimpleType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(entityEClass, Entity.class, "Entity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getEntity_Attributes(), this.getAttribute(), null, "attributes", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -377,6 +457,11 @@ public class PhysisPackageImpl extends EPackageImpl implements PhysisPackage
     initEAttribute(getAttribute_Name(), ecorePackage.getEString(), "name", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAttribute_Type(), this.getType(), null, "type", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getAttribute_Multiplicity(), ecorePackage.getEBoolean(), "multiplicity", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    // Initialize enums and add enum literals
+    initEEnum(platformEEnum, Platform.class, "Platform");
+    addEEnumLiteral(platformEEnum, Platform.IOS);
+    addEEnumLiteral(platformEEnum, Platform.ANDROID);
 
     // Create resource
     createResource(eNS_URI);
