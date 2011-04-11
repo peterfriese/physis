@@ -40,15 +40,15 @@ public class PhysisGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cTypesAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cTypesTypeParserRuleCall_3_0 = (RuleCall)cTypesAssignment_3.eContents().get(0);
+		private final Assignment cEntitiesAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cEntitiesEntityParserRuleCall_3_0 = (RuleCall)cEntitiesAssignment_3.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//DataModel:
-		//	"datamodel" name=ID "{" types+=Type* "}";
+		//	"datamodel" name=ID "{" entities+=Entity* "}";
 		public ParserRule getRule() { return rule; }
 
-		//"datamodel" name=ID "{" types+=Type* "}"
+		//"datamodel" name=ID "{" entities+=Entity* "}"
 		public Group getGroup() { return cGroup; }
 
 		//"datamodel"
@@ -63,102 +63,210 @@ public class PhysisGrammarAccess extends AbstractGrammarElementFinder {
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 
-		//types+=Type*
-		public Assignment getTypesAssignment_3() { return cTypesAssignment_3; }
+		//entities+=Entity*
+		public Assignment getEntitiesAssignment_3() { return cEntitiesAssignment_3; }
 
-		//Type
-		public RuleCall getTypesTypeParserRuleCall_3_0() { return cTypesTypeParserRuleCall_3_0; }
+		//Entity
+		public RuleCall getEntitiesEntityParserRuleCall_3_0() { return cEntitiesEntityParserRuleCall_3_0; }
 
 		//"}"
 		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
 	}
 
-	public class TypeElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Type");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cSimpleTypeParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cEntityParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+	public class DateTypeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "DateType");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cDateTypeAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cDateKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		
-		//Type:
-		//	SimpleType | Entity;
+		//DateType:
+		//	{DateType} "Date";
 		public ParserRule getRule() { return rule; }
 
-		//SimpleType | Entity
+		//{DateType} "Date"
+		public Group getGroup() { return cGroup; }
+
+		//{DateType}
+		public Action getDateTypeAction_0() { return cDateTypeAction_0; }
+
+		//"Date"
+		public Keyword getDateKeyword_1() { return cDateKeyword_1; }
+	}
+
+	public class IntegerTypeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "IntegerType");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cIntegerTypeAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cIntegerKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		
+		//IntegerType:
+		//	{IntegerType} "Integer";
+		public ParserRule getRule() { return rule; }
+
+		//{IntegerType} "Integer"
+		public Group getGroup() { return cGroup; }
+
+		//{IntegerType}
+		public Action getIntegerTypeAction_0() { return cIntegerTypeAction_0; }
+
+		//"Integer"
+		public Keyword getIntegerKeyword_1() { return cIntegerKeyword_1; }
+	}
+
+	public class DoubleTypeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "DoubleType");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cDoubleTypeAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cDoubleKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		
+		//DoubleType:
+		//	{DoubleType} "Double";
+		public ParserRule getRule() { return rule; }
+
+		//{DoubleType} "Double"
+		public Group getGroup() { return cGroup; }
+
+		//{DoubleType}
+		public Action getDoubleTypeAction_0() { return cDoubleTypeAction_0; }
+
+		//"Double"
+		public Keyword getDoubleKeyword_1() { return cDoubleKeyword_1; }
+	}
+
+	public class FloatTypeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "FloatType");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cFloatTypeAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cFloatKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		
+		//FloatType:
+		//	{FloatType} "Float";
+		public ParserRule getRule() { return rule; }
+
+		//{FloatType} "Float"
+		public Group getGroup() { return cGroup; }
+
+		//{FloatType}
+		public Action getFloatTypeAction_0() { return cFloatTypeAction_0; }
+
+		//"Float"
+		public Keyword getFloatKeyword_1() { return cFloatKeyword_1; }
+	}
+
+	public class StringTypeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "StringType");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cStringTypeAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cStringKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		
+		//StringType:
+		//	{StringType} "String";
+		public ParserRule getRule() { return rule; }
+
+		//{StringType} "String"
+		public Group getGroup() { return cGroup; }
+
+		//{StringType}
+		public Action getStringTypeAction_0() { return cStringTypeAction_0; }
+
+		//"String"
+		public Keyword getStringKeyword_1() { return cStringKeyword_1; }
+	}
+
+	public class BooleanTypeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "BooleanType");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cBooleanTypeAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cBooleanKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		
+		//BooleanType:
+		//	{BooleanType} "Boolean";
+		public ParserRule getRule() { return rule; }
+
+		//{BooleanType} "Boolean"
+		public Group getGroup() { return cGroup; }
+
+		//{BooleanType}
+		public Action getBooleanTypeAction_0() { return cBooleanTypeAction_0; }
+
+		//"Boolean"
+		public Keyword getBooleanKeyword_1() { return cBooleanKeyword_1; }
+	}
+
+	public class BuiltInTypeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "BuiltInType");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cDateTypeParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cIntegerTypeParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cDoubleTypeParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cFloatTypeParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cStringTypeParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
+		private final RuleCall cBooleanTypeParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
+		
+		//BuiltInType:
+		//	DateType | IntegerType | DoubleType | FloatType | StringType | BooleanType;
+		public ParserRule getRule() { return rule; }
+
+		//DateType | IntegerType | DoubleType | FloatType | StringType | BooleanType
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//SimpleType
-		public RuleCall getSimpleTypeParserRuleCall_0() { return cSimpleTypeParserRuleCall_0; }
+		//DateType
+		public RuleCall getDateTypeParserRuleCall_0() { return cDateTypeParserRuleCall_0; }
 
-		//Entity
-		public RuleCall getEntityParserRuleCall_1() { return cEntityParserRuleCall_1; }
+		//IntegerType
+		public RuleCall getIntegerTypeParserRuleCall_1() { return cIntegerTypeParserRuleCall_1; }
+
+		//DoubleType
+		public RuleCall getDoubleTypeParserRuleCall_2() { return cDoubleTypeParserRuleCall_2; }
+
+		//FloatType
+		public RuleCall getFloatTypeParserRuleCall_3() { return cFloatTypeParserRuleCall_3; }
+
+		//StringType
+		public RuleCall getStringTypeParserRuleCall_4() { return cStringTypeParserRuleCall_4; }
+
+		//BooleanType
+		public RuleCall getBooleanTypeParserRuleCall_5() { return cBooleanTypeParserRuleCall_5; }
 	}
 
-	public class MappingClauseElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "MappingClause");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cIsKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cMappedTypeAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cMappedTypeIDTerminalRuleCall_1_0 = (RuleCall)cMappedTypeAssignment_1.eContents().get(0);
-		private final Keyword cOnPlatformKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cPlatformAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cPlatformPlatformEnumRuleCall_3_0 = (RuleCall)cPlatformAssignment_3.eContents().get(0);
+	public class ReferenceElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Reference");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cTypeReferenceParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cBuiltInTypeParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
-		//MappingClause:
-		//	"is" mappedType=ID "on platform" platform=Platform;
+		//Reference:
+		//	TypeReference | BuiltInType;
 		public ParserRule getRule() { return rule; }
 
-		//"is" mappedType=ID "on platform" platform=Platform
-		public Group getGroup() { return cGroup; }
+		//TypeReference | BuiltInType
+		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//"is"
-		public Keyword getIsKeyword_0() { return cIsKeyword_0; }
+		//TypeReference
+		public RuleCall getTypeReferenceParserRuleCall_0() { return cTypeReferenceParserRuleCall_0; }
 
-		//mappedType=ID
-		public Assignment getMappedTypeAssignment_1() { return cMappedTypeAssignment_1; }
-
-		//ID
-		public RuleCall getMappedTypeIDTerminalRuleCall_1_0() { return cMappedTypeIDTerminalRuleCall_1_0; }
-
-		//"on platform"
-		public Keyword getOnPlatformKeyword_2() { return cOnPlatformKeyword_2; }
-
-		//platform=Platform
-		public Assignment getPlatformAssignment_3() { return cPlatformAssignment_3; }
-
-		//Platform
-		public RuleCall getPlatformPlatformEnumRuleCall_3_0() { return cPlatformPlatformEnumRuleCall_3_0; }
+		//BuiltInType
+		public RuleCall getBuiltInTypeParserRuleCall_1() { return cBuiltInTypeParserRuleCall_1; }
 	}
 
-	public class SimpleTypeElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "SimpleType");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cTypeKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Assignment cMappingsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cMappingsMappingClauseParserRuleCall_2_0 = (RuleCall)cMappingsAssignment_2.eContents().get(0);
+	public class TypeReferenceElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "TypeReference");
+		private final Assignment cTypeAssignment = (Assignment)rule.eContents().get(1);
+		private final CrossReference cTypeEntityCrossReference_0 = (CrossReference)cTypeAssignment.eContents().get(0);
+		private final RuleCall cTypeEntityIDTerminalRuleCall_0_1 = (RuleCall)cTypeEntityCrossReference_0.eContents().get(1);
 		
-		//SimpleType:
-		//	"type" name=ID mappings+=MappingClause*;
+		//TypeReference:
+		//	type=[Entity];
 		public ParserRule getRule() { return rule; }
 
-		//"type" name=ID mappings+=MappingClause*
-		public Group getGroup() { return cGroup; }
+		//type=[Entity]
+		public Assignment getTypeAssignment() { return cTypeAssignment; }
 
-		//"type"
-		public Keyword getTypeKeyword_0() { return cTypeKeyword_0; }
-
-		//name=ID
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		//[Entity]
+		public CrossReference getTypeEntityCrossReference_0() { return cTypeEntityCrossReference_0; }
 
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
-
-		//mappings+=MappingClause*
-		public Assignment getMappingsAssignment_2() { return cMappingsAssignment_2; }
-
-		//MappingClause
-		public RuleCall getMappingsMappingClauseParserRuleCall_2_0() { return cMappingsMappingClauseParserRuleCall_2_0; }
+		public RuleCall getTypeEntityIDTerminalRuleCall_0_1() { return cTypeEntityIDTerminalRuleCall_0_1; }
 	}
 
 	public class EntityElements extends AbstractParserRuleElementFinder {
@@ -208,16 +316,15 @@ public class PhysisGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
 		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cTypeAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final CrossReference cTypeTypeCrossReference_2_0 = (CrossReference)cTypeAssignment_2.eContents().get(0);
-		private final RuleCall cTypeTypeIDTerminalRuleCall_2_0_1 = (RuleCall)cTypeTypeCrossReference_2_0.eContents().get(1);
+		private final RuleCall cTypeReferenceParserRuleCall_2_0 = (RuleCall)cTypeAssignment_2.eContents().get(0);
 		private final Assignment cMultiplicityAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final Keyword cMultiplicityLeftSquareBracketRightSquareBracketKeyword_3_0 = (Keyword)cMultiplicityAssignment_3.eContents().get(0);
 		
 		//Attribute:
-		//	name=ID ":" type=[Type] multiplicity?="[]"?;
+		//	name=ID ":" type=Reference multiplicity?="[]"?;
 		public ParserRule getRule() { return rule; }
 
-		//name=ID ":" type=[Type] multiplicity?="[]"?
+		//name=ID ":" type=Reference multiplicity?="[]"?
 		public Group getGroup() { return cGroup; }
 
 		//name=ID
@@ -229,14 +336,11 @@ public class PhysisGrammarAccess extends AbstractGrammarElementFinder {
 		//":"
 		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
 
-		//type=[Type]
+		//type=Reference
 		public Assignment getTypeAssignment_2() { return cTypeAssignment_2; }
 
-		//[Type]
-		public CrossReference getTypeTypeCrossReference_2_0() { return cTypeTypeCrossReference_2_0; }
-
-		//ID
-		public RuleCall getTypeTypeIDTerminalRuleCall_2_0_1() { return cTypeTypeIDTerminalRuleCall_2_0_1; }
+		//Reference
+		public RuleCall getTypeReferenceParserRuleCall_2_0() { return cTypeReferenceParserRuleCall_2_0; }
 
 		//multiplicity?="[]"?
 		public Assignment getMultiplicityAssignment_3() { return cMultiplicityAssignment_3; }
@@ -277,9 +381,15 @@ public class PhysisGrammarAccess extends AbstractGrammarElementFinder {
 	private ModelElements pModel;
 	private PlatformElements unknownRulePlatform;
 	private DataModelElements pDataModel;
-	private TypeElements pType;
-	private MappingClauseElements pMappingClause;
-	private SimpleTypeElements pSimpleType;
+	private DateTypeElements pDateType;
+	private IntegerTypeElements pIntegerType;
+	private DoubleTypeElements pDoubleType;
+	private FloatTypeElements pFloatType;
+	private StringTypeElements pStringType;
+	private BooleanTypeElements pBooleanType;
+	private BuiltInTypeElements pBuiltInType;
+	private ReferenceElements pReference;
+	private TypeReferenceElements pTypeReference;
 	private EntityElements pEntity;
 	private AttributeElements pAttribute;
 	
@@ -325,7 +435,7 @@ public class PhysisGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//DataModel:
-	//	"datamodel" name=ID "{" types+=Type* "}";
+	//	"datamodel" name=ID "{" entities+=Entity* "}";
 	public DataModelElements getDataModelAccess() {
 		return (pDataModel != null) ? pDataModel : (pDataModel = new DataModelElements());
 	}
@@ -334,34 +444,94 @@ public class PhysisGrammarAccess extends AbstractGrammarElementFinder {
 		return getDataModelAccess().getRule();
 	}
 
-	//Type:
-	//	SimpleType | Entity;
-	public TypeElements getTypeAccess() {
-		return (pType != null) ? pType : (pType = new TypeElements());
+	//DateType:
+	//	{DateType} "Date";
+	public DateTypeElements getDateTypeAccess() {
+		return (pDateType != null) ? pDateType : (pDateType = new DateTypeElements());
 	}
 	
-	public ParserRule getTypeRule() {
-		return getTypeAccess().getRule();
+	public ParserRule getDateTypeRule() {
+		return getDateTypeAccess().getRule();
 	}
 
-	//MappingClause:
-	//	"is" mappedType=ID "on platform" platform=Platform;
-	public MappingClauseElements getMappingClauseAccess() {
-		return (pMappingClause != null) ? pMappingClause : (pMappingClause = new MappingClauseElements());
+	//IntegerType:
+	//	{IntegerType} "Integer";
+	public IntegerTypeElements getIntegerTypeAccess() {
+		return (pIntegerType != null) ? pIntegerType : (pIntegerType = new IntegerTypeElements());
 	}
 	
-	public ParserRule getMappingClauseRule() {
-		return getMappingClauseAccess().getRule();
+	public ParserRule getIntegerTypeRule() {
+		return getIntegerTypeAccess().getRule();
 	}
 
-	//SimpleType:
-	//	"type" name=ID mappings+=MappingClause*;
-	public SimpleTypeElements getSimpleTypeAccess() {
-		return (pSimpleType != null) ? pSimpleType : (pSimpleType = new SimpleTypeElements());
+	//DoubleType:
+	//	{DoubleType} "Double";
+	public DoubleTypeElements getDoubleTypeAccess() {
+		return (pDoubleType != null) ? pDoubleType : (pDoubleType = new DoubleTypeElements());
 	}
 	
-	public ParserRule getSimpleTypeRule() {
-		return getSimpleTypeAccess().getRule();
+	public ParserRule getDoubleTypeRule() {
+		return getDoubleTypeAccess().getRule();
+	}
+
+	//FloatType:
+	//	{FloatType} "Float";
+	public FloatTypeElements getFloatTypeAccess() {
+		return (pFloatType != null) ? pFloatType : (pFloatType = new FloatTypeElements());
+	}
+	
+	public ParserRule getFloatTypeRule() {
+		return getFloatTypeAccess().getRule();
+	}
+
+	//StringType:
+	//	{StringType} "String";
+	public StringTypeElements getStringTypeAccess() {
+		return (pStringType != null) ? pStringType : (pStringType = new StringTypeElements());
+	}
+	
+	public ParserRule getStringTypeRule() {
+		return getStringTypeAccess().getRule();
+	}
+
+	//BooleanType:
+	//	{BooleanType} "Boolean";
+	public BooleanTypeElements getBooleanTypeAccess() {
+		return (pBooleanType != null) ? pBooleanType : (pBooleanType = new BooleanTypeElements());
+	}
+	
+	public ParserRule getBooleanTypeRule() {
+		return getBooleanTypeAccess().getRule();
+	}
+
+	//BuiltInType:
+	//	DateType | IntegerType | DoubleType | FloatType | StringType | BooleanType;
+	public BuiltInTypeElements getBuiltInTypeAccess() {
+		return (pBuiltInType != null) ? pBuiltInType : (pBuiltInType = new BuiltInTypeElements());
+	}
+	
+	public ParserRule getBuiltInTypeRule() {
+		return getBuiltInTypeAccess().getRule();
+	}
+
+	//Reference:
+	//	TypeReference | BuiltInType;
+	public ReferenceElements getReferenceAccess() {
+		return (pReference != null) ? pReference : (pReference = new ReferenceElements());
+	}
+	
+	public ParserRule getReferenceRule() {
+		return getReferenceAccess().getRule();
+	}
+
+	//TypeReference:
+	//	type=[Entity];
+	public TypeReferenceElements getTypeReferenceAccess() {
+		return (pTypeReference != null) ? pTypeReference : (pTypeReference = new TypeReferenceElements());
+	}
+	
+	public ParserRule getTypeReferenceRule() {
+		return getTypeReferenceAccess().getRule();
 	}
 
 	//Entity:
@@ -375,7 +545,7 @@ public class PhysisGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Attribute:
-	//	name=ID ":" type=[Type] multiplicity?="[]"?;
+	//	name=ID ":" type=Reference multiplicity?="[]"?;
 	public AttributeElements getAttributeAccess() {
 		return (pAttribute != null) ? pAttribute : (pAttribute = new AttributeElements());
 	}

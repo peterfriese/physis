@@ -70,9 +70,15 @@ public class PhysisFactoryImpl extends EFactoryImpl implements PhysisFactory
     {
       case PhysisPackage.MODEL: return createModel();
       case PhysisPackage.DATA_MODEL: return createDataModel();
-      case PhysisPackage.TYPE: return createType();
-      case PhysisPackage.MAPPING_CLAUSE: return createMappingClause();
-      case PhysisPackage.SIMPLE_TYPE: return createSimpleType();
+      case PhysisPackage.DATE_TYPE: return createDateType();
+      case PhysisPackage.INTEGER_TYPE: return createIntegerType();
+      case PhysisPackage.DOUBLE_TYPE: return createDoubleType();
+      case PhysisPackage.FLOAT_TYPE: return createFloatType();
+      case PhysisPackage.STRING_TYPE: return createStringType();
+      case PhysisPackage.BOOLEAN_TYPE: return createBooleanType();
+      case PhysisPackage.BUILT_IN_TYPE: return createBuiltInType();
+      case PhysisPackage.REFERENCE: return createReference();
+      case PhysisPackage.TYPE_REFERENCE: return createTypeReference();
       case PhysisPackage.ENTITY: return createEntity();
       case PhysisPackage.ATTRIBUTE: return createAttribute();
       default:
@@ -141,10 +147,10 @@ public class PhysisFactoryImpl extends EFactoryImpl implements PhysisFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Type createType()
+  public DateType createDateType()
   {
-    TypeImpl type = new TypeImpl();
-    return type;
+    DateTypeImpl dateType = new DateTypeImpl();
+    return dateType;
   }
 
   /**
@@ -152,10 +158,10 @@ public class PhysisFactoryImpl extends EFactoryImpl implements PhysisFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public MappingClause createMappingClause()
+  public IntegerType createIntegerType()
   {
-    MappingClauseImpl mappingClause = new MappingClauseImpl();
-    return mappingClause;
+    IntegerTypeImpl integerType = new IntegerTypeImpl();
+    return integerType;
   }
 
   /**
@@ -163,10 +169,76 @@ public class PhysisFactoryImpl extends EFactoryImpl implements PhysisFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public SimpleType createSimpleType()
+  public DoubleType createDoubleType()
   {
-    SimpleTypeImpl simpleType = new SimpleTypeImpl();
-    return simpleType;
+    DoubleTypeImpl doubleType = new DoubleTypeImpl();
+    return doubleType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public FloatType createFloatType()
+  {
+    FloatTypeImpl floatType = new FloatTypeImpl();
+    return floatType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public StringType createStringType()
+  {
+    StringTypeImpl stringType = new StringTypeImpl();
+    return stringType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public BooleanType createBooleanType()
+  {
+    BooleanTypeImpl booleanType = new BooleanTypeImpl();
+    return booleanType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public BuiltInType createBuiltInType()
+  {
+    BuiltInTypeImpl builtInType = new BuiltInTypeImpl();
+    return builtInType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Reference createReference()
+  {
+    ReferenceImpl reference = new ReferenceImpl();
+    return reference;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TypeReference createTypeReference()
+  {
+    TypeReferenceImpl typeReference = new TypeReferenceImpl();
+    return typeReference;
   }
 
   /**

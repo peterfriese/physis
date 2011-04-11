@@ -10,6 +10,8 @@ import com.itemis.mobile.physis.physis.Type
 import com.itemis.mobile.physis.physis.Attribute
 import java.util.Date
 import com.itemis.mobile.physis.PhysisMetamodelExtensions
+import com.itemis.mobile.physis.physis.Reference
+import com.itemis.mobile.physis.physis.TypeReference
 
 class GeneratorExtensions {
 	
@@ -20,22 +22,26 @@ class GeneratorExtensions {
 	}
 	
 	entityName(Entity e) {
-		e.className + "Entity"
+		e.className.toLowerCase + "Entity"
 	}
 	
-	typeDeclaration(Attribute attribute) {
-		attribute.type.typeDeclaration();
-	}
-	
-	typeDeclaration(Type type) {
-		type.name + if (type.isPrimitiveType()) '' else ' *'
-	}
-	
-	isPrimitiveType(Type type) {
-		switch (type.name) {
-			case 'NSInteger': true
-			default: false
+	typeDeclaration(Attribute attribute, ImportManager importManager) {
+		if (attribute.type instanceof TypeReference) {
+			importManager.addImport(attribute.typeName)
+		}		
+		if (attribute.isMultiplicity())
+			attribute.type.collectionTypeDeclaration()
+		else {
+			attribute.type.typeDeclaration();			
 		}
+	}
+	
+	collectionTypeDeclaration(Reference reference) {
+		reference.collectionTypeName +  " *"
+	}
+	
+	typeDeclaration(Reference reference) {
+		reference.typeName + if(reference.isPrimitiveType()) ' ' else ' *'
 	}
 	
 }

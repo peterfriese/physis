@@ -108,13 +108,13 @@ public interface PhysisPackage extends EPackage
   int DATA_MODEL__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Types</b></em>' containment reference list.
+   * The feature id for the '<em><b>Entities</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DATA_MODEL__TYPES = 1;
+  int DATA_MODEL__ENTITIES = 1;
 
   /**
    * The number of structural features of the '<em>Data Model</em>' class.
@@ -126,106 +126,184 @@ public interface PhysisPackage extends EPackage
   int DATA_MODEL_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link com.itemis.mobile.physis.physis.impl.TypeImpl <em>Type</em>}' class.
+   * The meta object id for the '{@link com.itemis.mobile.physis.physis.impl.ReferenceImpl <em>Reference</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see com.itemis.mobile.physis.physis.impl.TypeImpl
-   * @see com.itemis.mobile.physis.physis.impl.PhysisPackageImpl#getType()
+   * @see com.itemis.mobile.physis.physis.impl.ReferenceImpl
+   * @see com.itemis.mobile.physis.physis.impl.PhysisPackageImpl#getReference()
    * @generated
    */
-  int TYPE = 2;
+  int REFERENCE = 9;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * The number of structural features of the '<em>Reference</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TYPE__NAME = 0;
+  int REFERENCE_FEATURE_COUNT = 0;
 
   /**
-   * The number of structural features of the '<em>Type</em>' class.
+   * The meta object id for the '{@link com.itemis.mobile.physis.physis.impl.BuiltInTypeImpl <em>Built In Type</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.itemis.mobile.physis.physis.impl.BuiltInTypeImpl
+   * @see com.itemis.mobile.physis.physis.impl.PhysisPackageImpl#getBuiltInType()
+   * @generated
+   */
+  int BUILT_IN_TYPE = 8;
+
+  /**
+   * The number of structural features of the '<em>Built In Type</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TYPE_FEATURE_COUNT = 1;
+  int BUILT_IN_TYPE_FEATURE_COUNT = REFERENCE_FEATURE_COUNT + 0;
 
   /**
-   * The meta object id for the '{@link com.itemis.mobile.physis.physis.impl.MappingClauseImpl <em>Mapping Clause</em>}' class.
+   * The meta object id for the '{@link com.itemis.mobile.physis.physis.impl.DateTypeImpl <em>Date Type</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see com.itemis.mobile.physis.physis.impl.MappingClauseImpl
-   * @see com.itemis.mobile.physis.physis.impl.PhysisPackageImpl#getMappingClause()
+   * @see com.itemis.mobile.physis.physis.impl.DateTypeImpl
+   * @see com.itemis.mobile.physis.physis.impl.PhysisPackageImpl#getDateType()
    * @generated
    */
-  int MAPPING_CLAUSE = 3;
+  int DATE_TYPE = 2;
 
   /**
-   * The feature id for the '<em><b>Mapped Type</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MAPPING_CLAUSE__MAPPED_TYPE = 0;
-
-  /**
-   * The feature id for the '<em><b>Platform</b></em>' attribute.
+   * The number of structural features of the '<em>Date Type</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MAPPING_CLAUSE__PLATFORM = 1;
+  int DATE_TYPE_FEATURE_COUNT = BUILT_IN_TYPE_FEATURE_COUNT + 0;
 
   /**
-   * The number of structural features of the '<em>Mapping Clause</em>' class.
+   * The meta object id for the '{@link com.itemis.mobile.physis.physis.impl.IntegerTypeImpl <em>Integer Type</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.itemis.mobile.physis.physis.impl.IntegerTypeImpl
+   * @see com.itemis.mobile.physis.physis.impl.PhysisPackageImpl#getIntegerType()
+   * @generated
+   */
+  int INTEGER_TYPE = 3;
+
+  /**
+   * The number of structural features of the '<em>Integer Type</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MAPPING_CLAUSE_FEATURE_COUNT = 2;
+  int INTEGER_TYPE_FEATURE_COUNT = BUILT_IN_TYPE_FEATURE_COUNT + 0;
 
   /**
-   * The meta object id for the '{@link com.itemis.mobile.physis.physis.impl.SimpleTypeImpl <em>Simple Type</em>}' class.
+   * The meta object id for the '{@link com.itemis.mobile.physis.physis.impl.DoubleTypeImpl <em>Double Type</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see com.itemis.mobile.physis.physis.impl.SimpleTypeImpl
-   * @see com.itemis.mobile.physis.physis.impl.PhysisPackageImpl#getSimpleType()
+   * @see com.itemis.mobile.physis.physis.impl.DoubleTypeImpl
+   * @see com.itemis.mobile.physis.physis.impl.PhysisPackageImpl#getDoubleType()
    * @generated
    */
-  int SIMPLE_TYPE = 4;
+  int DOUBLE_TYPE = 4;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SIMPLE_TYPE__NAME = TYPE__NAME;
-
-  /**
-   * The feature id for the '<em><b>Mappings</b></em>' containment reference list.
+   * The number of structural features of the '<em>Double Type</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SIMPLE_TYPE__MAPPINGS = TYPE_FEATURE_COUNT + 0;
+  int DOUBLE_TYPE_FEATURE_COUNT = BUILT_IN_TYPE_FEATURE_COUNT + 0;
 
   /**
-   * The number of structural features of the '<em>Simple Type</em>' class.
+   * The meta object id for the '{@link com.itemis.mobile.physis.physis.impl.FloatTypeImpl <em>Float Type</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.itemis.mobile.physis.physis.impl.FloatTypeImpl
+   * @see com.itemis.mobile.physis.physis.impl.PhysisPackageImpl#getFloatType()
+   * @generated
+   */
+  int FLOAT_TYPE = 5;
+
+  /**
+   * The number of structural features of the '<em>Float Type</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SIMPLE_TYPE_FEATURE_COUNT = TYPE_FEATURE_COUNT + 1;
+  int FLOAT_TYPE_FEATURE_COUNT = BUILT_IN_TYPE_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link com.itemis.mobile.physis.physis.impl.StringTypeImpl <em>String Type</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.itemis.mobile.physis.physis.impl.StringTypeImpl
+   * @see com.itemis.mobile.physis.physis.impl.PhysisPackageImpl#getStringType()
+   * @generated
+   */
+  int STRING_TYPE = 6;
+
+  /**
+   * The number of structural features of the '<em>String Type</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRING_TYPE_FEATURE_COUNT = BUILT_IN_TYPE_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link com.itemis.mobile.physis.physis.impl.BooleanTypeImpl <em>Boolean Type</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.itemis.mobile.physis.physis.impl.BooleanTypeImpl
+   * @see com.itemis.mobile.physis.physis.impl.PhysisPackageImpl#getBooleanType()
+   * @generated
+   */
+  int BOOLEAN_TYPE = 7;
+
+  /**
+   * The number of structural features of the '<em>Boolean Type</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOOLEAN_TYPE_FEATURE_COUNT = BUILT_IN_TYPE_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link com.itemis.mobile.physis.physis.impl.TypeReferenceImpl <em>Type Reference</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.itemis.mobile.physis.physis.impl.TypeReferenceImpl
+   * @see com.itemis.mobile.physis.physis.impl.PhysisPackageImpl#getTypeReference()
+   * @generated
+   */
+  int TYPE_REFERENCE = 10;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_REFERENCE__TYPE = REFERENCE_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Type Reference</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_REFERENCE_FEATURE_COUNT = REFERENCE_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link com.itemis.mobile.physis.physis.impl.EntityImpl <em>Entity</em>}' class.
@@ -235,7 +313,7 @@ public interface PhysisPackage extends EPackage
    * @see com.itemis.mobile.physis.physis.impl.PhysisPackageImpl#getEntity()
    * @generated
    */
-  int ENTITY = 5;
+  int ENTITY = 11;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -244,7 +322,7 @@ public interface PhysisPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ENTITY__NAME = TYPE__NAME;
+  int ENTITY__NAME = 0;
 
   /**
    * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
@@ -253,7 +331,7 @@ public interface PhysisPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ENTITY__ATTRIBUTES = TYPE_FEATURE_COUNT + 0;
+  int ENTITY__ATTRIBUTES = 1;
 
   /**
    * The number of structural features of the '<em>Entity</em>' class.
@@ -262,7 +340,7 @@ public interface PhysisPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ENTITY_FEATURE_COUNT = TYPE_FEATURE_COUNT + 1;
+  int ENTITY_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link com.itemis.mobile.physis.physis.impl.AttributeImpl <em>Attribute</em>}' class.
@@ -272,7 +350,7 @@ public interface PhysisPackage extends EPackage
    * @see com.itemis.mobile.physis.physis.impl.PhysisPackageImpl#getAttribute()
    * @generated
    */
-  int ATTRIBUTE = 6;
+  int ATTRIBUTE = 12;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -284,7 +362,7 @@ public interface PhysisPackage extends EPackage
   int ATTRIBUTE__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Type</b></em>' reference.
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -318,7 +396,7 @@ public interface PhysisPackage extends EPackage
    * @see com.itemis.mobile.physis.physis.impl.PhysisPackageImpl#getPlatform()
    * @generated
    */
-  int PLATFORM = 7;
+  int PLATFORM = 13;
 
 
   /**
@@ -364,89 +442,116 @@ public interface PhysisPackage extends EPackage
   EAttribute getDataModel_Name();
 
   /**
-   * Returns the meta object for the containment reference list '{@link com.itemis.mobile.physis.physis.DataModel#getTypes <em>Types</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.itemis.mobile.physis.physis.DataModel#getEntities <em>Entities</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Types</em>'.
-   * @see com.itemis.mobile.physis.physis.DataModel#getTypes()
+   * @return the meta object for the containment reference list '<em>Entities</em>'.
+   * @see com.itemis.mobile.physis.physis.DataModel#getEntities()
    * @see #getDataModel()
    * @generated
    */
-  EReference getDataModel_Types();
+  EReference getDataModel_Entities();
 
   /**
-   * Returns the meta object for class '{@link com.itemis.mobile.physis.physis.Type <em>Type</em>}'.
+   * Returns the meta object for class '{@link com.itemis.mobile.physis.physis.DateType <em>Date Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Type</em>'.
-   * @see com.itemis.mobile.physis.physis.Type
+   * @return the meta object for class '<em>Date Type</em>'.
+   * @see com.itemis.mobile.physis.physis.DateType
    * @generated
    */
-  EClass getType();
+  EClass getDateType();
 
   /**
-   * Returns the meta object for the attribute '{@link com.itemis.mobile.physis.physis.Type#getName <em>Name</em>}'.
+   * Returns the meta object for class '{@link com.itemis.mobile.physis.physis.IntegerType <em>Integer Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see com.itemis.mobile.physis.physis.Type#getName()
-   * @see #getType()
+   * @return the meta object for class '<em>Integer Type</em>'.
+   * @see com.itemis.mobile.physis.physis.IntegerType
    * @generated
    */
-  EAttribute getType_Name();
+  EClass getIntegerType();
 
   /**
-   * Returns the meta object for class '{@link com.itemis.mobile.physis.physis.MappingClause <em>Mapping Clause</em>}'.
+   * Returns the meta object for class '{@link com.itemis.mobile.physis.physis.DoubleType <em>Double Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Mapping Clause</em>'.
-   * @see com.itemis.mobile.physis.physis.MappingClause
+   * @return the meta object for class '<em>Double Type</em>'.
+   * @see com.itemis.mobile.physis.physis.DoubleType
    * @generated
    */
-  EClass getMappingClause();
+  EClass getDoubleType();
 
   /**
-   * Returns the meta object for the attribute '{@link com.itemis.mobile.physis.physis.MappingClause#getMappedType <em>Mapped Type</em>}'.
+   * Returns the meta object for class '{@link com.itemis.mobile.physis.physis.FloatType <em>Float Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Mapped Type</em>'.
-   * @see com.itemis.mobile.physis.physis.MappingClause#getMappedType()
-   * @see #getMappingClause()
+   * @return the meta object for class '<em>Float Type</em>'.
+   * @see com.itemis.mobile.physis.physis.FloatType
    * @generated
    */
-  EAttribute getMappingClause_MappedType();
+  EClass getFloatType();
 
   /**
-   * Returns the meta object for the attribute '{@link com.itemis.mobile.physis.physis.MappingClause#getPlatform <em>Platform</em>}'.
+   * Returns the meta object for class '{@link com.itemis.mobile.physis.physis.StringType <em>String Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Platform</em>'.
-   * @see com.itemis.mobile.physis.physis.MappingClause#getPlatform()
-   * @see #getMappingClause()
+   * @return the meta object for class '<em>String Type</em>'.
+   * @see com.itemis.mobile.physis.physis.StringType
    * @generated
    */
-  EAttribute getMappingClause_Platform();
+  EClass getStringType();
 
   /**
-   * Returns the meta object for class '{@link com.itemis.mobile.physis.physis.SimpleType <em>Simple Type</em>}'.
+   * Returns the meta object for class '{@link com.itemis.mobile.physis.physis.BooleanType <em>Boolean Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Simple Type</em>'.
-   * @see com.itemis.mobile.physis.physis.SimpleType
+   * @return the meta object for class '<em>Boolean Type</em>'.
+   * @see com.itemis.mobile.physis.physis.BooleanType
    * @generated
    */
-  EClass getSimpleType();
+  EClass getBooleanType();
 
   /**
-   * Returns the meta object for the containment reference list '{@link com.itemis.mobile.physis.physis.SimpleType#getMappings <em>Mappings</em>}'.
+   * Returns the meta object for class '{@link com.itemis.mobile.physis.physis.BuiltInType <em>Built In Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Mappings</em>'.
-   * @see com.itemis.mobile.physis.physis.SimpleType#getMappings()
-   * @see #getSimpleType()
+   * @return the meta object for class '<em>Built In Type</em>'.
+   * @see com.itemis.mobile.physis.physis.BuiltInType
    * @generated
    */
-  EReference getSimpleType_Mappings();
+  EClass getBuiltInType();
+
+  /**
+   * Returns the meta object for class '{@link com.itemis.mobile.physis.physis.Reference <em>Reference</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Reference</em>'.
+   * @see com.itemis.mobile.physis.physis.Reference
+   * @generated
+   */
+  EClass getReference();
+
+  /**
+   * Returns the meta object for class '{@link com.itemis.mobile.physis.physis.TypeReference <em>Type Reference</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Type Reference</em>'.
+   * @see com.itemis.mobile.physis.physis.TypeReference
+   * @generated
+   */
+  EClass getTypeReference();
+
+  /**
+   * Returns the meta object for the reference '{@link com.itemis.mobile.physis.physis.TypeReference#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Type</em>'.
+   * @see com.itemis.mobile.physis.physis.TypeReference#getType()
+   * @see #getTypeReference()
+   * @generated
+   */
+  EReference getTypeReference_Type();
 
   /**
    * Returns the meta object for class '{@link com.itemis.mobile.physis.physis.Entity <em>Entity</em>}'.
@@ -457,6 +562,17 @@ public interface PhysisPackage extends EPackage
    * @generated
    */
   EClass getEntity();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.itemis.mobile.physis.physis.Entity#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see com.itemis.mobile.physis.physis.Entity#getName()
+   * @see #getEntity()
+   * @generated
+   */
+  EAttribute getEntity_Name();
 
   /**
    * Returns the meta object for the containment reference list '{@link com.itemis.mobile.physis.physis.Entity#getAttributes <em>Attributes</em>}'.
@@ -491,10 +607,10 @@ public interface PhysisPackage extends EPackage
   EAttribute getAttribute_Name();
 
   /**
-   * Returns the meta object for the reference '{@link com.itemis.mobile.physis.physis.Attribute#getType <em>Type</em>}'.
+   * Returns the meta object for the containment reference '{@link com.itemis.mobile.physis.physis.Attribute#getType <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Type</em>'.
+   * @return the meta object for the containment reference '<em>Type</em>'.
    * @see com.itemis.mobile.physis.physis.Attribute#getType()
    * @see #getAttribute()
    * @generated
@@ -582,74 +698,110 @@ public interface PhysisPackage extends EPackage
     EAttribute DATA_MODEL__NAME = eINSTANCE.getDataModel_Name();
 
     /**
-     * The meta object literal for the '<em><b>Types</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Entities</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference DATA_MODEL__TYPES = eINSTANCE.getDataModel_Types();
+    EReference DATA_MODEL__ENTITIES = eINSTANCE.getDataModel_Entities();
 
     /**
-     * The meta object literal for the '{@link com.itemis.mobile.physis.physis.impl.TypeImpl <em>Type</em>}' class.
+     * The meta object literal for the '{@link com.itemis.mobile.physis.physis.impl.DateTypeImpl <em>Date Type</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see com.itemis.mobile.physis.physis.impl.TypeImpl
-     * @see com.itemis.mobile.physis.physis.impl.PhysisPackageImpl#getType()
+     * @see com.itemis.mobile.physis.physis.impl.DateTypeImpl
+     * @see com.itemis.mobile.physis.physis.impl.PhysisPackageImpl#getDateType()
      * @generated
      */
-    EClass TYPE = eINSTANCE.getType();
+    EClass DATE_TYPE = eINSTANCE.getDateType();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * The meta object literal for the '{@link com.itemis.mobile.physis.physis.impl.IntegerTypeImpl <em>Integer Type</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see com.itemis.mobile.physis.physis.impl.IntegerTypeImpl
+     * @see com.itemis.mobile.physis.physis.impl.PhysisPackageImpl#getIntegerType()
      * @generated
      */
-    EAttribute TYPE__NAME = eINSTANCE.getType_Name();
+    EClass INTEGER_TYPE = eINSTANCE.getIntegerType();
 
     /**
-     * The meta object literal for the '{@link com.itemis.mobile.physis.physis.impl.MappingClauseImpl <em>Mapping Clause</em>}' class.
+     * The meta object literal for the '{@link com.itemis.mobile.physis.physis.impl.DoubleTypeImpl <em>Double Type</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see com.itemis.mobile.physis.physis.impl.MappingClauseImpl
-     * @see com.itemis.mobile.physis.physis.impl.PhysisPackageImpl#getMappingClause()
+     * @see com.itemis.mobile.physis.physis.impl.DoubleTypeImpl
+     * @see com.itemis.mobile.physis.physis.impl.PhysisPackageImpl#getDoubleType()
      * @generated
      */
-    EClass MAPPING_CLAUSE = eINSTANCE.getMappingClause();
+    EClass DOUBLE_TYPE = eINSTANCE.getDoubleType();
 
     /**
-     * The meta object literal for the '<em><b>Mapped Type</b></em>' attribute feature.
+     * The meta object literal for the '{@link com.itemis.mobile.physis.physis.impl.FloatTypeImpl <em>Float Type</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see com.itemis.mobile.physis.physis.impl.FloatTypeImpl
+     * @see com.itemis.mobile.physis.physis.impl.PhysisPackageImpl#getFloatType()
      * @generated
      */
-    EAttribute MAPPING_CLAUSE__MAPPED_TYPE = eINSTANCE.getMappingClause_MappedType();
+    EClass FLOAT_TYPE = eINSTANCE.getFloatType();
 
     /**
-     * The meta object literal for the '<em><b>Platform</b></em>' attribute feature.
+     * The meta object literal for the '{@link com.itemis.mobile.physis.physis.impl.StringTypeImpl <em>String Type</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see com.itemis.mobile.physis.physis.impl.StringTypeImpl
+     * @see com.itemis.mobile.physis.physis.impl.PhysisPackageImpl#getStringType()
      * @generated
      */
-    EAttribute MAPPING_CLAUSE__PLATFORM = eINSTANCE.getMappingClause_Platform();
+    EClass STRING_TYPE = eINSTANCE.getStringType();
 
     /**
-     * The meta object literal for the '{@link com.itemis.mobile.physis.physis.impl.SimpleTypeImpl <em>Simple Type</em>}' class.
+     * The meta object literal for the '{@link com.itemis.mobile.physis.physis.impl.BooleanTypeImpl <em>Boolean Type</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see com.itemis.mobile.physis.physis.impl.SimpleTypeImpl
-     * @see com.itemis.mobile.physis.physis.impl.PhysisPackageImpl#getSimpleType()
+     * @see com.itemis.mobile.physis.physis.impl.BooleanTypeImpl
+     * @see com.itemis.mobile.physis.physis.impl.PhysisPackageImpl#getBooleanType()
      * @generated
      */
-    EClass SIMPLE_TYPE = eINSTANCE.getSimpleType();
+    EClass BOOLEAN_TYPE = eINSTANCE.getBooleanType();
 
     /**
-     * The meta object literal for the '<em><b>Mappings</b></em>' containment reference list feature.
+     * The meta object literal for the '{@link com.itemis.mobile.physis.physis.impl.BuiltInTypeImpl <em>Built In Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.itemis.mobile.physis.physis.impl.BuiltInTypeImpl
+     * @see com.itemis.mobile.physis.physis.impl.PhysisPackageImpl#getBuiltInType()
+     * @generated
+     */
+    EClass BUILT_IN_TYPE = eINSTANCE.getBuiltInType();
+
+    /**
+     * The meta object literal for the '{@link com.itemis.mobile.physis.physis.impl.ReferenceImpl <em>Reference</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.itemis.mobile.physis.physis.impl.ReferenceImpl
+     * @see com.itemis.mobile.physis.physis.impl.PhysisPackageImpl#getReference()
+     * @generated
+     */
+    EClass REFERENCE = eINSTANCE.getReference();
+
+    /**
+     * The meta object literal for the '{@link com.itemis.mobile.physis.physis.impl.TypeReferenceImpl <em>Type Reference</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.itemis.mobile.physis.physis.impl.TypeReferenceImpl
+     * @see com.itemis.mobile.physis.physis.impl.PhysisPackageImpl#getTypeReference()
+     * @generated
+     */
+    EClass TYPE_REFERENCE = eINSTANCE.getTypeReference();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference SIMPLE_TYPE__MAPPINGS = eINSTANCE.getSimpleType_Mappings();
+    EReference TYPE_REFERENCE__TYPE = eINSTANCE.getTypeReference_Type();
 
     /**
      * The meta object literal for the '{@link com.itemis.mobile.physis.physis.impl.EntityImpl <em>Entity</em>}' class.
@@ -660,6 +812,14 @@ public interface PhysisPackage extends EPackage
      * @generated
      */
     EClass ENTITY = eINSTANCE.getEntity();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ENTITY__NAME = eINSTANCE.getEntity_Name();
 
     /**
      * The meta object literal for the '<em><b>Attributes</b></em>' containment reference list feature.
@@ -688,7 +848,7 @@ public interface PhysisPackage extends EPackage
     EAttribute ATTRIBUTE__NAME = eINSTANCE.getAttribute_Name();
 
     /**
-     * The meta object literal for the '<em><b>Type</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated

@@ -42,6 +42,15 @@ class DataManagerGenerator extends com.itemis.mobile.physis.generator.iOS.Abstra
 			
 			@implementation DataManager
 			
+			#pragma mark -
+			#pragma mark Entity description factory methods
+			«FOR entity: model.entities»
+				«entity.typeDescriptionMethod»
+			«ENDFOR»
+			
+			#pragma mark -
+			#pragma mark Managed Object Model factory method
+			
 			-(NSManagedObjectModel *)createManagedObjectModel {
 				NSManagedObjectModel *mom = [[[NSManagedObjectModel alloc] init] autorelease];
 				
@@ -57,34 +66,35 @@ class DataManagerGenerator extends com.itemis.mobile.physis.generator.iOS.Abstra
 	entityDescriptions(DataModel model) {
 		'''
 			NSMutableArray *entities = [[NSMutableArray alloc] init];
-			«FOR type: model.types»
-				«type.typeDescription»
+			«FOR entity: model.entities»
+				«entity.typeDescriptionCall»
 			«ENDFOR»
-			
 			[mom setEntities:entities];
 			[entities release];
 		'''
 	}
 	
-	dispatch typeDescription(Entity entity) {
-		'''
-			
-			// Entity «entity.className»
-			NSEntityDescription *«entity.entityName» = [[[NSEntityDescription alloc] init] autorelease];
-			[«entity.entityName» setName:@"«entity.className»"];
-			[«entity.entityName» setManagedObjectClassName:@"«entity.className»"];
-			[entities addObject:«entity.entityName»];
-			
-			«attributeDescriptions(entity)»
-		'''
+	typeDescriptionCall(Entity entity) {
+		"[entities addObject:[self " + entity.typeDescriptionFactoryMethodname() + "]];"
 	}
 	
-	dispatch typeDescription(Type type) {
-		// do nothing
+	typeDescriptionFactoryMethodname(Entity entity) {
+		"create" + entity.className + "EntityDecription"
 	}
 	
-	attributeName(Attribute attribute) {
-		attribute.name + "Attribute";
+	typeDescriptionMethod(Entity entity) {
+		'''
+			
+			-(NSEntityDescription *)«entity.typeDescriptionFactoryMethodname()» {
+				// Entity «entity.className»
+				NSEntityDescription *«entity.entityName» = [[[NSEntityDescription alloc] init] autorelease];
+				[«entity.entityName» setName:@"«entity.className»"];
+				[«entity.entityName» setManagedObjectClassName:@"«entity.className»"];
+			
+				«attributeDescriptions(entity)»
+				return «entity.entityName»;
+			}
+		'''
 	}
 	
 	attributeDescriptions(Entity entity) {
@@ -92,8 +102,12 @@ class DataManagerGenerator extends com.itemis.mobile.physis.generator.iOS.Abstra
 		'''
 			NSMutableArray *«arrayName» = [[NSMutableArray alloc] init];
 			«FOR attribute: entity.attributes»
-				«attribute.attributeDescription»
-				[«arrayName» addObject:«attribute.attributeName»];
+				«IF attribute.isRelationship()»
+					«attribute.relationshipDescription»
+				«ELSE»
+					«attribute.attributeDescription»
+					[«arrayName» addObject:«attribute.attributeName»];					
+				«ENDIF»
 			«ENDFOR»
 			
 			[«entity.entityName» setProperties:«arrayName»];
@@ -102,8 +116,12 @@ class DataManagerGenerator extends com.itemis.mobile.physis.generator.iOS.Abstra
 	}
 	
 	attributeType(Attribute attribute) {
-		attribute.typeName + "AttributeType"
+		attribute.dbTypeName + "AttributeType"
 	}
+	
+	attributeName(Attribute attribute) {
+		attribute.name + "Attribute";
+	}	
 	
 	attributeDescription(Attribute attribute) {
 		val attributeName = attribute.attributeName;
@@ -115,5 +133,21 @@ class DataManagerGenerator extends com.itemis.mobile.physis.generator.iOS.Abstra
 			[«attributeName» setAttributeType:«attribute.attributeType»];
 			[«attributeName» setOptional:NO];
 		'''
+	}
+	
+	relationshipName(Attribute attribute) {
+		attribute.name + "Relationship";
+	}	
+	
+	relationshipDescription(Attribute attribute) {
+		val relationshipName = attribute.relationshipName;
+		'''
+			
+			// Relationship «attribute.entity.className»::«attribute.name»
+			NSRelationshipDescription *«relationshipName» = [[[NSRelationshipDescription alloc] init] autorelease];
+			[«relationshipName» setName:@"«relationshipName»"];
+			[«relationshipName» setMaxCount:-1];
+		'''
+		
 	}
 }

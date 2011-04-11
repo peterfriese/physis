@@ -5,57 +5,48 @@
  */
 package com.itemis.mobile.physis.physis.impl;
 
+import com.itemis.mobile.physis.physis.Entity;
 import com.itemis.mobile.physis.physis.PhysisPackage;
-import com.itemis.mobile.physis.physis.Type;
+import com.itemis.mobile.physis.physis.TypeReference;
 
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Type</b></em>'.
+ * An implementation of the model object '<em><b>Type Reference</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link com.itemis.mobile.physis.physis.impl.TypeImpl#getName <em>Name</em>}</li>
+ *   <li>{@link com.itemis.mobile.physis.physis.impl.TypeReferenceImpl#getType <em>Type</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class TypeImpl extends MinimalEObjectImpl.Container implements Type
+public class TypeReferenceImpl extends ReferenceImpl implements TypeReference
 {
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The cached value of the '{@link #getType() <em>Type</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getType()
    * @generated
    * @ordered
    */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
+  protected Entity type;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected TypeImpl()
+  protected TypeReferenceImpl()
   {
     super();
   }
@@ -68,7 +59,7 @@ public class TypeImpl extends MinimalEObjectImpl.Container implements Type
   @Override
   protected EClass eStaticClass()
   {
-    return PhysisPackage.Literals.TYPE;
+    return PhysisPackage.Literals.TYPE_REFERENCE;
   }
 
   /**
@@ -76,9 +67,19 @@ public class TypeImpl extends MinimalEObjectImpl.Container implements Type
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getName()
+  public Entity getType()
   {
-    return name;
+    if (type != null && type.eIsProxy())
+    {
+      InternalEObject oldType = (InternalEObject)type;
+      type = (Entity)eResolveProxy(oldType);
+      if (type != oldType)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, PhysisPackage.TYPE_REFERENCE__TYPE, oldType, type));
+      }
+    }
+    return type;
   }
 
   /**
@@ -86,12 +87,22 @@ public class TypeImpl extends MinimalEObjectImpl.Container implements Type
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setName(String newName)
+  public Entity basicGetType()
   {
-    String oldName = name;
-    name = newName;
+    return type;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setType(Entity newType)
+  {
+    Entity oldType = type;
+    type = newType;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, PhysisPackage.TYPE__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, PhysisPackage.TYPE_REFERENCE__TYPE, oldType, type));
   }
 
   /**
@@ -104,8 +115,9 @@ public class TypeImpl extends MinimalEObjectImpl.Container implements Type
   {
     switch (featureID)
     {
-      case PhysisPackage.TYPE__NAME:
-        return getName();
+      case PhysisPackage.TYPE_REFERENCE__TYPE:
+        if (resolve) return getType();
+        return basicGetType();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -120,8 +132,8 @@ public class TypeImpl extends MinimalEObjectImpl.Container implements Type
   {
     switch (featureID)
     {
-      case PhysisPackage.TYPE__NAME:
-        setName((String)newValue);
+      case PhysisPackage.TYPE_REFERENCE__TYPE:
+        setType((Entity)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -137,8 +149,8 @@ public class TypeImpl extends MinimalEObjectImpl.Container implements Type
   {
     switch (featureID)
     {
-      case PhysisPackage.TYPE__NAME:
-        setName(NAME_EDEFAULT);
+      case PhysisPackage.TYPE_REFERENCE__TYPE:
+        setType((Entity)null);
         return;
     }
     super.eUnset(featureID);
@@ -154,27 +166,10 @@ public class TypeImpl extends MinimalEObjectImpl.Container implements Type
   {
     switch (featureID)
     {
-      case PhysisPackage.TYPE__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case PhysisPackage.TYPE_REFERENCE__TYPE:
+        return type != null;
     }
     return super.eIsSet(featureID);
   }
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(')');
-    return result.toString();
-  }
-
-} //TypeImpl
+} //TypeReferenceImpl

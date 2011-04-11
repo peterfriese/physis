@@ -15,10 +15,9 @@ import com.itemis.mobile.physis.generator.iOS.GeneratorExtensions
 import com.itemis.mobile.physis.generator.iOS.DataManagerGenerator
 import com.itemis.mobile.physis.generator.iOS.EntityGenerator
 
-class PhysisGenerator implements IGenerator {
+class PhysisGenerator extends PlatformAwareGenerator {
 	
 	@Inject extension GeneratorExtensions
-
 	@Inject extension DataManagerGenerator
 	@Inject extension EntityGenerator	
 	

@@ -88,19 +88,49 @@ public class PhysisAdapterFactory extends AdapterFactoryImpl
         return createDataModelAdapter();
       }
       @Override
-      public Adapter caseType(Type object)
+      public Adapter caseDateType(DateType object)
       {
-        return createTypeAdapter();
+        return createDateTypeAdapter();
       }
       @Override
-      public Adapter caseMappingClause(MappingClause object)
+      public Adapter caseIntegerType(IntegerType object)
       {
-        return createMappingClauseAdapter();
+        return createIntegerTypeAdapter();
       }
       @Override
-      public Adapter caseSimpleType(SimpleType object)
+      public Adapter caseDoubleType(DoubleType object)
       {
-        return createSimpleTypeAdapter();
+        return createDoubleTypeAdapter();
+      }
+      @Override
+      public Adapter caseFloatType(FloatType object)
+      {
+        return createFloatTypeAdapter();
+      }
+      @Override
+      public Adapter caseStringType(StringType object)
+      {
+        return createStringTypeAdapter();
+      }
+      @Override
+      public Adapter caseBooleanType(BooleanType object)
+      {
+        return createBooleanTypeAdapter();
+      }
+      @Override
+      public Adapter caseBuiltInType(BuiltInType object)
+      {
+        return createBuiltInTypeAdapter();
+      }
+      @Override
+      public Adapter caseReference(Reference object)
+      {
+        return createReferenceAdapter();
+      }
+      @Override
+      public Adapter caseTypeReference(TypeReference object)
+      {
+        return createTypeReferenceAdapter();
       }
       @Override
       public Adapter caseEntity(Entity object)
@@ -165,46 +195,136 @@ public class PhysisAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.itemis.mobile.physis.physis.Type <em>Type</em>}'.
+   * Creates a new adapter for an object of class '{@link com.itemis.mobile.physis.physis.DateType <em>Date Type</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.itemis.mobile.physis.physis.Type
+   * @see com.itemis.mobile.physis.physis.DateType
    * @generated
    */
-  public Adapter createTypeAdapter()
+  public Adapter createDateTypeAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.itemis.mobile.physis.physis.MappingClause <em>Mapping Clause</em>}'.
+   * Creates a new adapter for an object of class '{@link com.itemis.mobile.physis.physis.IntegerType <em>Integer Type</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.itemis.mobile.physis.physis.MappingClause
+   * @see com.itemis.mobile.physis.physis.IntegerType
    * @generated
    */
-  public Adapter createMappingClauseAdapter()
+  public Adapter createIntegerTypeAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.itemis.mobile.physis.physis.SimpleType <em>Simple Type</em>}'.
+   * Creates a new adapter for an object of class '{@link com.itemis.mobile.physis.physis.DoubleType <em>Double Type</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.itemis.mobile.physis.physis.SimpleType
+   * @see com.itemis.mobile.physis.physis.DoubleType
    * @generated
    */
-  public Adapter createSimpleTypeAdapter()
+  public Adapter createDoubleTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.itemis.mobile.physis.physis.FloatType <em>Float Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.itemis.mobile.physis.physis.FloatType
+   * @generated
+   */
+  public Adapter createFloatTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.itemis.mobile.physis.physis.StringType <em>String Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.itemis.mobile.physis.physis.StringType
+   * @generated
+   */
+  public Adapter createStringTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.itemis.mobile.physis.physis.BooleanType <em>Boolean Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.itemis.mobile.physis.physis.BooleanType
+   * @generated
+   */
+  public Adapter createBooleanTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.itemis.mobile.physis.physis.BuiltInType <em>Built In Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.itemis.mobile.physis.physis.BuiltInType
+   * @generated
+   */
+  public Adapter createBuiltInTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.itemis.mobile.physis.physis.Reference <em>Reference</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.itemis.mobile.physis.physis.Reference
+   * @generated
+   */
+  public Adapter createReferenceAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.itemis.mobile.physis.physis.TypeReference <em>Type Reference</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.itemis.mobile.physis.physis.TypeReference
+   * @generated
+   */
+  public Adapter createTypeReferenceAdapter()
   {
     return null;
   }

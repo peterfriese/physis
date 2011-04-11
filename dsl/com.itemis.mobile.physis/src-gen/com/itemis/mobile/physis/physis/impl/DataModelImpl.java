@@ -6,8 +6,8 @@
 package com.itemis.mobile.physis.physis.impl;
 
 import com.itemis.mobile.physis.physis.DataModel;
+import com.itemis.mobile.physis.physis.Entity;
 import com.itemis.mobile.physis.physis.PhysisPackage;
-import com.itemis.mobile.physis.physis.Type;
 
 import java.util.Collection;
 
@@ -33,7 +33,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link com.itemis.mobile.physis.physis.impl.DataModelImpl#getName <em>Name</em>}</li>
- *   <li>{@link com.itemis.mobile.physis.physis.impl.DataModelImpl#getTypes <em>Types</em>}</li>
+ *   <li>{@link com.itemis.mobile.physis.physis.impl.DataModelImpl#getEntities <em>Entities</em>}</li>
  * </ul>
  * </p>
  *
@@ -62,14 +62,14 @@ public class DataModelImpl extends MinimalEObjectImpl.Container implements DataM
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getTypes() <em>Types</em>}' containment reference list.
+   * The cached value of the '{@link #getEntities() <em>Entities</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTypes()
+   * @see #getEntities()
    * @generated
    * @ordered
    */
-  protected EList<Type> types;
+  protected EList<Entity> entities;
 
   /**
    * <!-- begin-user-doc -->
@@ -120,13 +120,13 @@ public class DataModelImpl extends MinimalEObjectImpl.Container implements DataM
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Type> getTypes()
+  public EList<Entity> getEntities()
   {
-    if (types == null)
+    if (entities == null)
     {
-      types = new EObjectContainmentEList<Type>(Type.class, this, PhysisPackage.DATA_MODEL__TYPES);
+      entities = new EObjectContainmentEList<Entity>(Entity.class, this, PhysisPackage.DATA_MODEL__ENTITIES);
     }
-    return types;
+    return entities;
   }
 
   /**
@@ -139,8 +139,8 @@ public class DataModelImpl extends MinimalEObjectImpl.Container implements DataM
   {
     switch (featureID)
     {
-      case PhysisPackage.DATA_MODEL__TYPES:
-        return ((InternalEList<?>)getTypes()).basicRemove(otherEnd, msgs);
+      case PhysisPackage.DATA_MODEL__ENTITIES:
+        return ((InternalEList<?>)getEntities()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -157,8 +157,8 @@ public class DataModelImpl extends MinimalEObjectImpl.Container implements DataM
     {
       case PhysisPackage.DATA_MODEL__NAME:
         return getName();
-      case PhysisPackage.DATA_MODEL__TYPES:
-        return getTypes();
+      case PhysisPackage.DATA_MODEL__ENTITIES:
+        return getEntities();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -177,9 +177,9 @@ public class DataModelImpl extends MinimalEObjectImpl.Container implements DataM
       case PhysisPackage.DATA_MODEL__NAME:
         setName((String)newValue);
         return;
-      case PhysisPackage.DATA_MODEL__TYPES:
-        getTypes().clear();
-        getTypes().addAll((Collection<? extends Type>)newValue);
+      case PhysisPackage.DATA_MODEL__ENTITIES:
+        getEntities().clear();
+        getEntities().addAll((Collection<? extends Entity>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -198,8 +198,8 @@ public class DataModelImpl extends MinimalEObjectImpl.Container implements DataM
       case PhysisPackage.DATA_MODEL__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case PhysisPackage.DATA_MODEL__TYPES:
-        getTypes().clear();
+      case PhysisPackage.DATA_MODEL__ENTITIES:
+        getEntities().clear();
         return;
     }
     super.eUnset(featureID);
@@ -217,8 +217,8 @@ public class DataModelImpl extends MinimalEObjectImpl.Container implements DataM
     {
       case PhysisPackage.DATA_MODEL__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case PhysisPackage.DATA_MODEL__TYPES:
-        return types != null && !types.isEmpty();
+      case PhysisPackage.DATA_MODEL__ENTITIES:
+        return entities != null && !entities.isEmpty();
     }
     return super.eIsSet(featureID);
   }

@@ -11,12 +11,16 @@ import com.itemis.mobile.physis.physis.PhysisPackage;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -28,14 +32,35 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link com.itemis.mobile.physis.physis.impl.EntityImpl#getName <em>Name</em>}</li>
  *   <li>{@link com.itemis.mobile.physis.physis.impl.EntityImpl#getAttributes <em>Attributes</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class EntityImpl extends TypeImpl implements Entity
+public class EntityImpl extends MinimalEObjectImpl.Container implements Entity
 {
+  /**
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
+
   /**
    * The cached value of the '{@link #getAttributes() <em>Attributes</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -65,6 +90,29 @@ public class EntityImpl extends TypeImpl implements Entity
   protected EClass eStaticClass()
   {
     return PhysisPackage.Literals.ENTITY;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getName()
+  {
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setName(String newName)
+  {
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, PhysisPackage.ENTITY__NAME, oldName, name));
   }
 
   /**
@@ -107,6 +155,8 @@ public class EntityImpl extends TypeImpl implements Entity
   {
     switch (featureID)
     {
+      case PhysisPackage.ENTITY__NAME:
+        return getName();
       case PhysisPackage.ENTITY__ATTRIBUTES:
         return getAttributes();
     }
@@ -124,6 +174,9 @@ public class EntityImpl extends TypeImpl implements Entity
   {
     switch (featureID)
     {
+      case PhysisPackage.ENTITY__NAME:
+        setName((String)newValue);
+        return;
       case PhysisPackage.ENTITY__ATTRIBUTES:
         getAttributes().clear();
         getAttributes().addAll((Collection<? extends Attribute>)newValue);
@@ -142,6 +195,9 @@ public class EntityImpl extends TypeImpl implements Entity
   {
     switch (featureID)
     {
+      case PhysisPackage.ENTITY__NAME:
+        setName(NAME_EDEFAULT);
+        return;
       case PhysisPackage.ENTITY__ATTRIBUTES:
         getAttributes().clear();
         return;
@@ -159,10 +215,29 @@ public class EntityImpl extends TypeImpl implements Entity
   {
     switch (featureID)
     {
+      case PhysisPackage.ENTITY__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case PhysisPackage.ENTITY__ATTRIBUTES:
         return attributes != null && !attributes.isEmpty();
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (name: ");
+    result.append(name);
+    result.append(')');
+    return result.toString();
   }
 
 } //EntityImpl

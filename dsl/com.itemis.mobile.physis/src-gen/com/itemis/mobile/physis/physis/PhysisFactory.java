@@ -44,31 +44,85 @@ public interface PhysisFactory extends EFactory
   DataModel createDataModel();
 
   /**
-   * Returns a new object of class '<em>Type</em>'.
+   * Returns a new object of class '<em>Date Type</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Type</em>'.
+   * @return a new object of class '<em>Date Type</em>'.
    * @generated
    */
-  Type createType();
+  DateType createDateType();
 
   /**
-   * Returns a new object of class '<em>Mapping Clause</em>'.
+   * Returns a new object of class '<em>Integer Type</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Mapping Clause</em>'.
+   * @return a new object of class '<em>Integer Type</em>'.
    * @generated
    */
-  MappingClause createMappingClause();
+  IntegerType createIntegerType();
 
   /**
-   * Returns a new object of class '<em>Simple Type</em>'.
+   * Returns a new object of class '<em>Double Type</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Simple Type</em>'.
+   * @return a new object of class '<em>Double Type</em>'.
    * @generated
    */
-  SimpleType createSimpleType();
+  DoubleType createDoubleType();
+
+  /**
+   * Returns a new object of class '<em>Float Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Float Type</em>'.
+   * @generated
+   */
+  FloatType createFloatType();
+
+  /**
+   * Returns a new object of class '<em>String Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>String Type</em>'.
+   * @generated
+   */
+  StringType createStringType();
+
+  /**
+   * Returns a new object of class '<em>Boolean Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Boolean Type</em>'.
+   * @generated
+   */
+  BooleanType createBooleanType();
+
+  /**
+   * Returns a new object of class '<em>Built In Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Built In Type</em>'.
+   * @generated
+   */
+  BuiltInType createBuiltInType();
+
+  /**
+   * Returns a new object of class '<em>Reference</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Reference</em>'.
+   * @generated
+   */
+  Reference createReference();
+
+  /**
+   * Returns a new object of class '<em>Type Reference</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Type Reference</em>'.
+   * @generated
+   */
+  TypeReference createTypeReference();
 
   /**
    * Returns a new object of class '<em>Entity</em>'.

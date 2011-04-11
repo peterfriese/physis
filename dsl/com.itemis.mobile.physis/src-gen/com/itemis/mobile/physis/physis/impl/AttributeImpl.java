@@ -7,9 +7,10 @@ package com.itemis.mobile.physis.physis.impl;
 
 import com.itemis.mobile.physis.physis.Attribute;
 import com.itemis.mobile.physis.physis.PhysisPackage;
-import com.itemis.mobile.physis.physis.Type;
+import com.itemis.mobile.physis.physis.Reference;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -55,14 +56,14 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getType() <em>Type</em>}' reference.
+   * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getType()
    * @generated
    * @ordered
    */
-  protected Type type;
+  protected Reference type;
 
   /**
    * The default value of the '{@link #isMultiplicity() <em>Multiplicity</em>}' attribute.
@@ -133,27 +134,7 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
    * <!-- end-user-doc -->
    * @generated
    */
-  public Type getType()
-  {
-    if (type != null && type.eIsProxy())
-    {
-      InternalEObject oldType = (InternalEObject)type;
-      type = (Type)eResolveProxy(oldType);
-      if (type != oldType)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, PhysisPackage.ATTRIBUTE__TYPE, oldType, type));
-      }
-    }
-    return type;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Type basicGetType()
+  public Reference getType()
   {
     return type;
   }
@@ -163,12 +144,37 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setType(Type newType)
+  public NotificationChain basicSetType(Reference newType, NotificationChain msgs)
   {
-    Type oldType = type;
+    Reference oldType = type;
     type = newType;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, PhysisPackage.ATTRIBUTE__TYPE, oldType, type));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PhysisPackage.ATTRIBUTE__TYPE, oldType, newType);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setType(Reference newType)
+  {
+    if (newType != type)
+    {
+      NotificationChain msgs = null;
+      if (type != null)
+        msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PhysisPackage.ATTRIBUTE__TYPE, null, msgs);
+      if (newType != null)
+        msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PhysisPackage.ATTRIBUTE__TYPE, null, msgs);
+      msgs = basicSetType(newType, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, PhysisPackage.ATTRIBUTE__TYPE, newType, newType));
   }
 
   /**
@@ -200,6 +206,22 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
    * @generated
    */
   @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case PhysisPackage.ATTRIBUTE__TYPE:
+        return basicSetType(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
@@ -207,8 +229,7 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
       case PhysisPackage.ATTRIBUTE__NAME:
         return getName();
       case PhysisPackage.ATTRIBUTE__TYPE:
-        if (resolve) return getType();
-        return basicGetType();
+        return getType();
       case PhysisPackage.ATTRIBUTE__MULTIPLICITY:
         return isMultiplicity();
     }
@@ -229,7 +250,7 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
         setName((String)newValue);
         return;
       case PhysisPackage.ATTRIBUTE__TYPE:
-        setType((Type)newValue);
+        setType((Reference)newValue);
         return;
       case PhysisPackage.ATTRIBUTE__MULTIPLICITY:
         setMultiplicity((Boolean)newValue);
@@ -252,7 +273,7 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
         setName(NAME_EDEFAULT);
         return;
       case PhysisPackage.ATTRIBUTE__TYPE:
-        setType((Type)null);
+        setType((Reference)null);
         return;
       case PhysisPackage.ATTRIBUTE__MULTIPLICITY:
         setMultiplicity(MULTIPLICITY_EDEFAULT);

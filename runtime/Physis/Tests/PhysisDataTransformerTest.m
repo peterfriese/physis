@@ -27,6 +27,7 @@
 
 #import <GHUnitIOS/GHUnit.h>
 #import "PhysisDataTransformer.h"
+#import "NSObject+Dump.h"
 
 @interface PhysisDataTransformerTest : GHTestCase { }
 @end
@@ -48,7 +49,7 @@
 
 	GHAssertEquals((NSUInteger) 1,  [result count], nil);
 	GHAssertEqualStrings(@"Peter", [result valueForKey:@"name"], nil);
-	
+    
 	[transformer release];
 }
 
@@ -74,6 +75,57 @@
 	GHAssertEqualStrings(@"Peter", [dict1 valueForKey:@"name"], nil);
 	
 	[transformer release];	
+}
+
+- (void)testTransformDefaultJSONArray {
+    PhysisDataTransformer *transformer = [[PhysisDataTransformer alloc] init];
+    
+    NSString *jsonFilePath = [[NSBundle mainBundle] pathForResource:@"DefaultJSONArray" ofType:@"json"];
+    NSError *error = nil;
+    NSString *sourceString = [NSString stringWithContentsOfFile:jsonFilePath encoding:NSUTF8StringEncoding error:&error];
+    
+    id result = [transformer transform:sourceString];
+    GHAssertTrue([[result class] isSubclassOfClass:[NSArray class]], nil);
+
+    NSArray *array = (NSArray *)result;
+    GHAssertEquals((NSUInteger) 4, [array count], nil);
+    
+    for (NSDictionary *dict in array) {
+        GHAssertTrue([[dict class] isSubclassOfClass:[NSDictionary class]], nil);
+        
+        GHAssertNotNil([dict objectForKey:@"id"], nil);
+        GHAssertNotNil([dict objectForKey:@"author"], nil);
+        GHAssertNotNil([dict objectForKey:@"title"], nil);
+        GHAssertNotNil([dict objectForKey:@"publisher"], nil);        
+    }
+    
+    [transformer release];
+}
+
+- (void)testTransformRailsJSONArray {
+    PhysisDataTransformer *transformer = [[PhysisDataTransformer alloc] init];
+    
+    NSString *jsonFilePath = [[NSBundle mainBundle] pathForResource:@"RailsJSONArray" ofType:@"json"];
+    NSError *error = nil;
+    NSString *sourceString = [NSString stringWithContentsOfFile:jsonFilePath encoding:NSUTF8StringEncoding error:&error];
+    
+    id result = [transformer transform:sourceString];
+    GHAssertTrue([[result class] isSubclassOfClass:[NSArray class]], nil);
+    
+    NSArray *array = (NSArray *)result;
+    GHAssertEquals((NSUInteger) 4, [array count], nil);
+    
+    for (NSDictionary *dict in array) {
+        GHAssertTrue([[dict class] isSubclassOfClass:[NSDictionary class]], nil);
+
+        GHAssertNotNil([dict objectForKey:@"id"], nil);
+        GHAssertNotNil([dict objectForKey:@"author"], nil);
+        GHAssertNotNil([dict objectForKey:@"title"], nil);
+        GHAssertNotNil([dict objectForKey:@"publisher"], nil);
+    }
+    
+    
+    [transformer release];
 }
 
 

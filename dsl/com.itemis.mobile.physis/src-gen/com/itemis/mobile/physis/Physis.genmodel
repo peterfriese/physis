@@ -18,24 +18,26 @@
     </genClasses>
     <genClasses ecoreClass="platform:/resource/com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/Physis.ecore#//DataModel">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/Physis.ecore#//DataModel/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/Physis.ecore#//DataModel/types"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/Physis.ecore#//DataModel/entities"/>
     </genClasses>
-    <genClasses ecoreClass="platform:/resource/com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/Physis.ecore#//Type">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/Physis.ecore#//Type/name"/>
-    </genClasses>
-    <genClasses ecoreClass="platform:/resource/com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/Physis.ecore#//MappingClause">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/Physis.ecore#//MappingClause/mappedType"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/Physis.ecore#//MappingClause/platform"/>
-    </genClasses>
-    <genClasses ecoreClass="platform:/resource/com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/Physis.ecore#//SimpleType">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/Physis.ecore#//SimpleType/mappings"/>
+    <genClasses ecoreClass="platform:/resource/com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/Physis.ecore#//DateType"/>
+    <genClasses ecoreClass="platform:/resource/com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/Physis.ecore#//IntegerType"/>
+    <genClasses ecoreClass="platform:/resource/com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/Physis.ecore#//DoubleType"/>
+    <genClasses ecoreClass="platform:/resource/com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/Physis.ecore#//FloatType"/>
+    <genClasses ecoreClass="platform:/resource/com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/Physis.ecore#//StringType"/>
+    <genClasses ecoreClass="platform:/resource/com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/Physis.ecore#//BooleanType"/>
+    <genClasses ecoreClass="platform:/resource/com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/Physis.ecore#//BuiltInType"/>
+    <genClasses ecoreClass="platform:/resource/com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/Physis.ecore#//Reference"/>
+    <genClasses ecoreClass="platform:/resource/com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/Physis.ecore#//TypeReference">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/resource/com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/Physis.ecore#//TypeReference/type"/>
     </genClasses>
     <genClasses ecoreClass="platform:/resource/com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/Physis.ecore#//Entity">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/Physis.ecore#//Entity/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/Physis.ecore#//Entity/attributes"/>
     </genClasses>
     <genClasses ecoreClass="platform:/resource/com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/Physis.ecore#//Attribute">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/Physis.ecore#//Attribute/name"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/resource/com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/Physis.ecore#//Attribute/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/Physis.ecore#//Attribute/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/com.itemis.mobile.physis/src-gen/com/itemis/mobile/physis/Physis.ecore#//Attribute/multiplicity"/>
     </genClasses>
   </genPackages>

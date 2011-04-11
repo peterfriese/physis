@@ -8,7 +8,7 @@ import com.itemis.mobile.physis.generator.AbstractBaseGenerator
 /**
  * Abstract base generator class for code generators for iOS.
  */
-class AbstractIOSBaseGenerator extends AbstractBaseGenerator {
+class AbstractIOSBaseGenerator {
 
 	fileheaderComment(EObject object, boolean header) {
 		val Date date = new Date();

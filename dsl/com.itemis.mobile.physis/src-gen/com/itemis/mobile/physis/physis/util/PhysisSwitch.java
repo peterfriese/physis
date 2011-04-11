@@ -7,10 +7,10 @@ package com.itemis.mobile.physis.physis.util;
 
 import com.itemis.mobile.physis.physis.*;
 
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EPackage;
+import java.util.List;
 
-import org.eclipse.emf.ecore.util.Switch;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,7 +25,7 @@ import org.eclipse.emf.ecore.util.Switch;
  * @see com.itemis.mobile.physis.physis.PhysisPackage
  * @generated
  */
-public class PhysisSwitch<T> extends Switch<T>
+public class PhysisSwitch<T>
 {
   /**
    * The cached model package
@@ -50,17 +50,15 @@ public class PhysisSwitch<T> extends Switch<T>
   }
 
   /**
-   * Checks whether this is a switch for the given package.
+   * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @parameter ePackage the package in question.
-   * @return whether this is a switch for the given package.
+   * @return the first non-null result returned by a <code>caseXXX</code> call.
    * @generated
    */
-  @Override
-  protected boolean isSwitchFor(EPackage ePackage)
+  public T doSwitch(EObject theEObject)
   {
-    return ePackage == modelPackage;
+    return doSwitch(theEObject.eClass(), theEObject);
   }
 
   /**
@@ -70,7 +68,29 @@ public class PhysisSwitch<T> extends Switch<T>
    * @return the first non-null result returned by a <code>caseXXX</code> call.
    * @generated
    */
-  @Override
+  protected T doSwitch(EClass theEClass, EObject theEObject)
+  {
+    if (theEClass.eContainer() == modelPackage)
+    {
+      return doSwitch(theEClass.getClassifierID(), theEObject);
+    }
+    else
+    {
+      List<EClass> eSuperTypes = theEClass.getESuperTypes();
+      return
+        eSuperTypes.isEmpty() ?
+          defaultCase(theEObject) :
+          doSwitch(eSuperTypes.get(0), theEObject);
+    }
+  }
+
+  /**
+   * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the first non-null result returned by a <code>caseXXX</code> call.
+   * @generated
+   */
   protected T doSwitch(int classifierID, EObject theEObject)
   {
     switch (classifierID)
@@ -89,25 +109,80 @@ public class PhysisSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case PhysisPackage.TYPE:
+      case PhysisPackage.DATE_TYPE:
       {
-        Type type = (Type)theEObject;
-        T result = caseType(type);
+        DateType dateType = (DateType)theEObject;
+        T result = caseDateType(dateType);
+        if (result == null) result = caseBuiltInType(dateType);
+        if (result == null) result = caseReference(dateType);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case PhysisPackage.MAPPING_CLAUSE:
+      case PhysisPackage.INTEGER_TYPE:
       {
-        MappingClause mappingClause = (MappingClause)theEObject;
-        T result = caseMappingClause(mappingClause);
+        IntegerType integerType = (IntegerType)theEObject;
+        T result = caseIntegerType(integerType);
+        if (result == null) result = caseBuiltInType(integerType);
+        if (result == null) result = caseReference(integerType);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case PhysisPackage.SIMPLE_TYPE:
+      case PhysisPackage.DOUBLE_TYPE:
       {
-        SimpleType simpleType = (SimpleType)theEObject;
-        T result = caseSimpleType(simpleType);
-        if (result == null) result = caseType(simpleType);
+        DoubleType doubleType = (DoubleType)theEObject;
+        T result = caseDoubleType(doubleType);
+        if (result == null) result = caseBuiltInType(doubleType);
+        if (result == null) result = caseReference(doubleType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case PhysisPackage.FLOAT_TYPE:
+      {
+        FloatType floatType = (FloatType)theEObject;
+        T result = caseFloatType(floatType);
+        if (result == null) result = caseBuiltInType(floatType);
+        if (result == null) result = caseReference(floatType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case PhysisPackage.STRING_TYPE:
+      {
+        StringType stringType = (StringType)theEObject;
+        T result = caseStringType(stringType);
+        if (result == null) result = caseBuiltInType(stringType);
+        if (result == null) result = caseReference(stringType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case PhysisPackage.BOOLEAN_TYPE:
+      {
+        BooleanType booleanType = (BooleanType)theEObject;
+        T result = caseBooleanType(booleanType);
+        if (result == null) result = caseBuiltInType(booleanType);
+        if (result == null) result = caseReference(booleanType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case PhysisPackage.BUILT_IN_TYPE:
+      {
+        BuiltInType builtInType = (BuiltInType)theEObject;
+        T result = caseBuiltInType(builtInType);
+        if (result == null) result = caseReference(builtInType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case PhysisPackage.REFERENCE:
+      {
+        Reference reference = (Reference)theEObject;
+        T result = caseReference(reference);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case PhysisPackage.TYPE_REFERENCE:
+      {
+        TypeReference typeReference = (TypeReference)theEObject;
+        T result = caseTypeReference(typeReference);
+        if (result == null) result = caseReference(typeReference);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -115,7 +190,6 @@ public class PhysisSwitch<T> extends Switch<T>
       {
         Entity entity = (Entity)theEObject;
         T result = caseEntity(entity);
-        if (result == null) result = caseType(entity);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -163,49 +237,145 @@ public class PhysisSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Type</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Date Type</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Type</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Date Type</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseType(Type object)
+  public T caseDateType(DateType object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Mapping Clause</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Integer Type</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Mapping Clause</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Integer Type</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseMappingClause(MappingClause object)
+  public T caseIntegerType(IntegerType object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Simple Type</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Double Type</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Simple Type</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Double Type</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseSimpleType(SimpleType object)
+  public T caseDoubleType(DoubleType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Float Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Float Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFloatType(FloatType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>String Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>String Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStringType(StringType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Boolean Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Boolean Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBooleanType(BooleanType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Built In Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Built In Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBuiltInType(BuiltInType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Reference</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Reference</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseReference(Reference object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Type Reference</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Type Reference</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTypeReference(TypeReference object)
   {
     return null;
   }
@@ -253,7 +423,6 @@ public class PhysisSwitch<T> extends Switch<T>
    * @see #doSwitch(org.eclipse.emf.ecore.EObject)
    * @generated
    */
-  @Override
   public T defaultCase(EObject object)
   {
     return null;

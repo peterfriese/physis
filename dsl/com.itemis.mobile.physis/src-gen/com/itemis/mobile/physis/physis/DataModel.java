@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link com.itemis.mobile.physis.physis.DataModel#getName <em>Name</em>}</li>
- *   <li>{@link com.itemis.mobile.physis.physis.DataModel#getTypes <em>Types</em>}</li>
+ *   <li>{@link com.itemis.mobile.physis.physis.DataModel#getEntities <em>Entities</em>}</li>
  * </ul>
  * </p>
  *
@@ -55,19 +55,19 @@ public interface DataModel extends EObject
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Types</b></em>' containment reference list.
-   * The list contents are of type {@link com.itemis.mobile.physis.physis.Type}.
+   * Returns the value of the '<em><b>Entities</b></em>' containment reference list.
+   * The list contents are of type {@link com.itemis.mobile.physis.physis.Entity}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Types</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Entities</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Types</em>' containment reference list.
-   * @see com.itemis.mobile.physis.physis.PhysisPackage#getDataModel_Types()
+   * @return the value of the '<em>Entities</em>' containment reference list.
+   * @see com.itemis.mobile.physis.physis.PhysisPackage#getDataModel_Entities()
    * @model containment="true"
    * @generated
    */
-  EList<Type> getTypes();
+  EList<Entity> getEntities();
 
 } // DataModel

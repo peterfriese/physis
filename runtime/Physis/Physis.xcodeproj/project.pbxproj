@@ -16,6 +16,9 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
 		8807113713211191007FFDC7 /* NSPredicate+Physis.m in Sources */ = {isa = PBXBuildFile; fileRef = 8807113613211191007FFDC7 /* NSPredicate+Physis.m */; };
+		882D9E5E132ED2CC00727BFE /* DefaultJSONArray.json in Resources */ = {isa = PBXBuildFile; fileRef = 882D9E5D132ED2CB00727BFE /* DefaultJSONArray.json */; };
+		882D9E60132ED84B00727BFE /* RailsJSONArray.json in Resources */ = {isa = PBXBuildFile; fileRef = 882D9E5F132ED84B00727BFE /* RailsJSONArray.json */; };
+		882D9E63132EE18600727BFE /* NSObject+Dump.m in Sources */ = {isa = PBXBuildFile; fileRef = 882D9E62132EE17F00727BFE /* NSObject+Dump.m */; };
 		883DE74F131E4625005DC877 /* PhysisDataConnectorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 883DE74E131E4625005DC877 /* PhysisDataConnectorTest.m */; };
 		883DE754131E467F005DC877 /* PhysisDataConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 883DE753131E467F005DC877 /* PhysisDataConnector.m */; };
 		883DE7CC131E552D005DC877 /* PhysisDataTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 883DE7CB131E552D005DC877 /* PhysisDataTransformer.m */; };
@@ -84,6 +87,10 @@
 		32CA4F630368D1EE00C91783 /* Physis_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Physis_Prefix.pch; sourceTree = "<group>"; };
 		8807113513211191007FFDC7 /* NSPredicate+Physis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSPredicate+Physis.h"; sourceTree = "<group>"; };
 		8807113613211191007FFDC7 /* NSPredicate+Physis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSPredicate+Physis.m"; sourceTree = "<group>"; };
+		882D9E5D132ED2CB00727BFE /* DefaultJSONArray.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DefaultJSONArray.json; sourceTree = "<group>"; };
+		882D9E5F132ED84B00727BFE /* RailsJSONArray.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RailsJSONArray.json; sourceTree = "<group>"; };
+		882D9E61132EE17C00727BFE /* NSObject+Dump.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Dump.h"; sourceTree = "<group>"; };
+		882D9E62132EE17F00727BFE /* NSObject+Dump.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Dump.m"; sourceTree = "<group>"; };
 		883DE74E131E4625005DC877 /* PhysisDataConnectorTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhysisDataConnectorTest.m; sourceTree = "<group>"; };
 		883DE752131E467F005DC877 /* PhysisDataConnector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhysisDataConnector.h; sourceTree = "<group>"; };
 		883DE753131E467F005DC877 /* PhysisDataConnector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhysisDataConnector.m; sourceTree = "<group>"; };
@@ -201,6 +208,7 @@
 		002D9D4B0F4918E5007932FE /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				882D9E5C132ED2CB00727BFE /* data */,
 				88B0C303131D4CA40096BA6F /* DataModel */,
 				0080407D1290AC280033DA60 /* GHUnitIOSTestMain.m */,
 				88D6C74A131D3FBF00F5825B /* PhysisResourceBasicTest.m */,
@@ -209,6 +217,8 @@
 				883DE7D9131E5670005DC877 /* PhysisDataTransformerTest.m */,
 				883DE928131EAB28005DC877 /* PhysisDataMappingRegistryTest.m */,
 				88E4A08F1321045300B3EC19 /* NSPredicate+PhysisTest.m */,
+				882D9E61132EE17C00727BFE /* NSObject+Dump.h */,
+				882D9E62132EE17F00727BFE /* NSObject+Dump.m */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -248,7 +258,6 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				88A8E9E613214641000C05B9 /* QuartzCore.framework */,
 				00CDDE300F7703B40089C60E /* Makefile */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				00DA15A30F897CDD001FE08E /* Libraries */,
@@ -282,6 +291,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				88A8E9E613214641000C05B9 /* QuartzCore.framework */,
 				006A590E0FC4A7B600C79A81 /* CoreLocation.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
@@ -293,6 +303,15 @@
 				88D6C6DF131D3D8F00F5825B /* CoreData.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		882D9E5C132ED2CB00727BFE /* data */ = {
+			isa = PBXGroup;
+			children = (
+				882D9E5D132ED2CB00727BFE /* DefaultJSONArray.json */,
+				882D9E5F132ED84B00727BFE /* RailsJSONArray.json */,
+			);
+			path = data;
 			sourceTree = "<group>";
 		};
 		88A8E9E0132144A8000C05B9 /* PullToRefresh */ = {
@@ -499,6 +518,8 @@
 				88D6C6C7131D3D2E00F5825B /* CHANGELOG.md in Resources */,
 				88D6C6C9131D3D2E00F5825B /* README.md in Resources */,
 				88A8E9E4132144A8000C05B9 /* pulltorefresh.png in Resources */,
+				882D9E5E132ED2CC00727BFE /* DefaultJSONArray.json in Resources */,
+				882D9E60132ED84B00727BFE /* RailsJSONArray.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -571,6 +592,7 @@
 				88E4A0901321045300B3EC19 /* NSPredicate+PhysisTest.m in Sources */,
 				8807113713211191007FFDC7 /* NSPredicate+Physis.m in Sources */,
 				88A8E9E5132144A8000C05B9 /* PullRefreshTableViewController.m in Sources */,
+				882D9E63132EE18600727BFE /* NSObject+Dump.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

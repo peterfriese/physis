@@ -1,0 +1,35 @@
+[
+    {
+        "book": {
+            "id": "1",
+            "author": "God",
+            "title": "The Bible",
+            "publisher": "The church",
+            "additional": "field"
+        }
+    },
+    {
+        "book": {
+            "id": "2",
+            "author": "Josh Clark",
+            "title": "Tapworthy",
+            "publisher": "O'Reilly"
+        }
+    },
+    {
+        "book": {
+            "id": "3",
+            "author": "Dave Mark, Jeff LaMarche",
+            "title": "More iPhone 3 Development rocks!",
+            "publisher": "Apress"
+        }
+    },
+    {
+        "book": {
+            "id": "4",
+            "author": "Erik M. Buck, Donald A. Yacktman",
+            "title": "Cocoa Design Patterns",
+            "publisher": "Pearson Education"
+        }
+    }
+]

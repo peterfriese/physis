@@ -1,19 +1,19 @@
 package com.itemis.mobile.physis.generator.iOS;
 
-import com.itemis.mobile.physis.generator.AbstractBaseGenerator;
 import java.util.Date;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.xbase.lib.StringExtensions;
 import org.eclipse.xtext.xtend2.lib.StringConcatenation;
 
 @SuppressWarnings("all")
-public class AbstractIOSBaseGenerator extends AbstractBaseGenerator {
+public class AbstractIOSBaseGenerator {
   private final AbstractIOSBaseGenerator _this = this;
   
   public StringConcatenation fileheaderComment(final EObject object, final boolean header) {
     StringConcatenation _xblockexpression = null;
     {
-      final Date date = new Date();
+      Date _date = new Date();
+      final Date date = _date;
       String _localeString = date.toLocaleString();
       final String today = _localeString;
       String _xifexpression = null;
@@ -49,7 +49,8 @@ public class AbstractIOSBaseGenerator extends AbstractBaseGenerator {
   }
   
   public String baseFileName(final EObject object) throws RuntimeException{
-    throw new RuntimeException("You need to override baseFileName in your generator class!");
+    RuntimeException _runtimeException = new RuntimeException("You need to override baseFileName in your generator class!");
+    throw _runtimeException;
   }
   
   public String headerFileName(final EObject object) {

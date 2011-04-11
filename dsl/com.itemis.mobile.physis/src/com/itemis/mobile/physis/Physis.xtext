@@ -11,17 +11,35 @@ enum Platform:
 	
 DataModel:
 	'datamodel' name=ID '{'
-		(types += Type)*
+		(entities += Entity)*
 	'}';
 		
-Type:
-	SimpleType | Entity;
+DateType:
+	{DateType} "Date";
+
+IntegerType:
+	{IntegerType} "Integer";
 	
-MappingClause:
-	'is' mappedType=ID 'on platform' platform=Platform;
+DoubleType:
+	{DoubleType} "Double";
 	
-SimpleType:
-	'type' name=ID (mappings += MappingClause)*;
+FloatType:
+	{FloatType} "Float";
+			
+StringType:
+	{StringType} "String";
+	
+BooleanType:
+	{BooleanType} "Boolean";
+	
+BuiltInType:
+	DateType | IntegerType | DoubleType | FloatType | StringType | BooleanType;
+	
+Reference:
+	TypeReference | BuiltInType;
+	
+TypeReference:
+	type=[Entity];
 	
 Entity:
 	'entity' name=ID '{'
@@ -29,4 +47,4 @@ Entity:
 	'}';
 	
 Attribute:
-	name=ID ':' type=[Type] (multiplicity?='[]')?;
+	name=ID ':' type=Reference (multiplicity?='[]')?;
